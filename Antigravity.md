@@ -3,16 +3,25 @@
 > **프로젝트 목표**: Architecting with Google Compute Engine 과정 개정 (모듈 00 ~ 11)
 > **담당 AI**: Google Antigravity AI Pair Programmer
 > **디자인 가이드 문서**: `GCP_PPT_Design.md` (v3.5.0)
-> **지침 버전**: 1.3.0 (Presenter View 프레임 헛돎 방지 수칙 수록)
+> **지침 버전**: 1.4.0 (HTML 단일 표준 출력 적용)
 
 ---
 
 ## 📌 프로젝트 개요 및 핵심 원칙
-본 문서는 Google Antigravity AI가 구교재 GCP PDF 교재를 최신 2026 프레젠테이션 슬라이드, 1:1 강사 구어체 발표 대본, HTML 교재로 변환할 때 반복적인 질문 및 버그 없이 즉시 일관되게 수행하기 위한 **100% 한글 절대 준수 지침**입니다.
+본 문서는 Google Antigravity AI가 구교재 GCP PDF 교재를 최신 2026 프레젠테이션 슬라이드, 1:1 강사 구어체 발표 대본, HTML 교재로 변환할 때 반복적인 질문 및 버그 없이 즉시 일관되게 수행하기 위한 **100% 한글 HTML 단일 출력 준수 지침**입니다.
 
 ---
 
-## 🛑 [필수] Presenter View 헛도는 버그(`f=...`) 원천 차단 수칙
+## 🎯 100% HTML 단일 표준 출력 규격 (HTML-Only Output)
+모든 모듈의 변환 결과물은 PPTX나 PDF 변환 없이 **오직 HTML 웹 표준 문서**로만 생성 및 관리합니다:
+1. **발표용 HTML 슬라이드**: `slides_html/XX_Module_Name_Slide.html` (키보드 `P` 키 발표자 대본 모드 탑재)
+2. **강사 대본 HTML 교재**: `lecturer_notes/XX_Module_Name_Lecturer_Notes.html` (상단 PPT + 하단 1:1 구어체 대본)
+3. **슬라이드 원본 마크다운**: `XX_Module_Name_Marp.md`
+4. **현대화 개정 노트**: `XX_Module_Name_Modernized.md`
+
+---
+
+## 🛑 Presenter View 헛도는 버그(`f=...`) 원천 차단 수칙
 
 Marp 슬라이드 변환 시 키보드 `P` 키 발표자 모드(Presenter View)에서 페이지가 안 넘어가고 헛도는 증상(`f=1, f=2...`)을 방지하기 위해 다음 규칙을 **100% 엄격히 준수**합니다:
 
@@ -77,16 +86,3 @@ Marp 슬라이드 변환 시 키보드 `P` 키 발표자 모드(Presenter View)�
 3. **비용 관리 경고 박스 (`.alert-warning-box`)**:
    - 수업 마감 및 미사용 시 **가상 머신(VM) OFF 필수** 명시.
    - GCP 결제 데이터 집계 **최소 2일(48시간) 시차 인지** 경고 박스 필수 작성.
-
----
-
-## 📄 강사 대본 및 결과물 저장 폴더 규격
-
-1. **발표자 모드 대본 내장 (`<!-- comment: ... -->`)**:
-   - Marp 슬라이드마다 1:1 강사 구어체 대본 주석 포함 ➔ 키보드 `P` 키 입력 시 발표자 모드 Presenter Notes 란에 실시간 동기화.
-
-2. **결과물 저장 폴더 구조**:
-   - 발표용 HTML 슬라이드: `slides_html/XX_Module_Name_Slide.html`
-   - 강사 대본 HTML 교재: `lecturer_notes/XX_Module_Name_Lecturer_Notes.html`
-   - 슬라이드 원본 마크다운: `XX_Module_Name_Marp.md`
-   - 현대화 개정 노트: `XX_Module_Name_Modernized.md`
