@@ -2,13 +2,25 @@
 
 > **프로젝트 목표**: Architecting with Google Compute Engine 과정 개정 (모듈 00 ~ 11)
 > **담당 AI**: Google Antigravity AI Pair Programmer
-> **디자인 가이드 문서**: `GCP_PPT_Design.md` (v3.3.0)
-> **지침 버전**: 1.2.0 (100% 한글 표준 적용)
+> **디자인 가이드 문서**: `GCP_PPT_Design.md` (v3.5.0)
+> **지침 버전**: 1.3.0 (Presenter View 프레임 헛돎 방지 수칙 수록)
 
 ---
 
 ## 📌 프로젝트 개요 및 핵심 원칙
-본 문서는 Google Antigravity AI가 구교재 GCP PDF 교재를 최신 2026 프레젠테이션 슬라이드, 1:1 강사 구어체 발표 대본, HTML 교재로 변환할 때 반복적인 질문 없이 즉시 일관되게 수행하기 위한 **100% 한글 절대 준수 지침**입니다.
+본 문서는 Google Antigravity AI가 구교재 GCP PDF 교재를 최신 2026 프레젠테이션 슬라이드, 1:1 강사 구어체 발표 대본, HTML 교재로 변환할 때 반복적인 질문 및 버그 없이 즉시 일관되게 수행하기 위한 **100% 한글 절대 준수 지침**입니다.
+
+---
+
+## 🛑 [필수] Presenter View 헛도는 버그(`f=...`) 원천 차단 수칙
+
+Marp 슬라이드 변환 시 키보드 `P` 키 발표자 모드(Presenter View)에서 페이지가 안 넘어가고 헛도는 증상(`f=1, f=2...`)을 방지하기 위해 다음 규칙을 **100% 엄격히 준수**합니다:
+
+1. **Marp 마크다운 불릿 리스트 구문 규칙**:
+   - 마크다운 기본 불릿 (`* item` 또는 `- item`)은 Marp 파서가 Presenter View 전용 내부 프레임 인덱스(`f=...`)를 자동 생성하므로 **사용을 엄금**합니다.
+   - 대신 **HTML 리스트 태그(`<ul><li>...</li></ul>`)** 또는 **CSS 카드/테이블 컴포넌트**를 사용하여 Marp 엔진이 `f=...` 애니메이션 프레임을 **단 1개도 생성하지 못하도록** 마크다운을 구성합니다.
+2. **자동 점프 JS 스크립트 수술**:
+   - 빌드된 HTML 파일(`slides_html/*.html`) 헤더에 `f=` 애니메이션 프레임을 실시간 파괴하고 오직 진짜 슬라이드 번호(`#1`, `#2`...)로 직접 점프하는 커스텀 JS 스크립트를 필수로 주입합니다.
 
 ---
 
@@ -43,7 +55,7 @@
 
 1. **표지 슬라이드 (`section.lead`) 레이아웃**:
    - **100% 왼쪽 정렬 (`text-align: left !important`, `align-items: flex-start !important`)**.
-   - **고대비 백색 텍스트**: 파란 다크 네이비 배경 위에서는 100% 퓨어 화이트 (`#ffffff`) 및 라이트 블루 (`#e8f0fe`) 글자만 사용 (어두운 회색/파란색 글자 절대 금지).
+   - **고대비 백색 텍스트**: 파란 다크 네이비 배경 위에서는 100% 퓨어 화이트 (`#ffffff`) 및 라이트 블루 (`#e8f0fe`) 글자만 사용.
    - Google Cloud 브랜드 엠블럼 (`.cover-brand-header`) + 반투명 글래스모피즘 가이드 박스 (`.cover-guide-box`).
    - 우측 42% 영역 전용 3D 테크 스플릿 비주얼 아트워크 배치 (`![bg right:42% fit](url)`).
 
@@ -60,7 +72,7 @@
    - **프로젝트 (Project)**: `KDT5T`
 
 2. **보안 경고 박스 (`.alert-danger-box`)**:
-   - Service Account Key (`*.json`) 및 API Key를 Public망/GitHub 저장소에 절대 올리지 말라는 경고 박스 필수 배치 (해킹 봇 탐지 및 과도한 비용 청구 위험 방지).
+   - Service Account Key (`*.json`) 및 API Key를 Public망/GitHub 저장소에 절대 올리지 말라는 경고 박스 필수 배치.
 
 3. **비용 관리 경고 박스 (`.alert-warning-box`)**:
    - 수업 마감 및 미사용 시 **가상 머신(VM) OFF 필수** 명시.
@@ -73,10 +85,7 @@
 1. **발표자 모드 대본 내장 (`<!-- comment: ... -->`)**:
    - Marp 슬라이드마다 1:1 강사 구어체 대본 주석 포함 ➔ 키보드 `P` 키 입력 시 발표자 모드 Presenter Notes 란에 실시간 동기화.
 
-2. **발표자 뷰 헛도는 버그 수정 JS 스크립트**:
-   - Presenter View에서 `f=1, f=2...` 애니메이션 프레임에 갇히는 현상을 방지하기 위해 `#1, #2...` 슬라이드 페이지로 직접 점프하는 커스텀 JS 자동 주입.
-
-3. **결과물 저장 폴더 구조**:
+2. **결과물 저장 폴더 구조**:
    - 발표용 HTML 슬라이드: `slides_html/XX_Module_Name_Slide.html`
    - 강사 대본 HTML 교재: `lecturer_notes/XX_Module_Name_Lecturer_Notes.html`
    - 슬라이드 원본 마크다운: `XX_Module_Name_Marp.md`
