@@ -1,0 +1,19 @@
+# Service Account Keys & API Keys (Security Strict Rules)
+*.json
+!.eslintrc.json
+!.prettierrc.json
+.env
+.env.*
+*.pem
+*.key
+
+# Temporary & Scratch Files
+scratch/
+.tempmediaStorage/
+*.log
+
+# OS & IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

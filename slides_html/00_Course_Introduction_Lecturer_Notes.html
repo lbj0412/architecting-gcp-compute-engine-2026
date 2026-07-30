@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Architecting with Google Compute Engine - 모듈 00 전 슬라이드 강의 노트</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 15mm;
+    }
+    body {
+      font-family: 'Pretendard Variable', Pretendard, sans-serif;
+      background-color: #f8f9fa;
+      color: #202124;
+      margin: 0;
+      padding: 30px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .doc-header {
+      background: linear-gradient(135deg, #0b3880 0%, #1557bf 100%);
+      color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .doc-header h1 {
+      margin: 0 0 10px 0;
+      font-size: 30px;
+      font-weight: 800;
+    }
+    .doc-header p {
+      margin: 0;
+      font-size: 16px;
+      color: #e8f0fe;
+    }
+    
+    .note-card-page {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(60, 64, 67, 0.08);
+      border: 1px solid #e8eaed;
+      page-break-after: always;
+    }
+
+    .slide-preview-box {
+      background: #f8f9fa;
+      border-radius: 12px;
+      border: 2px solid #1a73e8;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-preview-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #4285f4 0%, #4285f4 25%, #ea4335 25%, #ea4335 50%, #fbbc05 50%, #fbbc05 75%, #34a853 75%, #34a853 100%);
+    }
+    .slide-num-badge {
+      position: absolute;
+      top: 14px;
+      right: 20px;
+      background: #1a73e8;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+    .slide-preview-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1a73e8;
+      margin: 0 0 10px 0;
+    }
+    .slide-preview-body {
+      font-size: 15px;
+      color: #3c4043;
+      line-height: 1.6;
+    }
+
+    .lecturer-script-box {
+      background: #f1f3f4;
+      border-left: 5px solid #34a853;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-top: 15px;
+    }
+    .script-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1e8e3e;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .script-content {
+      font-size: 15px;
+      color: #202124;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .tip-box {
+      background: #feefc3;
+      border-left: 5px solid #fbbc04;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #b06000;
+      line-height: 1.5;
+    }
+    .alert-box {
+      background: #fce8e6;
+      border-left: 5px solid #ea4335;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #c5221f;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="doc-header">
+    <h1>Architecting with Google Compute Engine</h1>
+    <p>전체 26개 슬라이드 1:1 강사 강의 노트 & 구어체 대본 (Full Lecturer Notes)</p>
+  </div>
+
+  <!-- Slide 01 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 01</span>
+      <div class="slide-preview-title">Architecting with Google Compute Engine (표지)</div>
+      <div class="slide-preview-body">
+        • <strong>과정명</strong>: Architecting with Google Compute Engine<br>
+        • <strong>버전</strong>: 2026 Modernized Edition | Module 00: Course Introduction<br>
+        • <strong>가이드</strong>: Google Cloud 인프라 구축, 설계, 자동화 및 실습 가이드
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"안녕하세요 수강생 여러분! **Architecting with Google Compute Engine** 과정에 오신 것을 진심으로 환영합니다. 저는 이번 3일간 여러분과 함께 구글 클라우드 인프라 아키텍팅을 공부할 강사입니다.
+
+본 과정은 Google Cloud의 핵심 컴퓨팅 인프라를 직접 설계하고, 네트워크, 보안, 모니터링, 그리고 Terraform을 활용한 자동화 배포까지 실무 중심으로 습득하는 정규 과정입니다. 3일간 즐겁고 알찬 시간이 되도록 최선을 다하겠습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 02 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 02</span>
+      <div class="slide-preview-title">01. 강사 소개</div>
+      <div class="slide-preview-body">
+        • 2019 ~ 현재 : 베스핀글로벌 구글 MSP 팀 / Cloud 엔지니어<br>
+        • 2018 ~ 2019 : 신한 DS / 인프라 운영<br>
+        • 2015 ~ 2018 : 쌍용정보통신 / 네트워크 엔지니어<br>
+        • 2015 년 : 연세 IT 전문학원<br>
+        • 2012 년 : 충북대학교 고고미술사학과 (졸업)
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"본격적인 수업에 앞서 제 소개를 간단히 드리겠습니다.
+저는 네트워크 엔지니어를 시작으로 금융권 인프라 운영을 거쳐, 2019년부터 지금까지 베스핀글로벌 구글 MSP 팀에서 Google Cloud 엔지니어 및 아키텍트로 재직하고 있습니다.
+
+현업에서 수많은 기업의 Google Cloud 마이그레이션과 아키텍팅 솔루션을 직접 구축하며 얻은 실무 팁과 노하우를 강의 중간중간 적극적으로 공유해 드리겠습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 03 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 03</span>
+      <div class="slide-preview-title">에티켓 (Etiquette - Part 1)</div>
+      <div class="slide-preview-body">
+        • 📵 <strong>통화 금지</strong>: 강의 중 전화 통화는 강의실 밖에서 진행<br>
+        • 🚫 <strong>녹화 금지</strong>: 화면 캡처 및 영상 녹화 금지<br>
+        • ❓ <strong>질문하기</strong>: 언제든지 편하게 질문 요청
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"원활한 강의 환경을 위한 첫 번째 에티켓입니다.
+급한 통화는 다른 수강생분들을 위해 강의실 밖에서 진행해 주시기 바라며, 본 과정의 강의 화면 및 자료는 저작권 보호를 위해 무단 캡처나 녹화를 금지하고 있습니다. 궁금한 점이 생기시면 언제든 편하게 손을 들거나 채팅으로 질문해 주세요."</div>
+    </div>
+  </div>
+
+  <!-- Slide 04 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 04</span>
+      <div class="slide-preview-title">에티켓 (Etiquette - Part 2)</div>
+      <div class="slide-preview-body">
+        • 🎙️ <strong>마이크 음소거</strong>: 발표자 이외 마이크 음소거 유지<br>
+        • 🚫 <strong>녹화 금지</strong>: 무단 전재 및 배포 금지<br>
+        • 💬 <strong>질문하기</strong>: 실습 막힐 시 즉시 강사 요청
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"온라인/원격 환경에서는 소음 방지를 위해 질문 시간을 제외하고는 마이크를 음소거 상태로 유지해 주시기 바랍니다. 실습을 진행하다가 에러가 나거나 진행이 안 될 때는 주저하지 마시고 바로 저에게 알려주시면 빠르게 도와드리겠습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 05 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 05</span>
+      <div class="slide-preview-title">Google Cloud 생태계 (Global Ecosystem)</div>
+      <div class="slide-preview-body">
+        • <strong>글로벌 인프라 서비스</strong>: Search, YouTube, Gmail, Workspace 기반망<br>
+        • <strong>오픈소스 리더십</strong>: Kubernetes, Terraform, Redis, MongoDB 호환<br>
+        • <strong>AI 통합</strong>: Chrome, Maps, Analytics, Vertex AI & Gemini 연계
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"Google Cloud는 단순한 인프라 대여 서비스가 아닙니다. 수십억 명의 글로벌 사용자를 매일 처리하는 YouTube, Gmail, Google Search와 동일한 세계 최고의 인프라 위에서 구동됩니다. 또한 쿠버네티스나 테라폼 같은 오픈소스 생태계를 이끌며 최신 생성형 AI인 Gemini까지 완벽히 연결되는 강력한 플랫폼입니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 06 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 06</span>
+      <div class="slide-preview-title">글로벌 인프라 (Region, PoP, Network)</div>
+      <div class="slide-preview-body">
+        • <strong>리전 (Region)</strong>: 전 세계 40개 이상 (서울 asia-northeast3 포함)<br>
+        • <strong>영역 (Zone)</strong>: 리전당 최소 3개 이상의 독립 고가용성 존<br>
+        • <strong>에지 접속 지점 (PoP)</strong>: 지구를 둘러싼 Google 전용 고속 광케이블망
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"화면에 보이는 지도가 바로 Google Cloud의 글로벌 인프라 지도입니다. 파란선은 지구 전체를 감싸고 있는 구글 전용 사설 해저 광케이블망입니다. 
+우리가 사용하는 서울 리전(`asia-northeast3`)을 비롯해 전 세계 40개 이상의 리전이 존재하며, 각 리전은 최소 3개의 독립된 존(Zone)으로 구성되어 완벽한 장애 격리와 고가용성(HA)을 제공합니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 07 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 07</span>
+      <div class="slide-preview-title">Google Cloud는...</div>
+      <div class="slide-preview-body">
+        • <strong>다양한 비즈니스 요구사항 충족</strong><br>
+        • 컴퓨팅, 데이터베이스, AI, 네트워킹 등 최적의 인프라 제품군 다각도 제공
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"Google Cloud는 기업마다 다른 비즈니스 상황과 요구사항을 맞춤형으로 충족할 수 있도록 정교한 제품군을 갖추고 있습니다. 단일 방식만 강요하는 것이 아니라, 필요에 따라 자유롭게 조합할 수 있는 유연성을 제공하는 것이 가장 큰 특징입니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 08 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 08</span>
+      <div class="slide-preview-title">일반적인 문제에 대한 솔루션 다양성</div>
+      <div class="slide-preview-body">
+        • 💡 <strong>하나의 과제에 대해 2개 이상의 솔루션 제공</strong><br>
+        • 가상 머신(IaaS), 컨테이너(CaaS), 서버리스(PaaS) 등 다중 선택지 제공
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"Google Cloud 아키텍팅의 핵심 원칙 중 하나는 '하나의 문제에 항상 2개 이상의 솔루션이 존재한다'는 점입니다.
+예를 들어 웹 서버 하나를 띄우더라도 Compute Engine VM으로 올릴 수도 있고, GKE 컨테이너로 띄우거나, Cloud Run 서버리스로 배포할 수도 있습니다. 조직의 엔지니어링 역량과 비용에 맞춰 최적의 옵션을 선택할 수 있습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 09 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 09</span>
+      <div class="slide-preview-title">솔루션 연속성 (Solution Continuum)</div>
+      <div class="slide-preview-body">
+        • <strong>IaaS (Compute Engine)</strong>: SysOps 직접 관리, OS 제어<br>
+        • <strong>CaaS (GKE)</strong>: DevOps 클러스터 및 Pod 관리<br>
+        • <strong>PaaS / Serverless (Cloud Run)</strong>: No-Ops 완전 관리형
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"이 표는 IaaS부터 SaaS까지의 솔루션 연속성을 나타냅니다.
+왼쪽 IaaS로 갈수록 OS와 커널까지 내 마음대로 제어할 수 있지만 직접 관리해야 하는 운영 부담(SysOps)이 커집니다. 반대로 오른쪽 서버리스(Cloud Run)로 갈수록 구글이 인프라를 100% 관리해주므로 인프라 관리 부담이 전혀 없는 노옵스(No-Ops) 환경을 누릴 수 있습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 10 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 10</span>
+      <div class="slide-preview-title">인프라, 사용자, 애플리케이션 구조</div>
+      <div class="slide-preview-body">
+        • <strong>기반 인프라 (Underlying Infrastructure)</strong>: 구글 글로벌 사설망, VM, VPC<br>
+        • <strong>애플리케이션 계층</strong>: GKE Pod, Cloud Run, 서버리스 함수<br>
+        • <strong>사용자 & 디바이스</strong>: IAM 인증, IAP, 보안 게이트웨이
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"클라우드 아키텍처를 도시 구조에 비유해 보겠습니다.
+하부의 도로와 지하철, 전력망 같은 도시 인프라가 바로 구글의 '기반 인프라(Underlying Infrastructure)'입니다. 그 위에서 달리는 차량이나 상점이 '애플리케이션'이며, 도시에 거주하는 시민이 바로 '사용자'입니다. 우리는 이번 과정에서 가장 밑바탕이 되는 인프라 레이어를 집중적으로 배우게 됩니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 11 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 11</span>
+      <div class="slide-preview-title">컴퓨팅 서비스 01: Compute Engine</div>
+      <div class="slide-preview-body">
+        • <strong>대표 IaaS (Virtual Machines)</strong><br>
+        • 커스텀 CPU/RAM 사양, Live Migration (무중단 마이그레이션), GPU/Spot VM
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"첫 번째 주요 서비스는 바로 이번 교육 과정의 주인공인 **Compute Engine**입니다.
+클라우드 상에서 가상 머신(VM)을 필요에 따라 생성하는 IaaS 서비스입니다. 구글만의 차별점인 'Live Migration' 기능 덕분에 물리 서버 하드웨어 점검 중에도 수강생분의 VM이 꺼지지 않고 다른 물리 서버로 무중단 이동됩니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 12 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 12</span>
+      <div class="slide-preview-title">컴퓨팅 서비스 02: Google Kubernetes Engine (GKE)</div>
+      <div class="slide-preview-body">
+        • <strong>관리형 CaaS (Container-as-a-Service)</strong><br>
+        • GKE Standard (노드 제어) & GKE Autopilot (완전 관리형 K8s Pod 운영)
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"두 번째는 **GKE(Google Kubernetes Engine)**입니다. 쿠버네티스를 최초로 만든 구글의 기술력이 집약된 대표 관리형 컨테이너 서비스입니다. 특히 최신 GKE Autopilot 모드를 사용하면 노드 서버 관리조차 신경 쓸 필요 없이 컨테이너 **Pod** 단위로만 깔끔하게 배포하고 운영할 수 있습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 13 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 13</span>
+      <div class="slide-preview-title">컴퓨팅 서비스 03: App Engine</div>
+      <div class="slide-preview-body">
+        • <strong>전통적 PaaS (Platform-as-a-Service)</strong><br>
+        • Standard & Flexible 환경, 서버 프로비저닝 없이 코드 즉시 배포
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"세 번째는 Google Cloud의 오리지널 PaaS인 **App Engine**입니다.
+개발자가 서버 구축이나 OS 패치 걱정 없이 오직 작성한 소스 코드만 제출하면 구글이 런타임 환경을 자동으로 구성하고 트래픽 확장을 알아서 처리해 주는 완벽한 코드 중심 서비스입니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 14 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 14</span>
+      <div class="slide-preview-title">컴퓨팅 서비스 04: Cloud Functions</div>
+      <div class="slide-preview-body">
+        • <strong>이벤트 기반 FaaS (Function-as-a-Service)</strong><br>
+        • Cloud Storage 파일 업로드 / Pub/Sub 수신 반응 실행, 2세대 Cloud Run 기반
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"네 번째는 이벤트 기반의 서버리스 함수인 **Cloud Functions(Cloud Run Functions)**입니다.
+스토리지에 사진이 업로드되거나 큐 메시지가 도착할 때 1초만 짠 하고 실행되는 단일 기능 스크립트에 적합합니다. 요청이 없을 때는 요금이 0원이며, 2세대는 Cloud Run 인프라 위에서 구동되어 성능이 대폭 향상되었습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 15 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 15</span>
+      <div class="slide-preview-title">컴퓨팅 서비스 05: Cloud Run</div>
+      <div class="slide-preview-body">
+        • <strong>모던 서버리스 컨테이너 플랫폼</strong><br>
+        • 표준 Docker 이미지 기반, 0부터 수천 개까지 초단위 자동 스케일링
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"다섯 번째는 현시점 구글 클라우드에서 가장 매력적인 서버리스 플랫폼인 **Cloud Run**입니다.
+Docker 컨테이너 이미지 하나만 만들어 던져주면, 트래픽이 없을 땐 인스턴스 0개로 줄어들어 요금이 안 나가고, 요청이 몰리면 1초 만에 수백 개로 자동 확장됩니다. 언어나 라이브러리 제약이 전혀 없습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 16 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 16</span>
+      <div class="slide-preview-title">컴퓨팅 서비스 비교 매트릭스</div>
+      <div class="slide-preview-body">
+        • 5개 주요 컴퓨팅 제품군(Compute Engine, GKE, App Engine, Cloud Run, Cloud Functions) 스케일링 및 제어 수준 비교표
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"앞서 배운 5가지 컴퓨팅 옵션을 한눈에 비교해 놓은 매트릭스입니다.
+OS와 세밀한 제어가 필요하면 **Compute Engine**, 대규모 K8s 마이크로서비스는 **GKE**, 웹 앱 PaaS 배포는 **App Engine**, 서버리스 컨테이너는 **Cloud Run**, 이벤트 스크립트는 **Cloud Functions**를 선택하시면 됩니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 17 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 17</span>
+      <div class="slide-preview-title">클라우드 인프라 학습 과정</div>
+      <div class="slide-preview-body">
+        • <strong>1단계</strong>: Google Cloud Fundamentals: Core Infrastructure<br>
+        • <strong>2단계</strong>: Architecting with Google Compute Engine (본 과정 하이라이트)<br>
+        • <strong>3단계</strong>: Architecting with Google Cloud: Design and Process
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"구글 클라우드 공식 아키텍팅 트랙의 전체 커리큘럼 로드맵입니다.
+기초 과정인 1단계를 거쳐, 현재 우리가 수강하는 **2단계 Compute Engine 아키텍팅 과정**이 허리 역할을 수행합니다. 본 과정을 수료하신 후 3단계 Design & Process 과정까지 이수하시면 Professional Cloud Architect 자격증에 도전하실 수 있습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 18 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 18</span>
+      <div class="slide-preview-title">1일 차 주제: 기초 (Day 1 - Foundation)</div>
+      <div class="slide-preview-body">
+        • <strong>Module 01</strong>: Google Cloud 소개 & Cloud Shell<br>
+        • <strong>Module 02</strong>: 가상 네트워크 (VPC & Cloud NAT)<br>
+        • <strong>Module 03</strong>: 가상 머신 (Compute Engine VM 생성)
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"오늘 진행될 1일 차 '기초' 커리큘럼입니다.
+모듈 01에서는 GCP 콘솔 접속과 Cloud Shell 터미널을 다루고, 모듈 02에서는 네트워크의 핵심인 VPC 및 Cloud NAT를 구축합니다. 마지막 모듈 03에서는 직접 Compute Engine VM을 생성하고 SSH로 접속하는 실습을 진행합니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 19 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 19</span>
+      <div class="slide-preview-title">2일 차 주제: 핵심 서비스 (Day 2 - Core Services)</div>
+      <div class="slide-preview-body">
+        • <strong>Module 04</strong>: IAM (Identity & Access Management)<br>
+        • <strong>Module 05</strong>: 데이터 스토리지 (Cloud Storage & Cloud SQL)<br>
+        • <strong>Module 06</strong>: 리소스 관리 (BigQuery 결제 분석)<br>
+        • <strong>Module 07</strong>: 리소스 모니터링 (Cloud Monitoring)
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"내일 진행될 2일 차 '핵심 서비스' 과정입니다.
+클라우드 보안의 중심인 IAM 권한을 다루고, Cloud Storage 버킷과 Cloud SQL 데이터베이스를 구축합니다. 그리고 BigQuery로 결제 데이터를 분석해 본 뒤 Cloud Monitoring으로 인프라 모니터링 대시보드를 만들어 봅니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 20 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 20</span>
+      <div class="slide-preview-title">3일 차 주제: 확장 및 자동화 (Day 3 - Scaling & IaC)</div>
+      <div class="slide-preview-body">
+        • <strong>Module 08</strong>: 네트워크 상호 연결 (Cloud VPN)<br>
+        • <strong>Module 09</strong>: 부하 분산 및 자동 확장 (HTTP LB & MIG)<br>
+        • <strong>Module 10</strong>: 인프라 자동화 (Terraform IaC)<br>
+        • <strong>Module 11</strong>: 관리형 서비스 & 아키텍처 패턴
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"마지막 3일 차 '확장 및 자동화' 과정입니다.
+하이브리드 온프레미스 연결을 위한 Cloud VPN, 트래픽을 분산하고 자동 스케일링하는 Load Balancer, 그리고 최근 필수 도구인 Terraform 코드로 인프라를 자동 배포하는 고급 실습까지 마스터하게 됩니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 21 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 21</span>
+      <div class="slide-preview-title">실습 환경 안내 (GCP Lab Environment)</div>
+      <div class="slide-preview-body">
+        • <strong>베스핀글로벌 제공 전용 GCP 프로젝트</strong><br>
+        • <strong>조직 (Organization)</strong>: `bespin.email`<br>
+        • <strong>프로젝트 (Project)</strong>: `KDT5T` (별도 Qwiklabs 계정 필요 없음)
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"이제 실습 환경에 대해 안내해 드리겠습니다.
+본 교육의 모든 실습은 Qwiklabs가 아니라, 저희 베스핀글로벌에서 수강생분들을 위해 준비한 `bespin.email` 조직 아래의 `KDT5T` 전용 GCP 프로젝트에서 직접 진행됩니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 22 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 22</span>
+      <div class="slide-preview-title">실습 보안 필수 수칙 (Security & Key Management)</div>
+      <div class="slide-preview-body">
+        • 🚨 <strong>Service Account Key & API Key</strong>: Public망/GitHub 절대 노출 금지!<br>
+        • 봇 탐지 시 해킹 및 과도한 서비스 금액 폭탄 발생<br>
+        • `.gitignore` 파일 자격 증명 키 필수 등록
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"여기서 가장 중요한 보안 경고 사항입니다! 
+**Service Account Key 파일이나 API Key를 절대로 GitHub 공개 저장소나 인터넷에 업로드하지 마십시오.**
+자동 탐지 봇에 노출되면 수초 만에 계정이 해킹당하고 수천만 원 상당의 비트코인 채굴 등 과도한 서비스 요금이 청구될 수 있습니다. 반드시 `.gitignore`에 등록해 관리해 주시기 바랍니다."</div>
+    </div>
+    <div class="alert-box">
+      🚨 <strong>강사 핵심 강조</strong>: 실습 중 생성한 자격 증명 JSON 키 파일 관리를 매 수업 시간마다 점검하세요.
+    </div>
+  </div>
+
+  <!-- Slide 23 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 23</span>
+      <div class="slide-preview-title">실습 비용 및 리소스 관리 수칙 (FinOps Guide)</div>
+      <div class="slide-preview-body">
+        • ⚠️ <strong>수업 종료 및 미진행 시 VM OFF 필수</strong><br>
+        • 💰 <strong>GCP 결제 집계는 최소 2일(48시간) 후 반영</strong>되므로 사전 비용 고려 필수
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"다음은 비용 관리 수칙입니다.
+**수업이 종료되거나 실습을 쉬는 시간에는 반드시 켜둔 Compute Engine VM을 OFF(중지) 상태로 바꾸셔야 합니다.**
+또한 GCP의 요금 통계 집계는 최소 48시간(2일) 뒤에나 시스템에 반영되기 때문에 '지금 요금 안 찍혔네?' 하고 방치하시면 2일 뒤 큰 금액이 청구됩니다. 항상 비용을 염두에 두고 자원을 아껴주세요."</div>
+    </div>
+    <div class="tip-box">
+      💡 <strong>퇴실 점검 수칙</strong>: 매일 수업 마감 10분 전 수강생들에게 VM 인스턴스 전원 중단을 일괄 안내하세요.
+    </div>
+  </div>
+
+  <!-- Slide 24 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 24</span>
+      <div class="slide-preview-title">실습 환경 기본 유의사항 종합</div>
+      <div class="slide-preview-body">
+        • 🔒 <strong>보안</strong>: Service Account / API Key 공유 및 퍼블릭 노출 엄금<br>
+        • 🛑 <strong>전원</strong>: 미사용 시 VM 인스턴스 OFF 필수<br>
+        • 💰 <strong>비용</strong>: 결제 데이터 2일 시차 고려<br>
+        • 🏢 <strong>프로젝트</strong>: `bespin.email` / `KDT5T` 지정 프로젝트 사용
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"앞서 말씀드린 4가지 핵심 유의사항을 종합한 카드입니다.
+보안 키 관리, VM 전원 관리, 2일 요금 시차 인지, 지정된 `KDT5T` 프로젝트 사용 규칙을 지켜주시면 안심하고 쾌적하게 실습을 진행하실 수 있습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 25 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 25</span>
+      <div class="slide-preview-title">수업 종료 후 수료 및 복습 안내</div>
+      <div class="slide-preview-body">
+        • 강의 자료 및 프로젝트 결과를 활용한 복습 지원<br>
+        • 수료 후 구글 클라우드 관련 문의는 강사 및 MSP 팀 채널 지원
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"수업이 수료된 이후에도 전달해 드린 교재와 실습 프로젝트 자료를 활용해 자유롭게 복습하실 수 있으며, 기술적 궁금증은 저희 MSP 팀 지원 채널로 문의해주시면 친절히 가이드해 드리겠습니다."</div>
+    </div>
+  </div>
+
+  <!-- Slide 26 -->
+  <div class="note-card-page">
+    <div class="slide-preview-box">
+      <span class="slide-num-badge">SLIDE 26</span>
+      <div class="slide-preview-title">Q & A SESSION (마무리)</div>
+      <div class="slide-preview-body">
+        • 모듈 00 과정 소개 마무리 및 질문 답변 시간
+      </div>
+    </div>
+    <div class="lecturer-script-box">
+      <div class="script-title">💬 강사 대본 (Instructor Script)</div>
+      <div class="script-content">"이것으로 오리엔테이션 및 모듈 00 과정 소개를 마치겠습니다. 
+혹시 지금까지 설명드린 내용이나 실습 환경과 관련해 질문이 있으신가요? 
+없으시면 10분간 휴식 후 모듈 01 'Google Cloud 소개 및 Cloud Shell 실습'으로 들어가겠습니다. 경청해 주셔서 감사합니다!"</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
