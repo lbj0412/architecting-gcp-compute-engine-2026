@@ -2,8 +2,8 @@
 marp: true
 theme: uncover
 paginate: true
-header: 'Google Cloud | Architecting Series'
-footer: 'Architecting with Google Compute Engine © 2026'
+header: 'Google Cloud | 구글 클라우드 아키텍처 과정'
+footer: 'Architecting with Google Compute Engine © 2026 개정판'
 style: |
   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
   
@@ -505,12 +505,11 @@ comment:
 
 ![bg right:40% fit](https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800)
 
-* **글로벌 인프라 서비스**
-  * Search, YouTube, Gmail, Workspace 지원 고성능 사설 망
-* **오픈소스 소프트웨어 & 파트너**
-  * Kubernetes, Terraform, Redis, MongoDB 완벽 호환
-* **고객 및 개발자 서비스**
-  * Chrome, Maps, Analytics, Vertex AI & Gemini AI 연계
+<ul>
+  <li><strong>글로벌 인프라 서비스</strong>: Search, YouTube, Gmail, Workspace 지원 고성능 사설 망</li>
+  <li><strong>오픈소스 소프트웨어 & 파트너</strong>: Kubernetes, Terraform, Redis, MongoDB 완벽 호환</li>
+  <li><strong>고객 및 개발자 서비스</strong>: Chrome, Maps, Analytics, Vertex AI & Gemini AI 연계</li>
+</ul>
 
 <!--
 comment:
@@ -526,9 +525,11 @@ comment:
 
 ![bg right:48% fit](images/gcp_region_map.png)
 
-* **리전 (Region)**: 전 세계 40개 이상 (서울 `asia-northeast3` 등)
-* **영역 (Zone)**: 리전당 최소 3개 이상의 독립 고가용성 존
-* **에지 접속 지점 (PoP)**: 지구를 둘러싼 Google 전용 고속 광케이블 네트워크
+<ul>
+  <li><strong>리전 (Region)</strong>: 전 세계 40개 이상 (서울 asia-northeast3 등)</li>
+  <li><strong>영역 (Zone)</strong>: 리전당 최소 3개 이상의 독립 고가용성 존</li>
+  <li><strong>에지 접속 지점 (PoP)</strong>: 지구를 둘러싼 Google 전용 고속 광케이블 네트워크</li>
+</ul>
 
 <!--
 comment:
@@ -598,12 +599,11 @@ comment:
 
 ![bg right:40% fit](https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800)
 
-* **기반 인프라 (Underlying Infrastructure)**
-  * Google 글로벌 전용 사설망 (Global Private Network), Compute Engine VM, VPC
-* **애플리케이션 계층 (Application Tier)**
-  * GKE Pod, Cloud Run 컨테이너, 서버리스 함수
-* **사용자 및 디바이스 (Users & Endpoints)**
-  * IAM 인증, Identity-Aware Proxy, 보안 게이트웨이
+<ul>
+  <li><strong>기반 인프라 (Underlying Infrastructure)</strong>: Google 글로벌 전용 사설망, Compute Engine VM, VPC</li>
+  <li><strong>애플리케이션 계층 (Application Tier)</strong>: GKE Pod, Cloud Run 컨테이너, 서버리스 함수</li>
+  <li><strong>사용자 및 디바이스 (Users & Endpoints)</strong>: IAM 인증, Identity-Aware Proxy, 보안 게이트웨이</li>
+</ul>
 
 <!--
 comment:
@@ -619,11 +619,10 @@ comment:
 
 ![bg right:38% fit](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800)
 
-* **Google Cloud의 대표 IaaS (Virtual Machines)**
-* **특징 및 장점**
-  * 커스텀 사양 (vCPU 및 RAM 미세 조정)
-  * Live Migration (점검 시에도 VM 중단 없는 라이브 이동)
-  * GPU / TPU 탑재 가능, 선점형(Spot) VM으로 비용 80% 절감
+<ul>
+  <li><strong>Google Cloud의 대표 IaaS (Virtual Machines)</strong></li>
+  <li><strong>특징 및 장점</strong>: 커스텀 사양, Live Migration (무중단 이동), GPU/TPU, Spot VM 비용 절감</li>
+</ul>
 
 <!--
 comment:
@@ -639,11 +638,10 @@ comment:
 
 ![bg right:38% fit](https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800)
 
-* **쿠버네티스 원조 Google의 관리형 CaaS**
-* **특징 및 장점**
-  * GKE Standard: 클러스터 노드 및 Pod 배포 직접 관리
-  * GKE Autopilot: 노드 관리 부담 없는 완전 관리형 K8s Pod 운영
-  * 자동 스케일링(HPA/VPA) 및 자동 복구 헬스체크 지원
+<ul>
+  <li><strong>쿠버네티스 원조 Google의 관리형 CaaS</strong></li>
+  <li><strong>특징 및 장점</strong>: GKE Standard 및 GKE Autopilot (완전 관리형 K8s Pod 운영)</li>
+</ul>
 
 <!--
 comment:
@@ -659,11 +657,10 @@ comment:
 
 ![bg right:38% fit](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800)
 
-* **Google Cloud의 전통적인 PaaS**
-* **특징 및 장점**
-  * Standard Environment: 인프라 관리 없는 즉시 코드 배포
-  * Flexible Environment: Docker 컨테이너 기반 확장
-  * 트래픽 증가에 따른 스케일링 자동화
+<ul>
+  <li><strong>Google Cloud의 전통적인 PaaS</strong></li>
+  <li><strong>특징 및 장점</strong>: Standard & Flexible 환경, 서버 관리 없이 코드 즉시 배포</li>
+</ul>
 
 <!--
 comment:
@@ -679,11 +676,10 @@ comment:
 
 ![bg right:38% fit](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800)
 
-* **이벤트 기반 FaaS (Function-as-a-Service)**
-* **특징 및 장점**
-  * Cloud Storage 파일 업로드, Pub/Sub 메시지 수신 시 실행
-  * 코드가 실행될 때만 비용 청구 (트래픽 0일 때 0원)
-  * 2세대: Cloud Run 인프라 기반 고성능 단일 함수 실행
+<ul>
+  <li><strong>이벤트 기반 FaaS (Function-as-a-Service)</strong></li>
+  <li><strong>특징 및 장점</strong>: Cloud Storage 파일 업로드 / Pub/Sub 수신 반응 실행 (트래픽 0일 때 0원)</li>
+</ul>
 
 <!--
 comment:
@@ -699,11 +695,10 @@ comment:
 
 ![bg right:38% fit](https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800)
 
-* **모던 서버리스 컨테이너 플랫폼**
-* **특징 및 장점**
-  * 표준 Docker 컨테이너 기반으로 언어/프레임워크 제약 없음
-  * 0개부터 수천 개 인스턴스까지 초단위 자동 스케일링
-  * 웹 요청, gRPC, WebSocket 및 비동기 작업 지원
+<ul>
+  <li><strong>모던 서버리스 컨테이너 플랫폼</strong></li>
+  <li><strong>특징 및 장점</strong>: 표준 Docker 컨테이너 기반, 0개부터 수천 개까지 초단위 자동 스케일링</li>
+</ul>
 
 <!--
 comment:
@@ -863,12 +858,10 @@ comment:
 
 ![bg right:38% fit](https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800)
 
-* **베스핀글로벌 제공 GCP 실습 환경**
-  * **조직 (Organization)**: `bespin.email`
-  * **프로젝트 (Project)**: `KDT5T`
-* **실습 준비사항**
-  * 교육용으로 할당된 전용 GCP 프로젝트 내에서 제약 없는 실습 진행
-  * 별도의 Qwiklabs 계정 생성 필요 없음
+<ul>
+  <li><strong>베스핀글로벌 제공 GCP 실습 환경</strong>: 조직 `bespin.email` / 프로젝트 `KDT5T`</li>
+  <li><strong>실습 준비사항</strong>: 전용 GCP 프로젝트 내에서 실습 진행 (별도 Qwiklabs 계정 필요 없음)</li>
+</ul>
 
 <!--
 comment:
@@ -890,9 +883,9 @@ comment:
   </div>
 </div>
 
-* **보안 관리 수칙**
-  * `.gitignore` 파일에 자격 증명 키(`*.json`, `.env`) 필수 등록
-  * 코드 내 자격 증명 하드코딩 금지 ➔ 환경 변수 또는 Secret Manager 활용
+<ul>
+  <li><strong>보안 관리 수칙</strong>: `.gitignore` 파일 자격 증명 키(`*.json`, `.env`) 필수 등록</li>
+</ul>
 
 <!--
 comment:
@@ -914,9 +907,9 @@ comment:
   </div>
 </div>
 
-* **리소스 절감 체크리스트**
-  * 사용하지 않는 Compute Engine VM, External IP, Unattached Disk 즉시 정리
-  * 테스트 완료 후 불필요한 GPU/TPU 고비용 리소스 해제
+<ul>
+  <li><strong>리소스 절감 체크리스트</strong>: 미사용 Compute Engine VM, External IP 즉시 정리</li>
+</ul>
 
 <!--
 comment:
@@ -961,10 +954,10 @@ comment:
 
 ## 수업 종료 후 수료 및 복습 안내
 
-* **강의 자료 및 프로젝트 활용**
-  * 제공된 실습 가이드 및 `KDT5T` 프로젝트 내 결과물 복습
-* **문의 및 지원**
-  * 교육 수료 후 기술 관련 문의는 담당 강사 및 MSP 팀 채널 활용
+<ul>
+  <li><strong>강의 자료 및 프로젝트 활용</strong>: 제공된 실습 가이드 및 `KDT5T` 프로젝트 내 결과물 복습</li>
+  <li><strong>문의 및 지원</strong>: 교육 수료 후 기술 관련 문의는 담당 강사 및 MSP 팀 채널 활용</li>
+</ul>
 
 <!--
 comment:

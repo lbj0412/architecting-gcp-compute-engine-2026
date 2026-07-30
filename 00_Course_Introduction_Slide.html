@@ -63,6 +63,45 @@
   })();
 </script>
 
+
+<script>
+  (function() {
+    function purgeFragmentHash() {
+      var hash = window.location.hash;
+      if (hash && hash.includes('f=')) {
+        var cleanHash = hash.replace(/f=\d+/g, '').replace(/&&/g, '&').replace(/\?&/g, '?').replace(/#&/g, '#');
+        if (cleanHash !== hash) {
+          history.replaceState(null, '', cleanHash);
+        }
+      }
+    }
+    window.addEventListener('hashchange', purgeFragmentHash);
+    window.addEventListener('load', purgeFragmentHash);
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+        var hash = window.location.hash;
+        var pageMatch = hash.match(/#(\d+)/);
+        var currentSlide = pageMatch ? parseInt(pageMatch[1]) : 1;
+        if (currentSlide < 26) {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.hash = '#' + (currentSlide + 1);
+        }
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        var hash = window.location.hash;
+        var pageMatch = hash.match(/#(\d+)/);
+        var currentSlide = pageMatch ? parseInt(pageMatch[1]) : 1;
+        if (currentSlide > 1) {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.hash = '#' + (currentSlide - 1);
+        }
+      }
+    }, true);
+  })();
+</script>
+
 </head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="overview" tabindex="-1" title="Toggle overview view (o)">Toggle overview view</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-header="Google Cloud | Architecting Series" data-footer="Architecting with Google Compute Engine © 2026" data-class="lead" data-theme="uncover" data-style="@import url(&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css&quot;);
 
 /* 클릭 순차 애니메이션 완전 무효화 -&gt; 모든 요소가 한 번에 즉시 노출 */
