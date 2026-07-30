@@ -2,13 +2,19 @@
 
 > **프로젝트 목표**: Architecting with Google Compute Engine 과정 개정 (모듈 00 ~ 11)
 > **담당 AI**: Google Antigravity AI Pair Programmer
-> **디자인 가이드 문서**: `GCP_PPT_Design.md` (v3.6.0)
-> **지침 버전**: 1.5.0 (루트 디렉토리 슬라이드 파일 제거 및 slides_html 단일 경로 지정)
+> **디자인 가이드 문서**: `GCP_PPT_Design.md` (v3.7.0)
+> **지침 버전**: 1.6.0 (Marp CLI 빌드 시 --allow-local-files 로컬 이미지 내장 수칙 추가)
 
 ---
 
 ## 📌 프로젝트 개요 및 핵심 원칙
 본 문서는 Google Antigravity AI가 구교재 GCP PDF 교재를 최신 2026 프레젠테이션 슬라이드, 1:1 강사 구어체 발표 대본, HTML 교재로 변환할 때 반복적인 질문 및 버그 없이 즉시 일관되게 수행하기 위한 **100% 한글 HTML 단일 출력 준수 지침**입니다.
+
+---
+
+## 🖼️ [필수] Marp CLI 빌드 시 로컬 이미지 임베딩 수칙 (--allow-local-files)
+슬라이드 내의 로컬 이미지(예: 6번 슬라이드의 GCP 리전 지도 `images/gcp_region_map.png`)가 누락되지 않고 HTML 슬라이드 내부에 100% 완벽히 포개어져 보이기 위해, Marp CLI 컴파일 시 반드시 다음 옵션을 포함합니다:
+- **컴파일 명령어**: `npx -y @marp-team/marp-cli --no-stdin --allow-local-files XX_Module_Name_Marp.md -o slides_html/XX_Module_Name_Slide.html`
 
 ---
 
