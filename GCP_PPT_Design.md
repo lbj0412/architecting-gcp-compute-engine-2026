@@ -3,7 +3,7 @@
 > **디자인 적용 대상**: Marp, Google Slides, HTML 웹 프레젠테이션 및 스티치 UI 컴포넌트
 > **테마 명칭**: Google Cloud 엔터프라이즈 최종 승인 규격
 > **폰트 패키지**: Pretendard v1.3.9 (웹 폰트 및 로컬 서체)
-> **문서 버전**: 3.5.0 (Presenter View 프레임 차단 기술 규격 포함)
+> **문서 버전**: 3.6.0 (Presenter View 프레임 차단 및 폴더 보관 필수 규격)
 
 ---
 
@@ -70,30 +70,21 @@
 - **고대비 백색 텍스트 규칙**: 파란 배경 위에서 어두운 회색/파란색 글자를 **완전히 배제**하고 100% 퓨어 화이트 (`#ffffff`) 및 라이트 블루 (`#e8f0fe`)로 지정.
 - **우측 스플릿 그래픽 (`![bg right:42% fit](url)`)**: 우측 42% 영역에 독자적인 고화질 3D 테크/클라우드 비주얼 아트워크 배치.
 
-### B. 슬라이드 애니메이션 및 발표자 대본 규격 (Fragment Elimination)
+### B. 슬라이드 애니메이션 및 Presenter View 버그 차단 규격
 - **한 번에 즉시 노출 수칙**:
-  - 클릭할 때마다 하나씩 나타나는 순차 노출(Fragment Animation) 금지 ➔ 슬라이드를 넘기면 슬라이드의 모든 리스트, 카드, 문구가 **즉시 100% 한 번에 노출**.
+  - 클릭할 때마다 하나씩 나타나는 순차 노출(Fragment Animation) 금지 ➔ 모든 요소가 즉시 노출.
 - **Presenter View 프레임 헛돎(`f=...`) 원천 차단 마크다운 규칙**:
-  - 마크다운 불릿 리스트 (`*`, `-`)는 Marp 파서가 Presenter View 전용 `f=...` 애니메이션 프레임을 자동 생성하므로 **사용 금지**.
-  - 대신 **HTML `<ul><li>...</li></ul>` 리스트 태그**를 사용하여 Marp 엔진이 `f=...` 인덱스를 0개도 생성하지 못하도록 조치.
-- **발표자 대본 내장 (`<!-- comment: ... -->`)**:
-  - Marp 마크다운 슬라이드마다 1:1 강사 구어체 대본 주석을 내장 ➔ 키보드 `P` 키로 발표자 모드 진입 시 Presenter Notes 란에 구어체 대본 실시간 동기화.
-- **발표자 뷰 헛도는 버그 수정 JS**:
-  - Presenter View에서 `f=1, f=2...` 등의 애니메이션 프레임에 갇히는 현상을 원천 차단하기 위해 `#1, #2...` 슬라이드 페이지로 직접 점프하는 커스텀 JS 스크립트 자동 주입.
-
-### C. 실습 환경, 보안 및 비용(FinOps) 규격
-- **Qwiklabs 완전 배제**: 퀵랩 안내 삭제 ➔ 베스핀글로벌 GCP 실습 프로젝트 (`bespin.email` 조직, `KDT5T` 프로젝트) 명시.
-- **보안 경고 박스 (`.alert-danger-box`)**:
-  - Service Account Key 및 API Key의 Public망/GitHub 절대 업로드 금지 경고 박스 수록.
-- **비용 관리 경고 박스 (`.alert-warning-box`)**:
-  - 수업 종료 및 미사용 시 **가상 머신(VM) OFF 필수** 명시.
-  - **GCP 결제 데이터 집계 최소 2일(48시간) 시차 인지** 경고 박스 필수 수록.
+  - Marp 마크다운 기본 불릿 (`*`, `-`) 대신 **HTML `<ul><li>...</li></ul>` 리스트 태그**를 사용하여 Marp 엔진이 Presenter View용 `f=...` 애니메이션 프레임을 0개도 생성하지 못하도록 조치.
+- **자동 점프 & Fragment 소멸 JS 필수 주입**:
+  - HTML 헤더에 `purgeFragmentHash()` 및 `ArrowRight`/`ArrowLeft` 슬라이드 점프 스크립트를 필수로 주입.
 
 ---
 
-## 📂 4. 결과물 저장 폴더 보관 규격
+## 📂 4. 결과물 저장 폴더 및 파일 경로 엄격 규격 (Strict Directory Structure)
 
-- **발표용 HTML 슬라이드**: `slides_html/XX_Module_Name_Slide.html`
-- **강사 대본 HTML 교재**: `lecturer_notes/XX_Module_Name_Lecturer_Notes.html`
-- **슬라이드 원본 마크다운**: `XX_Module_Name_Marp.md`
-- **현대화 개정 노트**: `XX_Module_Name_Modernized.md`
+⚠️ **경고: 루트 디렉토리(`c:\Users\C\...`)에는 절대로 `XX_Slide.html` 파일이나 `XX_Lecturer_Notes.html` 파일이 존재하면 안 됩니다! (버그 유발 원천 차단)**
+
+* **슬라이드 HTML 저장 경로**: **`slides_html/XX_Module_Name_Slide.html`** (단일 허용 경로)
+* **강사 대본 HTML 저장 경로**: **`lecturer_notes/XX_Module_Name_Lecturer_Notes.html`** (단일 허용 경로)
+* **슬라이드 원본 마크다운**: `XX_Module_Name_Marp.md`
+* **현대화 개정 노트**: `XX_Module_Name_Modernized.md`

@@ -2,8 +2,8 @@
 
 > **프로젝트 목표**: Architecting with Google Compute Engine 과정 개정 (모듈 00 ~ 11)
 > **담당 AI**: Google Antigravity AI Pair Programmer
-> **디자인 가이드 문서**: `GCP_PPT_Design.md` (v3.5.0)
-> **지침 버전**: 1.4.0 (HTML 단일 표준 출력 적용)
+> **디자인 가이드 문서**: `GCP_PPT_Design.md` (v3.6.0)
+> **지침 버전**: 1.5.0 (루트 디렉토리 슬라이드 파일 제거 및 slides_html 단일 경로 지정)
 
 ---
 
@@ -12,24 +12,19 @@
 
 ---
 
-## 🎯 100% HTML 단일 표준 출력 규격 (HTML-Only Output)
-모든 모듈의 변환 결과물은 PPTX나 PDF 변환 없이 **오직 HTML 웹 표준 문서**로만 생성 및 관리합니다:
-1. **발표용 HTML 슬라이드**: `slides_html/XX_Module_Name_Slide.html` (키보드 `P` 키 발표자 대본 모드 탑재)
-2. **강사 대본 HTML 교재**: `lecturer_notes/XX_Module_Name_Lecturer_Notes.html` (상단 PPT + 하단 1:1 구어체 대본)
-3. **슬라이드 원본 마크다운**: `XX_Module_Name_Marp.md`
-4. **현대화 개정 노트**: `XX_Module_Name_Modernized.md`
+## 🛑 [필수] 저장 폴더 경로 및 Presenter View 헛돎 방지 수칙
 
----
+1. **저장 폴더 및 파일 경로 엄격 준수**:
+   - ⚠️ **경고: 프로젝트 최상위 루트 디렉토리에는 절대로 HTML 슬라이드 파일(`00_Course_Introduction_Slide.html` 등)을 생성하거나 놔두지 마십시오!** (옛날 구버전 파일이 열려 버그를 유발함)
+   - **슬라이드 HTML 파일**: 오직 **`slides_html/XX_Module_Name_Slide.html`**에만 생성 및 보관.
+   - **강사 대본 HTML 파일**: 오직 **`lecturer_notes/XX_Module_Name_Lecturer_Notes.html`**에만 생성 및 보관.
 
-## 🛑 Presenter View 헛도는 버그(`f=...`) 원천 차단 수칙
-
-Marp 슬라이드 변환 시 키보드 `P` 키 발표자 모드(Presenter View)에서 페이지가 안 넘어가고 헛도는 증상(`f=1, f=2...`)을 방지하기 위해 다음 규칙을 **100% 엄격히 준수**합니다:
-
-1. **Marp 마크다운 불릿 리스트 구문 규칙**:
+2. **Marp 마크다운 불릿 리스트 구문 규칙**:
    - 마크다운 기본 불릿 (`* item` 또는 `- item`)은 Marp 파서가 Presenter View 전용 내부 프레임 인덱스(`f=...`)를 자동 생성하므로 **사용을 엄금**합니다.
    - 대신 **HTML 리스트 태그(`<ul><li>...</li></ul>`)** 또는 **CSS 카드/테이블 컴포넌트**를 사용하여 Marp 엔진이 `f=...` 애니메이션 프레임을 **단 1개도 생성하지 못하도록** 마크다운을 구성합니다.
-2. **자동 점프 JS 스크립트 수술**:
-   - 빌드된 HTML 파일(`slides_html/*.html`) 헤더에 `f=` 애니메이션 프레임을 실시간 파괴하고 오직 진짜 슬라이드 번호(`#1`, `#2`...)로 직접 점프하는 커스텀 JS 스크립트를 필수로 주입합니다.
+
+3. **자동 점프 & Fragment 소멸 JS 스크립트 필수 주입**:
+   - 빌드된 HTML 파일(`slides_html/*.html`) 헤더에 `purgeFragmentHash()` 및 `ArrowRight`/`ArrowLeft` 슬라이드 점프 스크립트를 필수로 주입합니다.
 
 ---
 
