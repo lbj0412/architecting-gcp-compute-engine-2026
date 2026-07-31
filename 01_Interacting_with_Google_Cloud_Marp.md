@@ -2,8 +2,8 @@
 marp: true
 theme: uncover
 paginate: true
-header: 'Google Cloud | 구글 클라우드 아키텍처 과정'
-footer: 'Architecting with Google Compute Engine © 2026 개정판'
+header: ''
+footer: ''
 style: |
   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
   
@@ -43,25 +43,6 @@ style: |
     z-index: 10;
   }
 
-  /* 헤더 & 푸터 */
-  header {
-    font-family: "Pretendard Variable", Pretendard, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: #1a73e8;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    top: 24px;
-    left: 80px;
-  }
-  footer {
-    font-family: "Pretendard Variable", Pretendard, sans-serif;
-    font-size: 12px;
-    color: #70757a;
-    bottom: 20px;
-    left: 80px;
-  }
-  
   /* 최초 다크 네이비 / 파란 그라데이션 프리미엄 표지 슬라이드 */
   section.lead {
     background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #1a73e8 100%) !important;
@@ -74,8 +55,6 @@ style: |
     align-items: center !important;
     position: relative;
   }
-  section.lead header { display: none; }
-  section.lead footer { display: none; }
 
   /* 상단 좌측 로고 조립 (Top 45px, Left 50px) */
   .cover-header-logo {
@@ -138,7 +117,7 @@ style: |
     font-weight: 500;
   }
 
-  /* 일반 슬라이드 제목 (H1 & H2) */
+  /* 일반 슬라이드 제목 (H1 & H2) - 파란색 밑줄(h2::after) 제거! */
   h1, h2 {
     color: #1a73e8;
     font-size: 38px;
@@ -146,16 +125,6 @@ style: |
     margin-top: 0;
     margin-bottom: 24px;
     letter-spacing: -0.03em;
-  }
-  
-  h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background: #1a73e8;
-    margin-top: 8px;
-    border-radius: 2px;
   }
 
   /* 구글 전용 HTML 불릿 리스트 */
@@ -355,19 +324,20 @@ comment:
 
 ## 콘솔 탐색 메뉴 (Navigation Menu)
 
-![bg right:40% fit](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800)
-
-<ul>
-  <li><strong>상단 좌측 햄버거 버튼 (☰)</strong>: GCP 전체 서비스 카테고리 탐색</li>
-  <li><strong>주요 카테고리 구분</strong>:
-    <ul>
-      <li>Compute Engine, GKE, Cloud Run 등 컴퓨팅 제품군</li>
-      <li>VPC network, Cloud DNS, Cloud Armor 네트워킹 제품군</li>
-      <li>IAM & Admin 보안 및 권한 설정</li>
-    </ul>
-  </li>
-  <li><strong>고정(Pin) 기능</strong>: 자주 쓰는 메뉴를 상단에 고정 가능</li>
-</ul>
+<div class="card-grid-3" style="margin-top:20px;">
+  <div class="card">
+    <div class="card-title">☰ 탐색 메뉴 (Navigation Menu)</div>
+    <div class="card-desc">상단 좌측 햄버거 버튼을 통해 GCP 전체 서비스 카테고리 탐색</div>
+  </div>
+  <div class="card">
+    <div class="card-title">📌 주요 서비스 카테고리</div>
+    <div class="card-desc">Compute, VPC Network, Storage, IAM & Admin 서비스 관리</div>
+  </div>
+  <div class="card">
+    <div class="card-title">📌 즐겨찾기 고정 (Pin)</div>
+    <div class="card-desc">자주 쓰는 메뉴를 상단에 고정하여 빠른 직관적 이동 지원</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -425,14 +395,20 @@ comment:
 
 ## API 액세스 및 Client Libraries
 
-![bg right:38% fit](https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=800)
-
-<ul>
-  <li><strong>RESTful APIs</strong>: HTTP GET, POST, PUT, DELETE 메서드 기반 프로그래밍 제어</li>
-  <li><strong>JSON 데이터 형식</strong>: 요청 및 응답 데이터 표준 포맷 사용</li>
-  <li><strong>Google Cloud Client Libraries</strong>: Java, Python, Node.js, Go, Ruby 등 최적화 SDK 제공</li>
-  <li><strong>OAuth 2.0 보안 인증</strong>: 안전한 API 호출 및 토큰 인증 메커니즘 지원</li>
-</ul>
+<div class="card-grid-3" style="margin-top:20px;">
+  <div class="card">
+    <div class="card-title">⚡ RESTful APIs</div>
+    <div class="card-desc">HTTP GET, POST, PUT, DELETE 메서드 기반 프로그래밍 제어</div>
+  </div>
+  <div class="card">
+    <div class="card-title">📦 Client Libraries</div>
+    <div class="card-desc">Java, Python, Node.js, Go 등 언어별 최적화 SDK 개발 지원</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔒 OAuth 2.0 Security</div>
+    <div class="card-desc">안전한 API 호출 및 토큰 기반 보안 인증 메커니즘 지원</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -446,13 +422,20 @@ comment:
 
 ## Cloud Mobile App (모바일 관리 전용 앱)
 
-![bg right:38% fit](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800)
-
-<ul>
-  <li><strong>스마트폰 기반 관리</strong>: Android 및 iOS 전용 Google Cloud 모바일 앱 지원</li>
-  <li><strong>실시간 모니터링</strong>: CPU, 네트워크 트래픽, HTTP 요청수 등 실시간 그래프 시각화</li>
-  <li><strong>긴급 장애 제어</strong>: 이동 중 알림(Alert) 수신, 긴급 SSH 접속, VM 전원 중지/재부팅</li>
-</ul>
+<div class="card-grid-3" style="margin-top:20px;">
+  <div class="card">
+    <div class="card-title">📱 스마트폰 기반 관리</div>
+    <div class="card-desc">Android 및 iOS 전용 Google Cloud 모바일 전용 앱 지원</div>
+  </div>
+  <div class="card">
+    <div class="card-title">📊 실시간 모니터링</div>
+    <div class="card-desc">CPU, 네트워크 트래픽, HTTP 요청수 등 실시간 시각화 그래프</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🚨 긴급 장애 제어</div>
+    <div class="card-desc">이동 중 알림 수신, 긴급 SSH 접속, VM 전원 중지 및 재부팅 조치</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -590,7 +573,7 @@ comment:
   <div class="alert-warning-title">⚠️ VM Off 및 요금 집계 48시간 시차 인지</div>
   <div style="font-size: 19px; color: #5c3c00; line-height: 1.5;">
     • 실습 종료 후에는 항상 <strong>Compute Engine VM 전원을 중지(OFF)</strong>해야 합니다.<br>
-    • GCP 요금 집계 데이터는 <strong>최소 2일(48시간) 시차</strong>가 있으므로 비용 절감을 항시 인지해야 합니다.
+    • GCP 결제 데이터는 <strong>최소 2일(48시간) 시차</strong>가 있으므로 비용 절감을 항시 인지해야 합니다.
   </div>
 </div>
 

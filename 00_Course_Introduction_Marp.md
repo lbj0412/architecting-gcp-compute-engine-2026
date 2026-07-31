@@ -2,8 +2,8 @@
 marp: true
 theme: uncover
 paginate: true
-header: 'Google Cloud | 구글 클라우드 아키텍처 과정'
-footer: 'Architecting with Google Compute Engine © 2026 개정판'
+header: ''
+footer: ''
 style: |
   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
   
@@ -43,25 +43,6 @@ style: |
     z-index: 10;
   }
 
-  /* 헤더 & 푸터 */
-  header {
-    font-family: "Pretendard Variable", Pretendard, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: #1a73e8;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    top: 24px;
-    left: 80px;
-  }
-  footer {
-    font-family: "Pretendard Variable", Pretendard, sans-serif;
-    font-size: 12px;
-    color: #70757a;
-    bottom: 20px;
-    left: 80px;
-  }
-  
   /* 최초 다크 네이비 / 파란 그라데이션 프리미엄 표지 슬라이드 */
   section.lead {
     background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #1a73e8 100%) !important;
@@ -74,8 +55,6 @@ style: |
     align-items: center !important;
     position: relative;
   }
-  section.lead header { display: none; }
-  section.lead footer { display: none; }
 
   /* 상단 좌측 로고 조립 (Top 45px, Left 50px) */
   .cover-header-logo {
@@ -138,7 +117,7 @@ style: |
     font-weight: 500;
   }
 
-  /* 일반 슬라이드 제목 (H1 & H2) */
+  /* 일반 슬라이드 제목 (H1 & H2) - 아래 파란색 밑줄(h2::after) 완전 제거! */
   h1, h2 {
     color: #1a73e8;
     font-size: 38px;
@@ -146,16 +125,6 @@ style: |
     margin-top: 0;
     margin-bottom: 24px;
     letter-spacing: -0.03em;
-  }
-  
-  h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background: #1a73e8;
-    margin-top: 8px;
-    border-radius: 2px;
   }
 
   /* 구글 전용 HTML 불릿 리스트 */
@@ -212,6 +181,39 @@ style: |
   .profile-detail {
     color: #3c4043;
     font-weight: 500;
+  }
+
+  /* 서비스 전용 브랜드 아이콘 래퍼 및 카드 스타일 */
+  .service-hero-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    align-items: center;
+    margin-top: 15px;
+  }
+  .service-icon-box {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 6px 24px rgba(60, 64, 67, 0.08);
+    border: 1px solid #e8eaed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .service-icon-box img {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 16px;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .service-icon-name {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1a73e8;
   }
 
   /* 카드 컴포넌트 */
@@ -360,23 +362,6 @@ style: |
   }
   tr:last-child td { border-bottom: none; }
   tr:nth-child(even) { background-color: #f8f9fa; }
-  
-  section:not(.lead) img {
-    border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(60, 64, 67, 0.15);
-  }
-  
-  .badge {
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 800;
-    background: #e8f0fe;
-    color: #1a73e8;
-    margin-bottom: 14px;
-    letter-spacing: 0.5px;
-  }
 ---
 
 <!-- Page 1 -->
@@ -410,8 +395,6 @@ comment:
 <!-- Page 2 -->
 
 ## 01. 강사 소개
-
-![bg right:36% fit](https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800)
 
 <div class="profile-container">
   <div class="profile-row">
@@ -508,13 +491,20 @@ comment:
 
 ## Google Cloud 생태계 (Global Ecosystem)
 
-![bg right:40% fit](https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800)
-
-<ul>
-  <li><strong>글로벌 인프라 서비스</strong>: Search, YouTube, Gmail, Workspace 지원 고성능 사설 망</li>
-  <li><strong>오픈소스 소프트웨어 & 파트너</strong>: Kubernetes, Terraform, Redis, MongoDB 완벽 호환</li>
-  <li><strong>고객 및 개발자 서비스</strong>: Chrome, Maps, Analytics, Vertex AI & Gemini AI 연계</li>
-</ul>
+<div class="card-grid-3" style="margin-top:20px;">
+  <div class="card">
+    <div class="card-title">🌐 글로벌 인프라</div>
+    <div class="card-desc">Search, YouTube, Gmail 지원 초고속 Google 글로벌 사설 망</div>
+  </div>
+  <div class="card">
+    <div class="card-title">⚡ 오픈소스 생태계</div>
+    <div class="card-desc">Kubernetes, Terraform, Redis, MongoDB 완벽 호환</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🤖 AI & Analytics</div>
+    <div class="card-desc">Vertex AI, Gemini, BigQuery 빅데이터 최첨단 연계</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -602,13 +592,20 @@ comment:
 
 ## 인프라, 사용자, 애플리케이션 구조
 
-![bg right:40% fit](https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800)
-
-<ul>
-  <li><strong>기반 인프라 (Underlying Infrastructure)</strong>: Google 글로벌 전용 사설망, Compute Engine VM, VPC</li>
-  <li><strong>애플리케이션 계층 (Application Tier)</strong>: GKE Pod, Cloud Run 컨테이너, 서버리스 함수</li>
-  <li><strong>사용자 및 디바이스 (Users & Endpoints)</strong>: IAM 인증, Identity-Aware Proxy, 보안 게이트웨이</li>
-</ul>
+<div class="card-grid-3" style="margin-top:20px;">
+  <div class="card">
+    <div class="card-title">🏗️ 기반 인프라</div>
+    <div class="card-desc">Google 글로벌 전용 사설망, Compute Engine VM, VPC 네트워크</div>
+  </div>
+  <div class="card">
+    <div class="card-title">📦 애플리케이션 계층</div>
+    <div class="card-desc">GKE Pod, Cloud Run 컨테이너, 서버리스 함수 워크로드</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔐 사용자 및 보안</div>
+    <div class="card-desc">IAM 계정 권한 인증, Identity-Aware Proxy, 보안 게이트웨이</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -622,12 +619,21 @@ comment:
 
 ## 컴퓨팅 서비스 01: Compute Engine
 
-![bg right:38% fit](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800)
-
-<ul>
-  <li><strong>Google Cloud의 대표 IaaS (Virtual Machines)</strong></li>
-  <li><strong>특징 및 장점</strong>: 커스텀 사양, Live Migration (무중단 이동), GPU/TPU, Spot VM 비용 절감</li>
-</ul>
+<div class="service-hero-layout">
+  <div>
+    <ul>
+      <li><strong>Google Cloud의 대표 IaaS (Virtual Machines)</strong></li>
+      <li><strong>자유로운 인프라 스펙 설정</strong>: vCPU 및 메모리 커스텀 사양 구성</li>
+      <li><strong>Google 고유 기술</strong>: Live Migration (물리 점검 시 무중단 이동)</li>
+      <li><strong>비용 절감 지원</strong>: Spot VM 최대 90% 할인 및 지속 사용 할인(SUD)</li>
+    </ul>
+  </div>
+  <div class="service-icon-box">
+    <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Compute Engine">
+    <div class="service-icon-name">Compute Engine</div>
+    <div style="font-size: 14px; color: #5f6368; margin-top: 6px;">Virtual Machines (IaaS)</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -641,12 +647,25 @@ comment:
 
 ## 컴퓨팅 서비스 02: Google Kubernetes Engine (GKE)
 
-![bg right:38% fit](https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800)
-
-<ul>
-  <li><strong>쿠버네티스 원조 Google의 관리형 CaaS</strong></li>
-  <li><strong>특징 및 장점</strong>: GKE Standard 및 GKE Autopilot (완전 관리형 K8s Pod 운영)</li>
-</ul>
+<div class="service-hero-layout">
+  <div>
+    <ul>
+      <li><strong>쿠버네티스 원조 Google의 관리형 CaaS</strong></li>
+      <li><strong>대규모 컨테이너 오케스트레이션</strong>: 배포, 자동 스케일링, 복구 관리</li>
+      <li><strong>운영 모드 선택</strong>:
+        <ul>
+          <li>GKE Standard: 클러스터 노드 직접 제어</li>
+          <li>GKE Autopilot: 완전 관리형 K8s Pod 운영 (No Node Management)</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="service-icon-box">
+    <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="GKE">
+    <div class="service-icon-name">Google Kubernetes Engine</div>
+    <div style="font-size: 14px; color: #5f6368; margin-top: 6px;">Managed Container (CaaS)</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -660,12 +679,21 @@ comment:
 
 ## 컴퓨팅 서비스 03: App Engine
 
-![bg right:38% fit](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800)
-
-<ul>
-  <li><strong>Google Cloud의 전통적인 PaaS</strong></li>
-  <li><strong>특징 및 장점</strong>: Standard & Flexible 환경, 서버 관리 없이 코드 즉시 배포</li>
-</ul>
+<div class="service-hero-layout">
+  <div>
+    <ul>
+      <li><strong>Google Cloud의 전통적인 PaaS (Platform-as-a-Service)</strong></li>
+      <li><strong>서버 관리 제로</strong>: 개발자는 애플리케이션 소스 코드만 제출</li>
+      <li><strong>자동 런타임 빌드</strong>: Python, Java, Node.js, Go 등 자동 구성</li>
+      <li><strong>트래픽 기반 자동 확장</strong>: 0개부터 자동 오토스케일링</li>
+    </ul>
+  </div>
+  <div class="service-icon-box">
+    <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="App Engine">
+    <div class="service-icon-name">App Engine</div>
+    <div style="font-size: 14px; color: #5f6368; margin-top: 6px;">Platform-as-a-Service (PaaS)</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -679,12 +707,25 @@ comment:
 
 ## 컴퓨팅 서비스 04: Cloud Functions (Cloud Run Functions)
 
-![bg right:38% fit](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800)
-
-<ul>
-  <li><strong>이벤트 기반 FaaS (Function-as-a-Service)</strong></li>
-  <li><strong>특징 및 장점</strong>: Cloud Storage 파일 업로드 / Pub/Sub 수신 반응 실행 (트래픽 0일 때 0원)</li>
-</ul>
+<div class="service-hero-layout">
+  <div>
+    <ul>
+      <li><strong>이벤트 기반 FaaS (Function-as-a-Service)</strong></li>
+      <li><strong>이벤트 반응형 트리거</strong>:
+        <ul>
+          <li>Cloud Storage 파일 업로드 감지 및 자동 처리</li>
+          <li>Cloud Pub/Sub 메시지 수신 시 1초 단위 스크립트 실행</li>
+        </ul>
+      </li>
+      <li><strong>극강의 비용 효율</strong>: 미사용 시 트래픽 0일 때 비용 0원</li>
+    </ul>
+  </div>
+  <div class="service-icon-box">
+    <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Cloud Functions">
+    <div class="service-icon-name">Cloud Functions</div>
+    <div style="font-size: 14px; color: #5f6368; margin-top: 6px;">Event-driven FaaS</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -698,12 +739,21 @@ comment:
 
 ## 컴퓨팅 서비스 05: Cloud Run
 
-![bg right:38% fit](https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800)
-
-<ul>
-  <li><strong>모던 서버리스 컨테이너 플랫폼</strong></li>
-  <li><strong>특징 및 장점</strong>: 표준 Docker 컨테이너 기반, 0개부터 수천 개까지 초단위 자동 스케일링</li>
-</ul>
+<div class="service-hero-layout">
+  <div>
+    <ul>
+      <li><strong>모던 서버리스 컨테이너 플랫폼 (Serverless Container)</strong></li>
+      <li><strong>표준 Docker 컨테이너 지원</strong>: 어떤 언어/프레임워크든 완벽 작동</li>
+      <li><strong>초단위 스케일링</strong>: 0개부터 수천 개까지 즉각 오토스케일링</li>
+      <li><strong>호환성</strong>: Knative 기반으로 하이브리드 / 온프레미스 이전 용이</li>
+    </ul>
+  </div>
+  <div class="service-icon-box">
+    <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Cloud Run">
+    <div class="service-icon-name">Cloud Run</div>
+    <div style="font-size: 14px; color: #5f6368; margin-top: 6px;">Serverless Container Platform</div>
+  </div>
+</div>
 
 <!--
 comment:
@@ -861,12 +911,16 @@ comment:
 
 ## 실습 환경 안내 (GCP Lab Environment)
 
-![bg right:38% fit](https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800)
-
-<ul>
-  <li><strong>베스핀글로벌 제공 GCP 실습 환경</strong>: 조직 `bespin.email` / 프로젝트 `KDT5T`</li>
-  <li><strong>실습 준비사항</strong>: 전용 GCP 프로젝트 내에서 실습 진행 (별도 Qwiklabs 계정 필요 없음)</li>
-</ul>
+<div class="card-grid" style="margin-top:20px;">
+  <div class="card">
+    <div class="card-title">🏢 베스핀글로벌 실습 환경 계정</div>
+    <div class="card-desc">• <strong>조직 (Organization)</strong>: `bespin.email`<br>• <strong>지정 프로젝트 (Project)</strong>: `KDT5T`</div>
+  </div>
+  <div class="card">
+    <div class="card-title">📋 실습 진행 방법</div>
+    <div class="card-desc">• 안내받은 전용 GCP 계정으로 로그인 후 `KDT5T` 프로젝트 내에서 실습 진행<br>• Qwiklabs 별도 계정 필요 없음</div>
+  </div>
+</div>
 
 <!--
 comment:
