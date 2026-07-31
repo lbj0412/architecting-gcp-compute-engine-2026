@@ -64,7 +64,7 @@ style: |
   
   /* 01. 표지 타이틀 슬라이드 (3D Cloud SVG Background) */
   section.lead {
-    background-image: url("images/gcp_cover_bg_00.svg") !important;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIwIDEwODAiIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiPg0KICA8ZGVmcz4NCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnLWdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPg0KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPg0KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjhmOWZhIi8+DQogICAgPC9saW5lYXJHcmFkaWVudD4NCiAgICA8ZmlsdGVyIGlkPSJzaGFkb3ciIHg9Ii0xMCUiIHk9Ii0xMCUiIHdpZHRoPSIxMjAlIiBoZWlnaHQ9IjEyMCUiPg0KICAgICAgPGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjgiIHN0ZERldmlhdGlvbj0iMTIiIGZsb29kLW9wYWNpdHk9IjAuMSIgZmxvb2QtY29sb3I9IiMyMDIxMjQiLz4NCiAgICA8L2ZpbHRlcj4NCiAgPC9kZWZzPg0KDQogIDwhLS0gQmFja2dyb3VuZCBCYXNlIC0tPg0KICA8cmVjdCB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiBmaWxsPSJ1cmwoI2JnLWdyYWQpIi8+DQoNCiAgPCEtLSBUb3AgUmlnaHQgM0QgQ2xvdWQgJiBOb2RlIE5ldHdvcmsgR3JvdXAgLS0+DQogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExODAsIC0zMCkiPg0KICAgIDwhLS0gTGlnaHQgQmx1ZSBPdXRlciBDbG91ZCAtLT4NCiAgICA8cGF0aCBkPSJNMTUwIDI1MCBDMTUwIDE3MCwgMjQwIDEyMCwgMzIwIDE1MCBDMzcwIDgwLCA0ODAgODAsIDUzMCAxNTAgQzYxMCAxMzAsIDY5MCAxOTAsIDY3MCAyNzAgQzcyMCAzMzAsIDY3MCA0MjAsIDU4MCA0MjAgTDE1MCA0MjAgWiIgZmlsbD0iI2QyZTNmYyIgb3BhY2l0eT0iMC44NSIvPg0KICAgIDwhLS0gR3JlZW4gQ2xvdWQgLS0+DQogICAgPHBhdGggZD0iTTQwIDI0MCBDNDAgMTYwLCAxMjAgMTEwLCAyMDAgMTQwIEMyNDAgODAsIDM0MCA4MCwgMzgwIDE0MCBDNDQwIDEyMCwgNTEwIDE3MCwgNDkwIDI0MCBMNDAgMjQwIFoiIGZpbGw9IiMzNGE4NTMiIG9wYWNpdHk9IjAuOSIvPg0KICAgIDwhLS0gV2hpdGUgRnJvbnQgT3ZlcmxheSBDbG91ZCAtLT4NCiAgICA8cGF0aCBkPSJNMjAwIDIwMCBDMjAwIDE0MCwgMjcwIDEwMCwgMzQwIDEzMCBDMzgwIDgwLCA0NzAgODAsIDUxMCAxMzAgQzU2MCAxMTAsIDYzMCAxNjAsIDYwMCAyMjAgQzY0MCAyNzAsIDYwMCAzNDAsIDUyMCAzNDAgTDIwMCAzNDAgWiIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC45NSIgZmlsdGVyPSJ1cmwoI3NoYWRvdykiLz4NCiAgICANCiAgICA8IS0tIFRvcCBSaWdodCBOb2RlIE5ldHdvcmsgV2lyZWZyYW1lIC0tPg0KICAgIDxnIHN0cm9rZT0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIyLjUiIG9wYWNpdHk9IjAuNyIgZmlsbD0ibm9uZSI+DQogICAgICA8bGluZSB4MT0iNDIwIiB5MT0iMTMwIiB4Mj0iNTYwIiB5Mj0iNTAiIC8+DQogICAgICA8bGluZSB4MT0iNTYwIiB5MT0iNTAiIHgyPSI2NDAiIHkyPSIxNTAiIC8+DQogICAgICA8bGluZSB4MT0iNjQwIiB5MT0iMTUwIiB4Mj0iNDgwIiB5Mj0iMjAwIiAvPg0KICAgICAgPGxpbmUgeDE9IjU2MCIgeTE9IjUwIiB4Mj0iNzIwIiB5Mj0iMjIwIiAvPg0KICAgIDwvZz4NCiAgICA8Y2lyY2xlIGN4PSI1NjAiIGN5PSI1MCIgcj0iMTMiIGZpbGw9IiM0Mjg1ZjQiLz4NCiAgICA8Y2lyY2xlIGN4PSI2NDAiIGN5PSIxNTAiIHI9IjExIiBmaWxsPSIjMzRhODUzIi8+DQogICAgPGNpcmNsZSBjeD0iNzIwIiBjeT0iMjIwIiByPSIxNCIgZmlsbD0iI2VhNDMzNSIvPg0KICA8L2c+DQoNCiAgPCEtLSBCb3R0b20gTGVmdCAzRCBDbG91ZCAmIE5vZGUgR3JvdXAgLS0+DQogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDAsIDUyMCkiPg0KICAgIDwhLS0gQmlnIEJsdWUgU2hhcGUgQmFja2dyb3VuZCAtLT4NCiAgICA8cGF0aCBkPSJNMCAyMjAgQzYwIDkwLCAyMDAgNjAsIDI4MCAxNzAgQzM2MCA5MCwgNDcwIDEzMCwgNDUwIDI1MCBMMCA1NTAgWiIgZmlsbD0iIzQyODVmNCIgb3BhY2l0eT0iMC44NSIvPg0KICAgIDwhLS0gTGlnaHQgQmx1ZS9XaGl0ZSBDbG91ZCAtLT4NCiAgICA8cGF0aCBkPSJNODAgMjgwIEM4MCAxOTAsIDE3MCAxNDAsIDI1MCAxODAgQzMxMCAxMTAsIDQyMCAxMjAsIDQ2MCAxOTAgQzUzMCAxODAsIDU5MCAyNDAsIDU2MCAzMjAgTDgwIDMyMCBaIiBmaWxsPSIjZThmMGZlIiBvcGFjaXR5PSIwLjkiLz4NCiAgICA8IS0tIFllbGxvdyAzRCBGcm9udCBDbG91ZCAtLT4NCiAgICA8cGF0aCBkPSJNMTYwIDM0MCBDMTYwIDI0MCwgMjYwIDE5MCwgMzQwIDI0MCBDNDAwIDE3MCwgNTEwIDE4MCwgNTUwIDI2MCBDNjEwIDI1MCwgNjcwIDMyMCwgNjMwIDQwMCBMMTYwIDQwMCBaIiBmaWxsPSIjZmJiYzA0IiBvcGFjaXR5PSIwLjk1IiBmaWx0ZXI9InVybCgjc2hhZG93KSIvPg0KICAgIDwhLS0gUmVkIENsb3VkIEFjY2VudCAtLT4NCiAgICA8cGF0aCBkPSJNMTAwIDQyMCBDMTAwIDM0MCwgMTcwIDMwMCwgMjMwIDM0MCBDMjgwIDI4MCwgMzYwIDI5MCwgMzgwIDM1MCBMMTAwIDQyMCBaIiBmaWxsPSIjZWE0MzM1IiBvcGFjaXR5PSIwLjkiLz4NCiAgICA8IS0tIEdyZWVuIEZyb250IGFjY2VudCAtLT4NCiAgICA8cGF0aCBkPSJNMjYwIDQzMCBDMjYwIDM4MCwgMzEwIDM2MCwgMzQwIDM4MCBDMzgwIDM1MCwgNDMwIDM2MCwgNDQwIDQxMCBMMjYwIDQzMCBaIiBmaWxsPSIjMzRhODUzIiBvcGFjaXR5PSIwLjkiLz4NCg0KICAgIDwhLS0gQm90dG9tIExlZnQgTm9kZSBOZXR3b3JrIFdpcmVmcmFtZSAtLT4NCiAgICA8ZyBzdHJva2U9IiM0Mjg1ZjQiIHN0cm9rZS13aWR0aD0iMi41IiBvcGFjaXR5PSIwLjY1IiBmaWxsPSJub25lIj4NCiAgICAgIDxsaW5lIHgxPSI4MCIgeTE9IjIyMCIgeDI9IjIyMCIgeTI9IjE3MCIgLz4NCiAgICAgIDxsaW5lIHgxPSIyMjAiIHkxPSIxNzAiIHgyPSIyOTAiIHkyPSIyODAiIC8+DQogICAgICA8bGluZSB4MT0iMjkwIiB5MT0iMjgwIiB4Mj0iMTUwIiB5Mj0iMzAwIiAvPg0KICAgICAgPGxpbmUgeDE9IjE1MCIgeTE9IjMwMCIgeDI9IjgwIiB5Mj0iMjIwIiAvPg0KICAgICAgPGxpbmUgeDE9IjIyMCIgeTE9IjE3MCIgeDI9IjE1MCIgeTI9IjMwMCIgLz4NCiAgICA8L2c+DQogICAgPGNpcmNsZSBjeD0iODAiIGN5PSIyMjAiIHI9IjExIiBmaWxsPSIjNDI4NWY0Ii8+DQogICAgPGNpcmNsZSBjeD0iMjIwIiBjeT0iMTcwIiByPSIxMyIgZmlsbD0iI2VhNDMzNSIvPg0KICAgIDxjaXJjbGUgY3g9IjI5MCIgY3k9IjI4MCIgcj0iMTEiIGZpbGw9IiMzNGE4NTMiLz4NCiAgICA8Y2lyY2xlIGN4PSIxNTAiIGN5PSIzMDAiIHI9IjE0IiBmaWxsPSIjZmJiYzA0Ii8+DQogIDwvZz4NCg0KICA8IS0tIFJpZ2h0IENlbnRlciAzRCBXaXJlZnJhbWUgV2F0ZXJtYXJrIENoYXB0ZXIgTnVtYmVyIC0tPg0KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzgwLCAzNDApIiBvcGFjaXR5PSIwLjI4Ij4NCiAgICA8dGV4dCB4PSIwIiB5PSIyNDAiIGZvbnQtZmFtaWx5PSInR29vZ2xlIFNhbnMnLCAnUHJldGVuZGFyZCcsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQwIiBmb250LXdlaWdodD0iMzAwIiBmaWxsPSJub25lIiBzdHJva2U9IiM0Mjg1ZjQiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgNiI+MDA8L3RleHQ+DQogICAgPCEtLSBXaXJlZnJhbWUgTm9kZXMgJiBNZXNoIExpbmVzIC0tPg0KICAgIDxnIHN0cm9rZT0iIzQyODVmNCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIj4NCiAgICAgIDxwb2x5Z29uIHBvaW50cz0iNTAsMzAgMjAwLC0zMCAyOTAsMTIwIDE0MCwxODAiIC8+DQogICAgICA8bGluZSB4MT0iNTAiIHkxPSIzMCIgeDI9IjI5MCIgeTI9IjEyMCIvPg0KICAgICAgPGxpbmUgeDE9IjIwMCIgeTE9Ii0zMCIgeDI9IjE0MCIgeTI9IjE4MCIvPg0KICAgICAgPGNpcmNsZSBjeD0iNTAiIGN5PSIzMCIgcj0iNyIgZmlsbD0iIzQyODVmNCIvPg0KICAgICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iLTMwIiByPSI3IiBmaWxsPSIjNDI4NWY0Ii8+DQogICAgICA8Y2lyY2xlIGN4PSIyOTAiIGN5PSIxMjAiIHI9IjciIGZpbGw9IiM0Mjg1ZjQiLz4NCiAgICAgIDxjaXJjbGUgY3g9IjE0MCIgY3k9IjE4MCIgcj0iNyIgZmlsbD0iIzQyODVmNCIvPg0KICAgIDwvZz4NCiAgPC9nPg0KPC9zdmc+") !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -381,37 +381,30 @@ style: |
   }
 ---
 
-<!-- Page 2 -->
+<!-- Page 4 -->
 
-## 01. 강사 소개
+## 에티켓 (Etiquette - Part 2)
 
-![bg right:36% fit](https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800)
-
-<div class="profile-container">
-  <div class="profile-row">
-    <div class="profile-period">2019 ~ 현재</div>
-    <div class="profile-detail">베스핀글로벌 구글 MSP 팀 / Cloud 엔지니어</div>
+<div class="card-grid-3">
+  <div class="card" style="text-align: center;">
+    <div style="font-size: 40px; margin-bottom: 10px;">🎙️</div>
+    <div class="card-title">마이크 음소거</div>
+    <div class="card-desc">발표자 이외의 불필요한 배경 소음 방지를 위해 마이크를 음소거합니다.</div>
   </div>
-  <div class="profile-row">
-    <div class="profile-period">2018 ~ 2019</div>
-    <div class="profile-detail">신한 DS / 인프라 운영</div>
+  <div class="card" style="text-align: center;">
+    <div style="font-size: 40px; margin-bottom: 10px;">🚫</div>
+    <div class="card-title">녹화 금지</div>
+    <div class="card-desc">본 과정의 모든 실습 및 영상 자료의 무단 배포를 금지합니다.</div>
   </div>
-  <div class="profile-row">
-    <div class="profile-period">2015 ~ 2018</div>
-    <div class="profile-detail">쌍용정보통신 / 네트워크 엔지니어</div>
-  </div>
-  <div class="profile-row">
-    <div class="profile-period">2015 년</div>
-    <div class="profile-detail">연세 IT 전문학원</div>
-  </div>
-  <div class="profile-row">
-    <div class="profile-period">2012 년</div>
-    <div class="profile-detail">충북대학교 고고미술사학과 (졸업)</div>
+  <div class="card" style="text-align: center;">
+    <div style="font-size: 40px; margin-bottom: 10px;">💬</div>
+    <div class="card-title">질문하기</div>
+    <div class="card-desc">실습 중 발생하는 오류나 막히는 부분은 즉시 강사에게 요청하세요.</div>
   </div>
 </div>
 
 <!--
 comment:
 💬 [강사 대본]
-"본격적인 수업에 앞서 제 소개를 간단히 드리겠습니다. 저는 네트워크 엔지니어를 시작으로 금융권 인프라 운영을 거쳐, 2019년부터 지금까지 베스핀글로벌 구글 MSP 팀에서 Google Cloud 엔지니어 및 아키텍트로 재직하고 있습니다. 현업에서 수많은 기업의 Google Cloud 마이그레이션과 아키텍팅 솔루션을 직접 구축하며 얻은 실무 팁과 노하우를 공유해 드리겠습니다."
+"온라인/원격 환경에서는 소음 방지를 위해 마이크를 음소거 상태로 유지해 주시기 바라며, 실습 중 막히거나 에러가 발생하면 주저하지 마시고 바로 저에게 질문해 주세요."
 -->
