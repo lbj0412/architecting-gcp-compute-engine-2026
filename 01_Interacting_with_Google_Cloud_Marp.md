@@ -400,12 +400,14 @@ comment:
 
 ## 콘솔 활용 실습 가이드 01: VM 페이지 이동
 
-<div class="card" style="margin-top: 20px; padding: 30px; border-left: 6px solid #1a73e8;">
-  <h3 style="color: #1a73e8; font-size: 26px; margin-top: 0;">📍 Compute Engine VM 인스턴스 메뉴 이동</h3>
-  <p style="font-size: 20px; color: #3c4043; line-height: 1.6;">
+![bg right:45% fit](images/gcp_console_vm_menu.png)
+
+<div class="card" style="margin-top: 10px; padding: 24px; border-left: 6px solid #1a73e8;">
+  <h3 style="color: #1a73e8; font-size: 24px; margin-top: 0;">📍 Compute Engine VM 인스턴스 메뉴 이동</h3>
+  <p style="font-size: 19px; color: #3c4043; line-height: 1.6;">
     1. 좌측 상단 <strong>탐색 메뉴(☰)</strong>를 클릭합니다.<br>
-    2. <strong>Compute > Compute Engine > VM 인스턴스</strong>를 클릭합니다.<br>
-    3. 해당 화면에서 가상 머신의 생명주기(생성, 중지, 삭제, SSH 접속)를 일괄 관리할 수 있습니다.
+    2. <strong>Compute Engine > VM 인스턴스</strong>를 클릭합니다.<br>
+    3. 가상 머신의 생명주기(생성, 중지, 삭제, SSH 접속)를 일괄 관리할 수 있습니다.
   </p>
 </div>
 

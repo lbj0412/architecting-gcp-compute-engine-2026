@@ -1218,7 +1218,7 @@ tr:nth-child(even) { background-color: #f8f9fa; }
   </div>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="uncover" data-style="@import url(&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css&quot;);
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="uncover" data-style="@import url(&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css&quot;);
 
 /* 클릭 순차 애니메이션 완전 무효화 -&gt; 모든 요소 한 번에 노출 */
 * {
@@ -1494,18 +1494,569 @@ td {
 tr:last-child td { border-bottom: none; }
 tr:nth-child(even) { background-color: #f8f9fa; }
 " lang="ko-KR" data-marpit-pagination="5" style="--paginate:true;--theme:uncover;--style:@import url(&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css&quot;)
-;" data-marpit-pagination-total="20">
+;--marpit-advanced-background-split:45%;" data-marpit-pagination-total="20" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/gcp_console_vm_menu.png&quot;);background-size:contain;"></figure></div></section></foreignObject><foreignObject width="55%" height="720"><section id="5" data-paginate="true" data-theme="uncover" data-style="@import url(&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css&quot;);
+
+/* 클릭 순차 애니메이션 완전 무효화 -&gt; 모든 요소 한 번에 노출 */
+* {
+  animation: none !important;
+  transition: none !important;
+}
+section *, section ul, section li, section div, section p {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 전반적인 슬라이드 기본 설정 (Pretendard v1.3.9 폰트 적용) */
+section {
+  font-family: &quot;Pretendard Variable&quot;, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, &quot;Helvetica Neue&quot;, &quot;Segoe UI&quot;, &quot;Apple SD Gothic Neo&quot;, &quot;Noto Sans KR&quot;, &quot;Malgun Gothic&quot;, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f8f9fa;
+  color: #202124;
+  padding: 70px 80px 50px 80px;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  box-sizing: border-box;
+}
+
+/* 구글 상단 4색 브랜드 포인트 라인 (GCP Signature Stripe) */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #4285f4 0%, #4285f4 25%, #ea4335 25%, #ea4335 50%, #fbbc05 50%, #fbbc05 75%, #34a853 75%, #34a853 100%);
+  z-index: 10;
+}
+
+/* 최초 다크 네이비 / 파란 그라데이션 프리미엄 표지 슬라이드 */
+section.lead {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #1a73e8 100%) !important;
+  color: #ffffff !important;
+  padding: 80px 80px;
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center !important;
+  position: relative;
+}
+
+/* 상단 좌측 로고 조립 (Top 45px, Left 50px) */
+.cover-header-logo {
+  position: absolute;
+  top: 45px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cover-header-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* 중앙 타이틀 (H1) 및 서브타이틀 (H3) */
+section.lead h1 {
+  color: #ffffff !important;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-top: 20px;
+  margin-bottom: 14px;
+  letter-spacing: -0.03em;
+  text-align: center !important;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+section.lead h3 {
+  color: #d2e3fc !important;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  text-align: center !important;
+}
+
+.cover-guide-box {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 14px 28px;
+  color: #ffffff !important;
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: center !important;
+  backdrop-filter: blur(8px);
+}
+
+/* 우측 하단 메타데이터 (Bottom 30px, Right 50px) */
+.cover-footer-info {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  font-size: 14px;
+  color: #9aa0a6;
+  font-weight: 500;
+}
+
+/* 일반 슬라이드 제목 (H1 &amp; H2) - 파란색 밑줄(h2::after) 완전 제거! */
+h1, h2 {
+  color: #1a73e8;
+  font-size: 38px;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+/* 구글 전용 HTML 불릿 리스트 */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-size: 21px;
+}
+li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  background-color: #1a73e8;
+  border-radius: 50%;
+}
+
+/* 카드 컴포넌트 */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+.card-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+.card-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 20px rgba(60, 64, 67, 0.08);
+  border: 1px solid #e8eaed;
+}
+.card-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1a73e8;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.card-desc {
+  font-size: 16px;
+  font-weight: 400;
+  color: #5f6368;
+  line-height: 1.5;
+}
+
+/* 서비스 및 도구 전용 히어로 레이아웃 */
+.tool-hero-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+  margin-top: 15px;
+}
+.tool-icon-box {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 6px 24px rgba(60, 64, 67, 0.08);
+  border: 1px solid #e8eaed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.tool-icon-box img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 16px;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.tool-icon-name {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a73e8;
+}
+
+/* 보안/비용 경고 박스 */
+.alert-danger-box {
+  background: #fce8e6;
+  border-left: 6px solid #ea4335;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 15px;
+}
+.alert-danger-title {
+  color: #c5221f;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.alert-warning-box {
+  background: #feefc3;
+  border-left: 6px solid #fbbc04;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 15px;
+}
+.alert-warning-title {
+  color: #b06000;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+/* 표(Table) 스타일링 */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  font-size: 18px;
+  margin-top: 15px;
+}
+th {
+  background: #1a73e8;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 16px;
+  text-align: left;
+}
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e8eaed;
+  color: #3c4043;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) { background-color: #f8f9fa; }
+" lang="ko-KR" data-marpit-pagination="5" style="--paginate:true;--theme:uncover;--style:@import url(&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css&quot;)
+;--marpit-advanced-background-split:45%;" data-marpit-pagination-total="20" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2 id="%EC%BD%98%EC%86%94-%ED%99%9C%EC%9A%A9-%EC%8B%A4%EC%8A%B5-%EA%B0%80%EC%9D%B4%EB%93%9C-01-vm-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B4%EB%8F%99">콘솔 활용 실습 가이드 01: VM 페이지 이동</h2>
 <div class="card">
   <h3>📍 Compute Engine VM 인스턴스 메뉴 이동</h3>
   <p>
     1. 좌측 상단 <strong>탐색 메뉴(☰)</strong>를 클릭합니다.<br />
-    2. <strong>Compute &gt; Compute Engine &gt; VM 인스턴스</strong>를 클릭합니다.<br />
-    3. 해당 화면에서 가상 머신의 생명주기(생성, 중지, 삭제, SSH 접속)를 일괄 관리할 수 있습니다.
+    2. <strong>Compute Engine &gt; VM 인스턴스</strong>를 클릭합니다.<br />
+    3. 가상 머신의 생명주기(생성, 중지, 삭제, SSH 접속)를 일괄 관리할 수 있습니다.
   </p>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="uncover" data-style="@import url(&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css&quot;);
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="uncover" data-style="@import url(&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css&quot;);
+
+/* 클릭 순차 애니메이션 완전 무효화 -&gt; 모든 요소 한 번에 노출 */
+* {
+  animation: none !important;
+  transition: none !important;
+}
+section *, section ul, section li, section div, section p {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 전반적인 슬라이드 기본 설정 (Pretendard v1.3.9 폰트 적용) */
+section {
+  font-family: &quot;Pretendard Variable&quot;, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, &quot;Helvetica Neue&quot;, &quot;Segoe UI&quot;, &quot;Apple SD Gothic Neo&quot;, &quot;Noto Sans KR&quot;, &quot;Malgun Gothic&quot;, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f8f9fa;
+  color: #202124;
+  padding: 70px 80px 50px 80px;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  box-sizing: border-box;
+}
+
+/* 구글 상단 4색 브랜드 포인트 라인 (GCP Signature Stripe) */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #4285f4 0%, #4285f4 25%, #ea4335 25%, #ea4335 50%, #fbbc05 50%, #fbbc05 75%, #34a853 75%, #34a853 100%);
+  z-index: 10;
+}
+
+/* 최초 다크 네이비 / 파란 그라데이션 프리미엄 표지 슬라이드 */
+section.lead {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #1a73e8 100%) !important;
+  color: #ffffff !important;
+  padding: 80px 80px;
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center !important;
+  position: relative;
+}
+
+/* 상단 좌측 로고 조립 (Top 45px, Left 50px) */
+.cover-header-logo {
+  position: absolute;
+  top: 45px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cover-header-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* 중앙 타이틀 (H1) 및 서브타이틀 (H3) */
+section.lead h1 {
+  color: #ffffff !important;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-top: 20px;
+  margin-bottom: 14px;
+  letter-spacing: -0.03em;
+  text-align: center !important;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+section.lead h3 {
+  color: #d2e3fc !important;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  text-align: center !important;
+}
+
+.cover-guide-box {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 14px 28px;
+  color: #ffffff !important;
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: center !important;
+  backdrop-filter: blur(8px);
+}
+
+/* 우측 하단 메타데이터 (Bottom 30px, Right 50px) */
+.cover-footer-info {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  font-size: 14px;
+  color: #9aa0a6;
+  font-weight: 500;
+}
+
+/* 일반 슬라이드 제목 (H1 &amp; H2) - 파란색 밑줄(h2::after) 완전 제거! */
+h1, h2 {
+  color: #1a73e8;
+  font-size: 38px;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+/* 구글 전용 HTML 불릿 리스트 */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-size: 21px;
+}
+li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  background-color: #1a73e8;
+  border-radius: 50%;
+}
+
+/* 카드 컴포넌트 */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+.card-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+.card-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 20px rgba(60, 64, 67, 0.08);
+  border: 1px solid #e8eaed;
+}
+.card-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1a73e8;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.card-desc {
+  font-size: 16px;
+  font-weight: 400;
+  color: #5f6368;
+  line-height: 1.5;
+}
+
+/* 서비스 및 도구 전용 히어로 레이아웃 */
+.tool-hero-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+  margin-top: 15px;
+}
+.tool-icon-box {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 6px 24px rgba(60, 64, 67, 0.08);
+  border: 1px solid #e8eaed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.tool-icon-box img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 16px;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.tool-icon-name {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a73e8;
+}
+
+/* 보안/비용 경고 박스 */
+.alert-danger-box {
+  background: #fce8e6;
+  border-left: 6px solid #ea4335;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 15px;
+}
+.alert-danger-title {
+  color: #c5221f;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.alert-warning-box {
+  background: #feefc3;
+  border-left: 6px solid #fbbc04;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 15px;
+}
+.alert-warning-title {
+  color: #b06000;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+/* 표(Table) 스타일링 */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  font-size: 18px;
+  margin-top: 15px;
+}
+th {
+  background: #1a73e8;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 16px;
+  text-align: left;
+}
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e8eaed;
+  color: #3c4043;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) { background-color: #f8f9fa; }
+" lang="ko-KR" data-marpit-pagination="5" style="" data-marpit-pagination-total="20" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="uncover" data-style="@import url(&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css&quot;);
 
 /* 클릭 순차 애니메이션 완전 무효화 -&gt; 모든 요소 한 번에 노출 */
 * {
