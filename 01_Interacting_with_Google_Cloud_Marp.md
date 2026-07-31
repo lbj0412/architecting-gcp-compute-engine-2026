@@ -61,72 +61,78 @@ style: |
     left: 80px;
   }
   
-  /* 표지 타이틀 슬라이드 (Google Cloud Dark Navy Theme - Standardized Layout) */
+  /* 표지 타이틀 슬라이드 (Google Cloud Training Presentation Design System v4.0.0) */
   section.lead {
-    background: linear-gradient(135deg, #0b3880 0%, #1557bf 100%);
-    color: #ffffff;
-    padding: 80px 60px;
-    text-align: left !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #202124;
+    padding: 80px 80px;
+    text-align: center !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start !important;
+    align-items: center !important;
+    position: relative;
   }
-  section.lead header {
-    color: #ffffff !important;
-    font-weight: 700;
-  }
-  section.lead footer {
-    color: #e8f0fe !important;
-  }
-  
-  section.lead h1 {
-    color: #ffffff;
-    font-size: 50px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-top: 10px;
-    margin-bottom: 12px;
-    letter-spacing: -0.03em;
-    text-align: left !important;
-  }
-  section.lead h3 {
-    color: #e8f0fe;
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 18px;
-    letter-spacing: -0.02em;
-    opacity: 0.95;
-    text-align: left !important;
-  }
+  section.lead header { display: none; }
+  section.lead footer { display: none; }
 
-  .cover-brand-header {
+  /* 상단 좌측 로고 조립 (Top 40px, Left 50px) */
+  .cover-header-logo {
+    position: absolute;
+    top: 40px;
+    left: 50px;
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 10px;
-    align-self: flex-start;
+    gap: 12px;
   }
-  .cover-brand-title {
-    font-size: 30px;
-    font-weight: 800;
-    color: #ffffff;
+  .cover-header-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #202124;
     letter-spacing: -0.02em;
+  }
+
+  /* 중앙 타이틀 (H1) 및 서브타이틀 (H3) */
+  section.lead h1 {
+    color: #202124;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 15px;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+    text-align: center !important;
+  }
+  section.lead h3 {
+    color: #5f6368;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    text-align: center !important;
   }
 
   .cover-guide-box {
-    background: rgba(255, 255, 255, 0.15);
-    border-left: 4px solid #ffffff;
-    border-radius: 8px;
-    padding: 12px 18px;
-    color: #ffffff !important;
+    background: #ffffff;
+    border: 1px solid #e8eaed;
+    border-radius: 12px;
+    padding: 14px 28px;
+    color: #3c4043 !important;
     font-size: 19px;
     font-weight: 600;
-    margin-top: 15px;
-    backdrop-filter: blur(10px);
-    max-width: 580px;
-    text-align: left !important;
-    align-self: flex-start;
+    margin-top: 10px;
+    box-shadow: 0 4px 16px rgba(60, 64, 67, 0.08);
+    text-align: center !important;
+  }
+
+  /* 우측 하단 메타데이터 (Bottom 30px, Right 50px) */
+  .cover-footer-info {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    font-size: 14px;
+    color: #5f6368;
+    font-weight: 500;
   }
 
   /* 일반 슬라이드 제목 (H1 & H2) */
@@ -268,11 +274,9 @@ style: |
 <!-- Page 1 -->
 <!-- _class: lead -->
 
-![bg right:42% fit](https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800)
-
-<div class="cover-brand-header">
-  <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" width="52" style="box-shadow:none; border-radius:0; border:none;">
-  <span class="cover-brand-title">Google Cloud</span>
+<div class="cover-header-logo">
+  <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" width="48" style="box-shadow:none; border-radius:0; border:none;">
+  <span class="cover-header-text">Google Cloud</span>
 </div>
 
 # Interacting with<br>Google Cloud
@@ -281,6 +285,10 @@ style: |
 
 <div class="cover-guide-box">
   Google Cloud 콘솔, Cloud Shell, SDK, REST API 및 모바일 앱 다각도 관리 가이드
+</div>
+
+<div class="cover-footer-info">
+  Google Cloud 교육 자료 | 베스핀글로벌 2026 개정판
 </div>
 
 <!--
@@ -713,14 +721,19 @@ comment:
 
 <!-- _class: lead -->
 
+<div class="cover-header-logo">
+  <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" width="48" style="box-shadow:none; border-radius:0; border:none;">
+  <span class="cover-header-text">Google Cloud</span>
+</div>
+
 <div class="badge badge-cover">NEXT MODULE PREVIEW</div>
 
 # 수고하셨습니다!
 
 ### 다음 장표: Module 02. Virtual Networks (VPC 가상 네트워크)
 
-<div class="cover-guide-box">
-  Google Cloud 글로벌 사설망 위에서 구동되는 VPC 네트워크 구축 및 서브넷 설계
+<div class="cover-footer-info">
+  Google Cloud 교육 자료 | 베스핀글로벌 2026 개정판
 </div>
 
 <!--
