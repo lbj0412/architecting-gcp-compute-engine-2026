@@ -40,6 +40,7 @@ style: |
     width: 100%;
     height: 6px;
     background: linear-gradient(90deg, #4285f4 0%, #4285f4 25%, #ea4335 25%, #ea4335 50%, #fbbc05 50%, #fbbc05 75%, #34a853 75%, #34a853 100%);
+    z-index: 10;
   }
 
   /* 헤더 & 푸터 */
@@ -61,9 +62,12 @@ style: |
     left: 80px;
   }
   
-  /* 표지 타이틀 슬라이드 (Google Cloud Training Presentation Design System v4.0.0) */
+  /* 표지 타이틀 슬라이드 (3D Cloud SVG Background) */
   section.lead {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background-image: url("images/gcp_cover_bg_01.svg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     color: #202124;
     padding: 80px 80px;
     text-align: center !important;
@@ -76,17 +80,17 @@ style: |
   section.lead header { display: none; }
   section.lead footer { display: none; }
 
-  /* 상단 좌측 로고 조립 (Top 40px, Left 50px) */
+  /* 상단 좌측 로고 조립 (Top 45px, Left 50px) */
   .cover-header-logo {
     position: absolute;
-    top: 40px;
+    top: 45px;
     left: 50px;
     display: flex;
     align-items: center;
     gap: 12px;
   }
   .cover-header-text {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
     color: #202124;
     letter-spacing: -0.02em;
@@ -97,32 +101,33 @@ style: |
     color: #202124;
     font-size: 52px;
     font-weight: 700;
-    line-height: 1.3;
-    margin-top: 15px;
-    margin-bottom: 12px;
+    line-height: 1.35;
+    margin-top: 20px;
+    margin-bottom: 14px;
     letter-spacing: -0.03em;
     text-align: center !important;
   }
   section.lead h3 {
-    color: #5f6368;
+    color: #3c4043;
     font-size: 28px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     letter-spacing: -0.02em;
     text-align: center !important;
   }
 
   .cover-guide-box {
-    background: #ffffff;
-    border: 1px solid #e8eaed;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #dadce0;
     border-radius: 12px;
     padding: 14px 28px;
-    color: #3c4043 !important;
+    color: #202124 !important;
     font-size: 19px;
     font-weight: 600;
     margin-top: 10px;
-    box-shadow: 0 4px 16px rgba(60, 64, 67, 0.08);
+    box-shadow: 0 4px 18px rgba(32, 33, 36, 0.08);
     text-align: center !important;
+    backdrop-filter: blur(4px);
   }
 
   /* 우측 하단 메타데이터 (Bottom 30px, Right 50px) */
@@ -728,7 +733,7 @@ comment:
 
 <div class="badge badge-cover">NEXT MODULE PREVIEW</div>
 
-# 수고하셨습니다!
+# 감사합니다!
 
 ### 다음 장표: Module 02. Virtual Networks (VPC 가상 네트워크)
 

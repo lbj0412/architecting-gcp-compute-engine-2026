@@ -61,7 +61,7 @@ style: |
     left: 80px;
   }
   
-  /* 01. 표지 타이틀 슬라이드 (Google Cloud Training Presentation Design System v4.0.0) */
+  /* 표지 타이틀 슬라이드 (Google Cloud Training Presentation Design System v4.0.0) */
   section.lead {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     color: #202124;
@@ -73,12 +73,8 @@ style: |
     align-items: center !important;
     position: relative;
   }
-  section.lead header {
-    display: none;
-  }
-  section.lead footer {
-    display: none;
-  }
+  section.lead header { display: none; }
+  section.lead footer { display: none; }
 
   /* 상단 좌측 로고 조립 (Top 40px, Left 50px) */
   .cover-header-logo {
@@ -184,37 +180,6 @@ style: |
     border-radius: 50%;
   }
 
-  /* 강사 프로필 전용 한눈에 보이는 리스트 테이블 박스 */
-  .profile-container {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 26px 32px;
-    box-shadow: 0 4px 20px rgba(60, 64, 67, 0.08);
-    border: 1px solid #e8eaed;
-    border-left: 6px solid #1a73e8;
-    margin-top: 10px;
-  }
-  .profile-row {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #f1f3f4;
-    font-size: 20px;
-  }
-  .profile-row:last-child {
-    border-bottom: none;
-  }
-  .profile-period {
-    font-weight: 700;
-    color: #1a73e8;
-    min-width: 170px;
-    letter-spacing: -0.01em;
-  }
-  .profile-detail {
-    color: #3c4043;
-    font-weight: 500;
-  }
-
   /* 카드 컴포넌트 */
   .card-grid {
     display: grid;
@@ -222,9 +187,9 @@ style: |
     gap: 16px;
     margin-top: 10px;
   }
-  .card-grid-3 {
+  .card-grid-4 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 10px;
   }
@@ -249,64 +214,7 @@ style: |
     line-height: 1.5;
   }
 
-  /* 17페이지 학습 로드맵 전용 스텝 레이아웃 */
-  .roadmap-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 20px;
-    margin-top: 15px;
-  }
-  .roadmap-info-box {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 24px;
-    box-shadow: 0 4px 20px rgba(60, 64, 67, 0.08);
-    border: 1px solid #e8eaed;
-  }
-  .roadmap-steps-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .roadmap-step-item {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 16px 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e8eaed;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .roadmap-step-active {
-    border: 2px solid #1a73e8;
-    background: #e8f0fe;
-  }
-  .step-num {
-    background: #dadce0;
-    color: #3c4043;
-    font-weight: 800;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-  .roadmap-step-active .step-num {
-    background: #1a73e8;
-    color: #ffffff;
-  }
-  .step-text {
-    font-size: 17px;
-    font-weight: 700;
-    color: #202124;
-    line-height: 1.3;
-  }
-
-  /* 보안 경고 박스 */
+  /* 보안/비용 경고 박스 */
   .alert-danger-box {
     background: #fce8e6;
     border-left: 6px solid #ea4335;
@@ -361,39 +269,30 @@ style: |
   }
   tr:last-child td { border-bottom: none; }
   tr:nth-child(even) { background-color: #f8f9fa; }
-  
-  section:not(.lead) img {
-    border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(60, 64, 67, 0.15);
-  }
-  
-  .badge {
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 800;
-    background: #e8f0fe;
-    color: #1a73e8;
-    margin-bottom: 14px;
-    letter-spacing: 0.5px;
-  }
 ---
 
-<!-- Page 6 -->
+<!-- Page 1 -->
+<!-- _class: lead -->
 
-## 글로벌 인프라 (Region, PoP, Network)
+<div class="cover-header-logo">
+  <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" width="48" style="box-shadow:none; border-radius:0; border:none;">
+  <span class="cover-header-text">Google Cloud</span>
+</div>
 
-![bg right:48% fit](images/gcp_region_map.png)
+# Interacting with<br>Google Cloud
 
-<ul>
-  <li><strong>리전 (Region)</strong>: 전 세계 40개 이상 (서울 asia-northeast3 등)</li>
-  <li><strong>영역 (Zone)</strong>: 리전당 최소 3개 이상의 독립 고가용성 존</li>
-  <li><strong>에지 접속 지점 (PoP)</strong>: 지구를 둘러싼 Google 전용 고속 광케이블 네트워크</li>
-</ul>
+### 2026 Modernized Edition | Module 01: Interacting with Google Cloud
+
+<div class="cover-guide-box">
+  Google Cloud 콘솔, Cloud Shell, SDK, REST API 및 모바일 앱 다각도 관리 가이드
+</div>
+
+<div class="cover-footer-info">
+  Google Cloud 교육 자료 | 베스핀글로벌 2026 개정판
+</div>
 
 <!--
 comment:
 💬 [강사 대본]
-"이 지도가 바로 Google Cloud의 글로벌 인프라 지도입니다. 서울 리전을 비롯해 40개 이상의 리전이 존재하며, 각 리전은 최소 3개의 독립된 존(Zone)으로 구성되어 완벽한 고가용성을 제공합니다."
+"수강생 여러분, 반갑습니다! 모듈 01에서는 Google Cloud 리소스와 상호작용하고 인프라를 직접 제어하기 위해 사용하는 도구와 관리 인터페이스에 대해 다룹니다. 클라우드 관리자는 웹 콘솔, CLI 터미널, REST API, 모바일 앱까지 상황에 맞는 최적의 인터페이스를 선택해야 합니다. 이번 시간에 각 도구의 핵심 특징을 명확히 익혀보겠습니다."
 -->

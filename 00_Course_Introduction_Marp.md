@@ -62,7 +62,7 @@ style: |
     left: 80px;
   }
   
-  /* 01. 표지 타이틀 슬라이드 (Google Cloud Training Presentation Design System v4.0.0 - 3D Cloud Background) */
+  /* 01. 표지 타이틀 슬라이드 (3D Cloud SVG Background) */
   section.lead {
     background-image: url("images/gcp_cover_bg_00.svg") !important;
     background-size: cover !important;
@@ -80,7 +80,7 @@ style: |
   section.lead header { display: none; }
   section.lead footer { display: none; }
 
-  /* 상단 좌측 로고 조립 (Top 40px, Left 50px) */
+  /* 상단 좌측 로고 조립 (Top 45px, Left 50px) */
   .cover-header-logo {
     position: absolute;
     top: 45px;
@@ -389,16 +389,16 @@ style: |
   <span class="cover-header-text">Google Cloud</span>
 </div>
 
-# 구글 클라우드 교육
+# Architecting with<br>Google Compute Engine
 
-### 제 0 장: 클라우드 컴퓨팅 기초 및 Google Cloud 소개
+### 2026 Modernized Edition | Module 00: Course Introduction
 
 <div class="cover-guide-box">
-  Architecting with Google Compute Engine (2026 개정판)
+  Google Cloud 인프라 구축, 설계, 자동화 및 실습 가이드
 </div>
 
 <div class="cover-footer-info">
-  교육 자료 | 2026
+  Google Cloud 교육 자료 | 베스핀글로벌 2026 개정판
 </div>
 
 <!--
@@ -990,7 +990,7 @@ comment:
 ### 질문이나 궁금하신 점이 있으시면 편하게 말씀해 주세요.
 
 <div class="cover-footer-info">
-  교육 자료 | 2026
+  Google Cloud 교육 자료 | 베스핀글로벌 2026 개정판
 </div>
 
 <!--
