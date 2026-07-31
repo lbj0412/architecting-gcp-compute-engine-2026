@@ -5,6 +5,20 @@ paginate: true
 header: ''
 footer: ''
 style: |
+  /* 본문 내 모든 요소 강제 좌측 정렬 (표지/Q&A 제외) */
+  section:not(.lead) p,
+  section:not(.lead) ul,
+  section:not(.lead) ol,
+  section:not(.lead) li,
+  section:not(.lead) div,
+  section:not(.lead) .card,
+  section:not(.lead) .card-desc,
+  section:not(.lead) .card-title,
+  section:not(.lead) h3,
+  section:not(.lead) table {
+    text-align: left !important;
+  }
+
   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
   
   /* 클릭 순차 애니메이션 완전 무효화 -> 모든 요소 한 번에 노출 */
