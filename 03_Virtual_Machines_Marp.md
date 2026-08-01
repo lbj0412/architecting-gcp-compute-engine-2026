@@ -298,7 +298,7 @@ style: |
   }
   .tool-icon-box img {
     max-width: 100%;
-    max-height: 140px;
+    max-height: 200px;
     object-fit: contain;
     margin-bottom: 8px;
     box-shadow: none !important;
@@ -718,4 +718,398 @@ comment:
 comment:
 💬 [강사 대본]
 "원본 교안 10번 장표인 디스크 스토리지와 동적 확장입니다. Standard, Balanced, SSD, Local SSD 라인업 및 용량 비례 성능 확장 법칙, 그리고 다운타임 없는 무중단 크기 조절 이점을 설명합니다."
+-->
+
+---
+
+<!-- Page 11 -->
+
+## Compute Engine 강력한 네트워킹 기능 (Networking Features)
+
+<div class="tool-hero-layout">
+  <div>
+    <ul>
+      <li><strong>자동 및 커스텀 VPC 네트워크</strong>: 서브넷 자동 구성 및 사용자 맞춤 IP 설계</li>
+      <li><strong>인바운드 / 아웃바운드 방화벽 규칙</strong>:
+        <ul>
+          <li>IP CIDR 대역 기반 액세스 제어</li>
+          <li>인스턴스 및 그룹 네트워크 태그 기반 보안 정책 지정</li>
+        </ul>
+      </li>
+      <li><strong>고성능 부하 분산 (Load Balancing)</strong>:
+        <ul>
+          <li>리전별 HTTPS 부하 분산 서비스</li>
+          <li>가동 준비(Warm-up) 과정이 필요 없는 초고속 네트워크 부하 분산(NLB)</li>
+        </ul>
+      </li>
+      <li><strong>전역 및 멀티 리전 서브네트워크</strong>: 구글 글로벌 사설 백본망 연동</li>
+    </ul>
+  </div>
+  <div class="tool-icon-box">
+    <img src="data:image/png;base64,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" alt="Compute Engine Networking">
+    <div class="tool-icon-name">Network Architecture</div>
+  </div>
+</div>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 11번 장표인 네트워킹 기능입니다. 자동/커스텀 VPC, 태그 기반 방화벽 규칙, 웜업이 필요 없는 네트워크 부하 분산 및 글로벌 사설망 연동 이점을 학습합니다."
+-->
+
+---
+
+<!-- Page 12 -->
+
+## 가상 머신(VM) 접속 및 액세스 방법 (Linux SSH vs Windows RDP)
+
+<table class="comp-table">
+  <thead>
+    <tr>
+      <th style="width: 20%;">구분</th>
+      <th style="width: 40%;">Linux VM 접속 (SSH)</th>
+      <th style="width: 40%;">Windows VM 접속 (RDP)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="header-col">접속 도구</td>
+      <td>Google Cloud 콘솔 브라우저 SSH, Cloud Shell, gcloud SDK</td>
+      <td>RDP 클라이언트 (Remote Desktop), PowerShell 터미널</td>
+    </tr>
+    <tr>
+      <td class="header-col">키 / 인증 지정</td>
+      <td>컴퓨터 또는 서드 파티 클라이언트에서 SSH 키 쌍 생성 지정</td>
+      <td>Windows 관리자 암호 (Password) 초기화 설정 필수</td>
+    </tr>
+    <tr>
+      <td class="header-col">방화벽 허용 포트</td>
+      <td><strong>tcp:22 (SSH)</strong> 허용 방화벽 규칙 필요</td>
+      <td><strong>tcp:3389 (RDP)</strong> 허용 방화벽 규칙 필요</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 12번 장표인 VM 접속 방법 비교입니다. Linux VM은 tcp:22 포트 기반 SSH 키 인증을 사용하고, Windows VM은 tcp:3389 포트 기반 RDP 및 암호 인증을 사용합니다."
+-->
+
+---
+
+<!-- Page 13 -->
+
+## Compute Engine 가상 머신 수명 주기 (VM Lifecycle)
+
+<div class="tool-hero-layout">
+  <div>
+    <ul>
+      <li><strong>생성 및 시작 상태</strong>:
+        <ul>
+          <li><code>PROVISIONING</code> ➔ <code>STAGING</code> ➔ <code>RUNNING</code> (실행 중)</li>
+          <li><code>instances.start()</code> 호출로 다시 시작</li>
+        </ul>
+      </li>
+      <li><strong>정지 및 일시 중지 상태</strong>:
+        <ul>
+          <li><code>instances.suspend()</code> ➔ <code>SUSPENDED</code> (메모리 보관)</li>
+          <li><code>instances.resume()</code> ➔ <code>RUNNING</code> (즉시 재개)</li>
+        </ul>
+      </li>
+      <li><strong>중지 및 삭제 상태</strong>:
+        <ul>
+          <li><code>instances.stop()</code> ➔ <code>STOPPING</code> ➔ <code>TERMINATED</code> (종료됨)</li>
+          <li><code>instances.delete()</code> ➔ 영구 삭제</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="tool-icon-box">
+    <img src="data:image/png;base64,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" alt="VM Lifecycle Diagram">
+    <div class="tool-icon-name">VM Lifecycle States</div>
+  </div>
+</div>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 13번 장표인 VM 수명 주기입니다. 프로비저닝부터 스테이징, 실행, 정지(suspend), 중지(stop) 및 삭제까지 각각의 API 메서드 흐름을 이해합니다."
+-->
+
+---
+
+<!-- Page 14 -->
+
+## 실행 중인 VM의 상태 변경 비교 (State Changes & ACPI)
+
+<table class="comp-table">
+  <thead>
+    <tr>
+      <th style="width: 14%;">작업 방식</th>
+      <th style="width: 20%;">실행 방법</th>
+      <th style="width: 22%;">종료 스크립트 실행</th>
+      <th style="width: 18%;">소요 시간</th>
+      <th style="width: 26%;">상태 변화</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="header-col">재설정 (Reset)</td>
+      <td>콘솔, gcloud, API, OS</td>
+      <td>없음 (강제 리셋)</td>
+      <td>약 0초</td>
+      <td>실행 중 ➔ 실행 중</td>
+    </tr>
+    <tr>
+      <td class="header-col">시작 (Start)</td>
+      <td>콘솔, gcloud, API</td>
+      <td>없음</td>
+      <td>약 0초</td>
+      <td>종료됨 ➔ 실행 중</td>
+    </tr>
+    <tr>
+      <td class="header-col">재부팅 (Reboot)</td>
+      <td>OS: <code>sudo reboot</code></td>
+      <td>정상 실행</td>
+      <td>약 90초</td>
+      <td>실행 중 ➔ 실행 중</td>
+    </tr>
+    <tr>
+      <td class="header-col">중지 (Stop)</td>
+      <td>콘솔, gcloud, API</td>
+      <td>ACPI 90초 대기 후 실행</td>
+      <td>약 90초</td>
+      <td>실행 중 ➔ 종료됨</td>
+    </tr>
+    <tr>
+      <td class="header-col">종료 (Shutdown)</td>
+      <td>OS: <code>sudo shutdown</code></td>
+      <td>정상 실행</td>
+      <td>약 90초</td>
+      <td>실행 중 ➔ 종료됨</td>
+    </tr>
+    <tr>
+      <td class="header-col">삭제 (Delete)</td>
+      <td>콘솔, gcloud, API</td>
+      <td>ACPI 90초 대기 후 실행</td>
+      <td>약 90초</td>
+      <td>실행 중 ➔ N/A (삭제됨)</td>
+    </tr>
+    <tr>
+      <td class="header-col">선점 종료</td>
+      <td>자동 (Spot/Preemptible)</td>
+      <td>ACPI 30초 경고 후 실행</td>
+      <td>약 30초</td>
+      <td>실행 중 ➔ 종료됨</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 14번 장표의 VM 상태 변경 비교표입니다. 재설정, 시작, 재부팅, 중지, 종료, 삭제 및 Spot VM 선점 시 ACPI 시그널과 종료 스크립트 실행 대기 시간을 상세히 가이드합니다."
+-->
+
+---
+
+<!-- Page 15 -->
+
+## 가용성 정책 (Availability Policies) 및 유지보수 설정
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-title">🔄 자동으로 다시 시작 (Automatic Restart)</div>
+    <div class="card-desc">
+      • 비정상 시스템 다운 또는 호스트 이벤트 시 <strong>자동으로 VM 인스턴스 재부팅 복구</strong><br>
+      • 사용자에 의한 직접 종료나 Spot VM 선점 종료 시에는 적용되지 않음
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🛠️ 호스트 유지보수 시 (On Host Maintenance)</div>
+    <div class="card-desc">
+      • 물리 하드웨어 정기 점검 발생 시 동작 방식을 1:1 결정 (SDK/API 예약 옵션)<br>
+      • <strong>라이브 마이그레이션 (Live Migration)</strong>이 기본값으로 자동 지정됨
+    </div>
+  </div>
+  <div class="card" style="grid-column: span 2; border-left: 6px solid #1a73e8;">
+    <div class="card-title" style="color: #1a73e8;">⚡ 무중단 라이브 마이그레이션 (Live Migration)</div>
+    <div class="card-desc" style="font-size: 16px;">
+      • 호스트 점검 도중 VM 인스턴스가 <strong>서비스 중단이나 재부팅 없이 다른 정상 하드웨어로 자동 실시간 이주</strong><br>
+      • 인스턴스 메타데이터(Metadata)에 라이브 마이그레이션 발생 내역이 자동으로 기록 및 노출됨
+    </div>
+  </div>
+</div>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 15번 장표인 가용성 정책입니다. 비정상 종료 시 자동 다시 시작, 호스트 유지보수 옵션 및 다운타임 없는 라이브 마이그레이션 메커니즘을 설명합니다."
+-->
+
+---
+
+<!-- Page 16 -->
+
+## Google Cloud OS 패치 관리 (OS Patch Management)
+
+<div class="tool-hero-layout">
+  <div>
+    <ul>
+      <li><strong>인프라 관리의 핵심 요소</strong>:
+        <ul>
+          <li>Google Cloud OS Config 서비스를 통해 여러 VM의 OS 패치를 쉽게 중앙 통합 관리</li>
+        </ul>
+      </li>
+      <li><strong>주요 핵심 가치</strong>:
+        <ul>
+          <li>인프라 운영 환경을 항시 최신 상태로 유지</li>
+          <li>보안 취약점(Vulnerability) 노출 위험 대폭 감소</li>
+        </ul>
+      </li>
+      <li><strong>OS 패치 관리 주요 기능</strong>:
+        <ul>
+          <li><strong>패치 규정 준수 보고 (Compliance Reporting)</strong></li>
+          <li><strong>자동 패치 배포 (Patch Deployment)</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="tool-icon-box">
+    <img src="data:image/png;base64,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" alt="OS Patch Management">
+    <div class="tool-icon-name">OS Patch Management</div>
+  </div>
+</div>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 16번 장표인 OS 패치 관리 개요입니다. 보안 취약점 예방을 위한 OS Config 서비스와 준수 보고서 및 자동 배포 기능을 가이드합니다."
+-->
+
+---
+
+<!-- Page 17 -->
+
+## OS 패치 관리를 위한 유연한 실행 작업 및 정책
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-title">✅ 패치 승인 (Patch Approval)</div>
+    <div class="card-desc">검증된 보안 패치 및 업데이트만 선별하여 안전하게 배포 승인 규칙 생성</div>
+  </div>
+  <div class="card">
+    <div class="card-title">⏰ 유연한 예약 설정 (Schedules)</div>
+    <div class="card-desc">서비스 영향을 최소화하기 위해 주말/야간 등 원하는 정기 점검 유지보수 시간대 지정</div>
+  </div>
+  <div class="card">
+    <div class="card-title">⚙️ 고급 패치 구성 설정 적용</div>
+    <div class="card-desc">패치 전/후 실행할 커스텀 스크립트 지정 및 OS 자동 재부팅 세부 정책 구성</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🌐 중앙 위치 통합 제어</div>
+    <div class="card-desc">Google Cloud 콘솔 한 곳에서 프로젝트 내 수백 대 VM의 패치 작업 일괄 관리</div>
+  </div>
+</div>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 17번 장표인 패치 관리 세부 작업입니다. 승인 규칙 작성, 유지보수 예약 설정, 고급 패치 구성 적용 및 중앙 통합 제어 이점을 학습합니다."
+-->
+
+---
+
+<!-- Page 18 -->
+
+## 중지(종료)된 VM에 대한 과금 리소스 (Billing for Stopped VMs)
+
+<div class="card-grid">
+  <div class="card" style="border-left: 6px solid #ea4335;">
+    <div class="card-title" style="color: #ea4335;">❌ 과금되지 않는 리소스 (요금 0원)</div>
+    <div class="card-desc" style="font-size: 17px; line-height: 1.6;">
+      • <strong>CPU 연산 리소스 (vCPU)</strong><br>
+      • <strong>RAM 시스템 메모리</strong><br>
+      <em>* VM이 중지(STOPPED/TERMINATED) 상태인 동안에는 CPU와 RAM에 대한 비용이 전혀 청구되지 않습니다.</em>
+    </div>
+  </div>
+  <div class="card" style="border-left: 6px solid #34a853;">
+    <div class="card-title" style="color: #34a853;">💰 계속 과금되는 리소스 (요금 발생)</div>
+    <div class="card-desc" style="font-size: 17px; line-height: 1.6;">
+      • <strong>연결된 디스크 (Persistent Disk / Local SSD)</strong><br>
+      • <strong>예약된 고정 외부 IP 주소 (Reserved Static IP)</strong><br>
+      <em>* 디스크에 저장된 데이터 용량과 예약된 IP 주소 점유에 대한 요금은 지속적으로 유지됩니다.</em>
+    </div>
+  </div>
+</div>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 18번 장표인 중지된 VM 과금 규칙입니다. CPU와 RAM 메모리는 요금이 청구되지 않지만, 데이터를 보관하는 영구 디스크와 고정 IP는 계속 요금이 발생한다는 핵심 포인트를 설명합니다."
+-->
+
+---
+
+<!-- Page 19 -->
+
+## 중지(종료)된 VM에서 지원되는 설정 변경 작업
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-title">⚙️ 사양 & 디스크 수정</div>
+    <div class="card-desc">
+      • <strong>머신 유형 변경</strong>: vCPU 및 RAM 메모리 사양 조정<br>
+      • <strong>연결된 디스크 추가/삭제</strong> 및 자동 삭제 설정 변경
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🏷️ 네트워크 & 메타데이터</div>
+    <div class="card-desc">
+      • <strong>인스턴스 네트워크 태그</strong> 수정<br>
+      • <strong>커스텀 및 프로젝트 전체 메타데이터</strong> 수정
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🌐 IP & 가용성 정책</div>
+    <div class="card-desc">
+      • <strong>고정 IP 삭제 또는 새로 설정</strong><br>
+      • <strong>가용성 정책(자동 재시작 등)</strong> 수정
+    </div>
+  </div>
+  <div class="card" style="background: #fce8e6; border-color: #ea4335;">
+    <div class="card-title" style="color: #ea4335;">⚠️ 변경 불가능한 항목</div>
+    <div class="card-desc" style="color: #c5221f;">
+      • <strong>중지된 VM의 OS 이미지는 변경 불가능</strong><br>
+      <em>(다른 OS 이미지 적용 필요 시 신규 인스턴스 생성 필수)</em>
+    </div>
+  </div>
+</div>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 19번 장표인 중지 상태에서의 인스턴스 설정 변경 범위입니다. 머신 타입, 디스크, 태그, 메타데이터, IP는 수정 가능하지만, OS 이미지는 변경 불가능하다는 제약사항을 전달합니다."
+-->
+
+---
+
+<!-- Page 20 -->
+
+## 실습 소개: Compute Engine 가상 머신 만들기 (Lab Preview)
+
+<div class="card" style="margin-top: 10px; padding: 24px; border-left: 6px solid #1a73e8;">
+  <h3 style="color: #1a73e8; font-size: 22px; margin-top:0;">🧪 실습 목표 및 주요 수행 과제</h3>
+  <p style="font-size: 18px; color: #3c4043; line-height: 1.6;">
+    • <strong>Google Cloud 콘솔 및 gcloud CLI 활용</strong>: Compute Engine VM 인스턴스를 직접 생성<br>
+    • <strong>커스텀 인프라 구성</strong>: vCPU/메모리 머신 타입, 부팅 디스크 및 Nginx 웹 서버 설치<br>
+    • <strong>SSH 접속 & 네트워크 테스트</strong>: 브라우저 SSH 접속을 통한 웹 서버 구동 및 외부 IP 수신 확인
+  </p>
+</div>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 20번 장표인 실습 안내입니다. 21번 슬라이드부터 시작할 Compute Engine 가상 머신 만들기 실습의 주요 과제와 수행 절차를 소개합니다."
 -->
