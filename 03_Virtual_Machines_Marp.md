@@ -7,7 +7,6 @@ footer: ''
 style: |
   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
   
-  /* 클릭 순차 애니메이션 완전 무효화 -> 모든 요소 한 번에 노출 */
   * {
     animation: none !important;
     transition: none !important;
@@ -17,7 +16,6 @@ style: |
     visibility: visible !important;
   }
 
-  /* 전반적인 슬라이드 기본 설정 (Pretendard v1.3.9 폰트 적용) */
   section {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -31,7 +29,6 @@ style: |
     box-sizing: border-box;
   }
   
-  /* 구글 상단 4색 브랜드 포인트 라인 (GCP Signature Stripe) */
   section::before {
     content: '';
     position: absolute;
@@ -43,7 +40,6 @@ style: |
     z-index: 10;
   }
 
-  /* 본문 모든 요소 강제 좌측 정렬 (표지/Q&A 제외) */
   section:not(.lead) p,
   section:not(.lead) ul,
   section:not(.lead) ol,
@@ -57,7 +53,6 @@ style: |
     text-align: left !important;
   }
 
-  /* 최초 다크 네이비 / 파란 그라데이션 프리미엄 표지 슬라이드 */
   section.lead {
     background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #1a73e8 100%) !important;
     color: #ffffff !important;
@@ -70,7 +65,6 @@ style: |
     position: relative;
   }
 
-  /* 상단 좌측 로고 조립 (Top 45px, Left 50px) */
   .cover-header-logo {
     position: absolute;
     top: 45px;
@@ -86,7 +80,6 @@ style: |
     letter-spacing: -0.02em;
   }
 
-  /* 중앙 타이틀 (H1) 및 서브타이틀 (H3) */
   section.lead h1 {
     color: #ffffff !important;
     font-size: 52px;
@@ -121,7 +114,6 @@ style: |
     backdrop-filter: blur(8px);
   }
 
-  /* 우측 하단 메타데이터 (Bottom 30px, Right 50px) */
   .cover-footer-info {
     position: absolute;
     bottom: 30px;
@@ -131,7 +123,6 @@ style: |
     font-weight: 500;
   }
 
-  /* 일반 슬라이드 제목 (H1 & H2) - 파란 밑줄(h2::after) 완전 제거! */
   h1, h2 {
     color: #1a73e8;
     font-size: 38px;
@@ -141,7 +132,6 @@ style: |
     letter-spacing: -0.03em;
   }
 
-  /* 구글 전용 HTML 불릿 리스트 */
   ul {
     list-style: none;
     padding-left: 0;
@@ -166,7 +156,6 @@ style: |
     border-radius: 50%;
   }
 
-  /* 카드 컴포넌트 */
   .card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -200,7 +189,6 @@ style: |
     line-height: 1.5;
   }
 
-  /* 서비스 및 도구 전용 히어로 레이아웃 */
   .tool-hero-layout {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -233,7 +221,6 @@ style: |
     color: #1a73e8;
   }
 
-  /* 표(Table) 스타일링 */
   table {
     width: 100%;
     border-collapse: separate;
@@ -260,7 +247,6 @@ style: |
   tr:last-child td { border-bottom: none; }
   tr:nth-child(even) { background-color: #f8f9fa; }
 ---
-
 <!-- Page 1 -->
 <!-- _class: lead -->
 
@@ -284,7 +270,7 @@ style: |
 <!--
 comment:
 💬 [강사 대본]
-"수강생 여러분, 반갑습니다! 모듈 03에서는 Google Cloud의 대표 IaaS 서비스인 Compute Engine 가상 머신(VM)에 대해 배웁니다. VM 인스턴스의 기본 개념부터 2026 최신 머신 패밀리 사양(C3, C4, N4, A3 GPU), Persistent Disk 및 Local SSD/Hyperdisk 스토리지 구축, 실시간 무중단 이동(Live Migration), 그리고 Spot VM을 활용한 극강의 비용 절감 팁까지 실무 중심으로 깊이 있게 다루겠습니다."
+"안녕하세요 수강생 여러분! 모듈 03에서는 Google Cloud의 대표 IaaS 서비스인 Compute Engine 가상 머신(VM)에 대해 배웁니다. 가상 머신의 기본 개념부터 2026 최신 머신 시리즈, 블록 스토리지 옵션, 무중단 라이브 마이그레이션 및 비용 최적화 팁까지 종합적으로 살펴보겠습니다."
 -->
 
 ---
@@ -295,54 +281,54 @@ comment:
 
 <div class="card-grid">
   <div class="card">
-    <div class="card-title">01. Compute Engine 옵션 & 머신 시리즈</div>
-    <div class="card-desc">VM 개념, 2026 최신 C3/C4/N4 및 범용/메모리/컴퓨팅 최적화 시리즈</div>
+    <div class="card-title">01. Compute Engine 옵션</div>
+    <div class="card-desc">VM 개념, 2026 최신 머신 시리즈(C3/C4/N4) 사양 및 특성</div>
   </div>
   <div class="card">
-    <div class="card-title">02. 가상 머신 접근 및 수명주기</div>
-    <div class="card-desc">SSH 접속, IAM 권한, VM 생성, 중지, 재부팅 및 삭제 수명주기</div>
+    <div class="card-title">02. 가상 머신 액세스 & 수명주기</div>
+    <div class="card-desc">SSH/RDP 접속, IAM 역할 제어, 생성/중지/삭제 수명주기</div>
   </div>
   <div class="card">
     <div class="card-title">03. Compute Engine 스토리지 옵션</div>
-    <div class="card-desc">Persistent Disk, Hyperdisk, Local SSD, Cloud Storage 연동</div>
+    <div class="card-desc">Persistent Disk, Local SSD, Hyperdisk 및 Cloud Storage</div>
   </div>
   <div class="card">
     <div class="card-title">04. 무중단 실시간 이동 (Live Migration)</div>
-    <div class="card-desc">구글만의 고유 기술: 물리 서버 점검 시 무중단 VM 자동 실시간 이동</div>
+    <div class="card-desc">물리 서버 점검 시 무중단 VM 자동 실시간 이동 프로세스</div>
   </div>
   <div class="card">
-    <div class="card-title">05. Spot VM & 할인 요금제 (Cost FinOps)</div>
-    <div class="card-desc">Spot VM (최대 90% 할인), 지속 사용 할인(SUD) 및 약정 사용 할인(CUD)</div>
+    <div class="card-title">05. Spot VM & 비용 최적화 (FinOps)</div>
+    <div class="card-desc">Spot VM(최대 90% 할인), 지속 사용 할인(SUD) 및 약정 할인(CUD)</div>
   </div>
   <div class="card">
     <div class="card-title">06. 가상 머신 구축 실습</div>
-    <div class="card-desc">Compute Engine VM 생성, 커스텀 사양 구성 및 SSH 접속 실습</div>
+    <div class="card-desc">Compute Engine VM 인스턴스 생성 및 SSH 접속 실습</div>
   </div>
 </div>
 
 <!--
 comment:
 💬 [강사 대본]
-"모듈 03의 주요 학습목표입니다. Compute Engine VM의 사양 결정부터 접근 관리, 스토리지 옵션, 라이브 마이그레이션 무중단 서버 이동, 비용 절감 팁, 그리고 실제 VM 생성 실습으로 구성됩니다."
+"모듈 03의 주요 목차입니다. VM 옵션부터 액세스 관리, 스토리지, 라이브 마이그레이션, Spot VM 요금 모델, 그리고 실제 VM 생성 실습 순서로 진행됩니다."
 -->
 
 ---
 
 <!-- Page 3 -->
 
-## 01. Compute Engine 옵션 & 머신 시리즈
+## 01. Compute Engine 옵션 & 머신 패밀리
 
 <div class="tool-hero-layout">
   <div>
     <ul>
-      <li><strong>Google Cloud의 대표 IaaS (Virtual Machines)</strong></li>
-      <li><strong>자유로운 인프라 스펙 설정</strong>: vCPU 및 메모리 커스텀 사양 구성 지원</li>
-      <li><strong>2026 최신 머신 패밀리 제공</strong>:
+      <li><strong>Google Cloud의 대표 IaaS 서비스 (Virtual Machines)</strong></li>
+      <li><strong>유연한 커스텀 사양 구성</strong>: 요구사항에 맞는 vCPU 및 RAM 메모리 맞춤 조합</li>
+      <li><strong>2026 최신 머신 패밀리 분류</strong>:
         <ul>
-          <li>범용 (General-purpose): N2, N4, E2</li>
-          <li>컴퓨팅 최적화 (Compute-optimized): C2, C3, C4</li>
-          <li>메모리 최적화 (Memory-optimized): M2, M3</li>
-          <li>가속기 최적화 (Accelerator-optimized): A2, A3 (NVIDIA H100/A100 GPU)</li>
+          <li>범용 (General-purpose): N2, N4, E2 (균형잡힌 워크로드)</li>
+          <li>컴퓨팅 최적화 (Compute-optimized): C2, C3, C4 (고성능 웹/게임)</li>
+          <li>메모리 최적화 (Memory-optimized): M2, M3 (In-memory DB/SAP)</li>
+          <li>가속기 최적화 (Accelerator-optimized): A2, A3 (NVIDIA H100 AI/ML)</li>
         </ul>
       </li>
     </ul>
@@ -357,7 +343,7 @@ comment:
 <!--
 comment:
 💬 [강사 대본]
-"첫 번째 주제인 Compute Engine VM 옵션입니다. Compute Engine은 업무 성격에 따라 범용 N4, 고성능 C4, 메모리 M3, AI 전용 A3 GPU 머신 시리즈 등 최신 2026 사양을 완벽하게 맞춤 구성할 수 있습니다."
+"Compute Engine은 다양한 가상 머신 옵션을 제공합니다. 업무 특성에 따라 범용 N4, 고성능 C4, 메모리 M3, AI 전용 A3 GPU 인스턴스를 자유롭게 조립할 수 있습니다."
 -->
 
 ---
@@ -371,17 +357,17 @@ comment:
     <ul>
       <li><strong>영구 디스크 (Persistent Disk - PD)</strong>:
         <ul>
-          <li>VM 인스턴스와 수명주기가 분리된 독립된 네트워크 연결 블록 스토리지</li>
-          <li>Standard HDD, Balanced SSD, Performance SSD 선택 가능</li>
+          <li>VM 인스턴스와 수명주기가 분리된 독립된 네트워크 블록 스토리지</li>
+          <li>Standard HDD, Balanced SSD, Performance SSD 선택 지원</li>
         </ul>
       </li>
       <li><strong>초고속 로컬 SSD (Local SSD)</strong>:
         <ul>
-          <li>VM의 물리적 서버에 직접 탑재되어 <strong>극강의 초고속 IOPS 속도</strong> 제공</li>
-          <li>휘발성 특성: VM 중지/삭제 시 데이터 삭제되므로 캐시 및 임시 공간 활용</li>
+          <li>VM 물리 서버에 직접 꽂혀 <strong>극강의 초고속 IOPS 속도</strong> 제공</li>
+          <li>휘발성 특성: VM 중지 시 삭제되므로 캐시 및 임시 공간으로 활용</li>
         </ul>
       </li>
-      <li><strong>차세대 초고성능 Hyperdisk (2026 최신)</strong>: IOPS와 처리량을 독립적으로 확장</li>
+      <li><strong>차세대 초고성능 Hyperdisk (2026 최신)</strong>: IOPS와 처리량 독립적 동적 확장</li>
     </ul>
   </div>
   <div class="tool-icon-box">
@@ -394,7 +380,7 @@ comment:
 <!--
 comment:
 💬 [강사 대본]
-"지금 우측에 보시는 구글 클라우드 공식 SSD 그래픽 아이콘이 바로 Compute Engine의 블록 스토리지입니다! 일반 Persistent Disk는 독립된 네트워크 스토리지로 VM이 꺼져도 데이터가 보존되며, Local SSD는 서버에 직접 꽂혀 초고속 캐시 공간으로 활용됩니다."
+"우측에 보시는 구글 공식 SSD 그래픽 아이콘이 바로 Compute Engine의 핵심 블록 스토리지입니다! 독립된 Persistent Disk와 초고속 캐시용 Local SSD를 적절히 혼용하여 아키텍처를 설계합니다."
 -->
 
 ---
@@ -406,15 +392,15 @@ comment:
 <div class="card" style="margin-top: 20px; padding: 30px; border-left: 6px solid #34a853;">
   <h3 style="color: #34a853; font-size: 26px; margin-top: 0;">⚡ 구글만의 차별화된 고유 기술: Live Migration</h3>
   <p style="font-size: 20px; color: #3c4043; line-height: 1.7;">
-    • Google Cloud는 수리, 소프트웨어 업데이트, 물리 서버 유지보수가 발생하더라도 <strong>실행 중인 수강생분들의 VM 인스턴스를 무중단 상태로 다른 물리 서버로 실시간 이동(Live Migration)</strong>시킵니다.<br>
-    • 인스턴스 재부팅이나 서비스 중단이 전혀 없으며, 애플리케이션 수명주기에 영향을 주지 않습니다.
+    • Google Cloud는 수리, 소프트웨어 패치, 물리 서버 점검이 발생하더라도 <strong>실행 중인 수강생분들의 VM 인스턴스를 무중단 상태로 다른 물리 서버로 실시간 이동(Live Migration)</strong>시킵니다.<br>
+    • 인스턴스 재부팅이나 서비스 중단이 전혀 없으며, 애플리케이션 수명주기에 어떤 영향도 주지 않습니다.
   </p>
 </div>
 
 <!--
 comment:
 💬 [강사 대본]
-"Google Cloud의 독보적인 강점인 Live Migration입니다. 물리 서버에 점검이 생겨도 수강생분의 VM 인스턴스를 0.1초의 서비스 중단도 없이 실시간으로 다른 싱싱한 서버로 쓱- 옮겨줍니다."
+"Google Cloud의 독보적 기술인 Live Migration입니다. 물리 서버 점검 시에도 수강생분의 VM 인스턴스를 0.1초의 서비스 중단 없이 실시간으로 다른 싱싱한 서버로 옮겨줍니다."
 -->
 
 ---
@@ -426,18 +412,18 @@ comment:
 <div class="card-grid">
   <div class="card">
     <div class="card-title">💰 최대 60~90% 파격 비용 할인</div>
-    <div class="card-desc">Google Cloud의 여유 미사용 인프라 자원을 활용하여 일반 VM 대비 극강의 할인가로 컴퓨팅 자원 이용</div>
+    <div class="card-desc">Google Cloud의 여유 미사용 자원을 활용하여 일반 VM 대비 극강의 할인가로 컴퓨팅 이용</div>
   </div>
   <div class="card">
     <div class="card-title">⚡ 회수 특성 인지 및 유즈케이스</div>
-    <div class="card-desc">GCP 자원 부족 시 30초 경고 후 회수될 수 있으므로, **배치 작업, CI/CD 테스트, Stateless 백엔드 워크로드**에 최적화</div>
+    <div class="card-desc">자원 부족 시 30초 경고 후 회수될 수 있으므로 **배치 작업, CI/CD 테스트, Stateless 워크로드**에 최적화</div>
   </div>
 </div>
 
 <!--
 comment:
 💬 [강사 대본]
-"비용을 최대 90%까지 아낄 수 있는 Spot VM입니다. 구글의 남는 컴퓨터를 파격적인 할인가로 쓰는 대신, 자원이 필요해지면 30초 전에 통보 후 회수하므로 껐다 켜져도 상관없는 테스트나 배치 작업에 강력 추천합니다."
+"비용을 최대 90%까지 아낄 수 있는 Spot VM입니다. 구글의 남는 자원을 파격 할인가로 쓰는 대신 자원 필요 시 30초 전 통보 후 회수되므로 껐다 켜져도 상관없는 테스트에 강력 추천합니다."
 -->
 
 ---
@@ -473,7 +459,7 @@ comment:
   <p style="font-size: 20px; color: #3c4043; line-height: 1.7;">
     • <strong>B (정답)</strong>: Live Migration은 물리적 유지보수 시에도 실행 중인 VM을 **재부팅이나 중단 없이 무중단 실시간 이동**시키는 Google Cloud의 독보적 기능입니다.<br>
     • <strong>A (오답)</strong>: VM이 재부팅되지 않습니다.<br>
-    • <strong>C, D (오답)</strong>: 구글 드라이브와 무관하며 일반 VM 및 다양한 인스턴스에 기본 적용됩니다.
+    • <strong>C, D (오답)</strong>: 구글 드라이브와 무관하며 일반 VM에 기본 적용됩니다.
   </p>
 </div>
 
@@ -486,7 +472,6 @@ comment:
 ---
 
 <!-- Page 9 -->
-
 <!-- _class: lead -->
 
 <div class="cover-header-logo">
@@ -507,5 +492,5 @@ comment:
 <!--
 comment:
 💬 [강사 대본]
-"이상으로 모듈 03 Virtual Machines 개정 수업을 마치겠습니다. 10분간 휴식하신 후 모듈 04에서는 Google Cloud 보안의 핵심인 IAM 권한과 서비스 계정 관리에 대해 다루겠습니다. 수고 많으셨습니다!"
+"이상으로 모듈 03 Virtual Machines 개정 수업을 마치겠습니다. 10분간 휴식하신 후 모듈 04에서는 IAM 권한 관리에 대해 배웁니다. 수고하셨습니다!"
 -->
