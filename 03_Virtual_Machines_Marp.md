@@ -162,7 +162,7 @@ style: |
     font-weight: 400;
   }
 
-  /* Table Custom Style for Page 4 */
+  /* Table Custom Style for Page 4 - Single-line neat layout */
   table.comp-table {
     width: 100%;
     border-collapse: separate;
@@ -171,23 +171,32 @@ style: |
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     background: #ffffff;
-    font-size: 16px;
+    font-size: 15px;
     margin-top: 10px;
   }
   table.comp-table th {
     background: #1a73e8;
     color: #ffffff;
     font-weight: 700;
-    padding: 10px 12px;
+    padding: 12px 10px;
     text-align: center;
+    white-space: nowrap;
   }
   table.comp-table td {
-    padding: 10px 12px;
+    padding: 11px 10px;
     border-bottom: 1px solid #e8eaed;
     color: #3c4043;
     vertical-align: middle;
+    line-height: 1.4;
   }
-  table.comp-table tr:nth-child(even) { background-color: #f8f9fa; }
+  table.comp-table td.header-col {
+    font-weight: 700;
+    color: #1a73e8;
+    background: #f8f9fa;
+    white-space: nowrap;
+    text-align: center !important;
+  }
+  table.comp-table tr:nth-child(even) { background-color: #ffffff; }
 
   ul {
     list-style: none;
@@ -370,46 +379,46 @@ comment:
 <table class="comp-table">
   <thead>
     <tr>
-      <th>구분</th>
-      <th>Compute Engine</th>
-      <th>GKE</th>
-      <th>App Engine (표준/가변)</th>
-      <th>Cloud Functions</th>
-      <th>Cloud Run</th>
+      <th style="width: 14%;">구분</th>
+      <th style="width: 18%;">Compute Engine</th>
+      <th style="width: 17%;">GKE</th>
+      <th style="width: 17%;">App Engine</th>
+      <th style="width: 17%;">Cloud Functions</th>
+      <th style="width: 17%;">Cloud Run</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>언어 지원</strong></td>
-      <td>모든 OS/언어</td>
+      <td class="header-col">언어 지원</td>
+      <td>모든 OS 및 언어</td>
       <td>모든 컨테이너</td>
-      <td>Python, Java, Go, Node.js, PHP 등</td>
-      <td>Node.js, Python, Go, Java 등</td>
+      <td>Python, Java, Go, Node.js 등</td>
+      <td>Node.js, Python, Go 등</td>
       <td>모든 컨테이너 (Docker)</td>
     </tr>
     <tr>
-      <td><strong>사용 모델</strong></td>
+      <td class="header-col">사용 모델</td>
       <td><strong>IaaS</strong> (가상 머신)</td>
       <td><strong>IaaS / PaaS</strong></td>
-      <td><strong>PaaS</strong> (웹 앱 배포)</td>
+      <td><strong>PaaS</strong> (웹 앱)</td>
       <td><strong>Serverless FaaS</strong></td>
       <td><strong>Serverless PaaS</strong></td>
     </tr>
     <tr>
-      <td><strong>확장 방식</strong></td>
+      <td class="header-col">확장 방식</td>
       <td>MIG 자동 확장</td>
-      <td>클러스터 / Pod 오토스케일링</td>
-      <td>관리형 서비스 자동 확장</td>
-      <td>이벤트 기반 0➔N 자동 확장</td>
-      <td>HTTP 요청 기반 0➔N 자동 확장</td>
+      <td>Pod / Node 확장</td>
+      <td>관리형 자동 확장</td>
+      <td>이벤트 0➔N 확장</td>
+      <td>HTTP 0➔N 확장</td>
     </tr>
     <tr>
-      <td><strong>주요 사례</strong></td>
-      <td>일반 OS 워크로드, 커스텀 앱</td>
-      <td>마이크로서비스 컨테이너 관리</td>
-      <td>확장 가능한 웹/모바일 백엔드</td>
-      <td>경량 이벤트 처리, 태스크 수신</td>
-      <td>컨테이너화된 앱 무버전 배포</td>
+      <td class="header-col">주요 사례</td>
+      <td>일반 OS 워크로드</td>
+      <td>컨테이너 클러스터</td>
+      <td>확장형 웹 애플리케이션</td>
+      <td>이벤트 기반 백엔드</td>
+      <td>컨테이너화 앱 서버리스 배포</td>
     </tr>
   </tbody>
 </table>
@@ -417,7 +426,7 @@ comment:
 <!--
 comment:
 💬 [강사 대본]
-"원본 교안 4번 장표의 핵심 내용인 Google Cloud 6대 컴퓨팅 처리 옵션 비교입니다. Compute Engine(IaaS)부터 GKE, App Engine, Cloud Functions, Cloud Run까지 애플리케이션 요구사항과 제어 수준에 따라 최적의 컴퓨팅 서비스를 선택합니다."
+"원본 교안 4번 장표의 6대 컴퓨팅 처리 옵션 비교표입니다. Compute Engine, GKE, App Engine, Cloud Functions, Cloud Run까지 언어 지원 및 사용 모델을 한눈에 비교할 수 있습니다."
 -->
 
 ---
