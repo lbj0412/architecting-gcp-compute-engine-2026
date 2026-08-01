@@ -40,3 +40,17 @@ npx -y @marp-team/marp-cli --no-stdin --allow-local-files 03_Virtual_Machines_Ma
 # 16:9 PDF 컴파일
 npx -y @marp-team/marp-cli --no-stdin --allow-local-files 03_Virtual_Machines_Marp.md --pdf -o slides_pdf/03_Virtual_Machines_Slide.pdf
 ```
+
+---
+
+## Image Rendering Verification Addendum
+
+이미지 태그가 존재하거나 `alt` 텍스트가 표시된다는 이유만으로 이미지를 정상으로 판정하지 않는다. HTML 및 PDF 렌더링 검수 시 다음 조건을 반드시 확인한다.
+
+- 모든 `<img>` 요소의 `src` 속성이 존재하고 빈 값(`src`, `src=""`)이 아닌지 확인한다.
+- 브라우저에서 각 이미지의 `img.complete === true`인지 확인한다.
+- 각 이미지의 `img.naturalWidth > 0`인지 확인한다.
+- 이미지 깨짐 아이콘, 대체 텍스트 단독 표시, 빈 이미지 박스가 없는지 시각적으로 확인한다.
+- HTML 렌더링과 PDF 렌더링을 모두 검사한다. 한쪽에서만 정상이어도 최종 정상으로 판정하지 않는다.
+- 페이지 구조에 `<img>` 태그가 있다는 사실만으로 정상 판정하지 않는다.
+- 검수 범위의 모든 페이지를 실제 렌더링 상태로 확인하고, 문제가 발견되면 페이지 번호·이미지 `alt`·원인·검수 결과를 기록한다.
