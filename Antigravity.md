@@ -1,16 +1,22 @@
-# Google Cloud Architecture Training Modernization Standard (Antigravity v3.0.0)
+# Google Cloud Architecture Training Modernization Standard (Antigravity v3.1.0)
 
 본 문서는 Google Cloud 교육용 Marp 프레젠테이션 개정 및 자동 변환 시 준수해야 하는 **절대적 철칙과 가이드라인**입니다.
 
 ---
 
-## 🚨 1. 자동 빌드 스크립트 실행 금지 수칙 (Strict Rule)
+## ⚡ 1. 2026 Google Cloud 최신 기술 및 용어 검증 (2026 Modernization)
+- **원문 100% 보존 & 최신화**: 교재 원문 텍스트의 제목과 내용을 100% 동일하게 유지하되, 구식 기술 표기나 레거시 사양은 **2026년 최신 Google Cloud 스펙 (Compute Engine C3/C3D/C4/N4, Hyperdisk, Spot VM, Gemini AI 연계 등)**으로 검증하고 최신 정보를 반영한다.
+- **실습 환경 최신화**: 베스핀글로벌 전용 실습 환경(`KDT5T` 프로젝트, `bespin.email` 조직) 정보를 정확히 안내한다.
+
+---
+
+## 🚨 2. 자동 빌드 스크립트 실행 금지 수칙 (Strict Rule)
 - `scratch/build_all_modules.py` 등 백그라운드 전체 자동 컴파일 스크립트는 **절대로 자동으로 실행하지 말 것**.
 - 사용자가 직접 "전체 돌려라"라고 명시하기 전까지는, 오직 사용자가 작업 중인 **단 1개의 마크다운/HTML 슬라이드 파일만 수동 컴파일**할 것.
 
 ---
 
-## 🎨 2. 표지 및 슬라이드 레이아웃 규칙 (Design Rules)
+## 🎨 3. 표지 및 슬라이드 레이아웃 규칙 (Design Rules)
 
 ### A. 표지 (1페이지 & 마지막 Q&A 페이지)
 - **배경**: 최초 다크 네이비 / 파란 고급 그라데이션 적용 (`linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #1a73e8 100%)`)
@@ -34,8 +40,9 @@
 
 ---
 
-## 🛠️ 3. 모듈별 파일 처리 절차
+## 🛠️ 4. 모듈별 파일 처리 절차
 1. PDF 원본에서 텍스트와 이미지 100% 추출
-2. `XX_[Module_Name]_Marp.md` 마크다운 작성 (위의 Design Rules 준수)
-3. Marp CLI로 단일 수동 빌드 (`slides_html/` 및 `slides_pdf/`)
-4. GitHub Private 저장소 동기화 푸시 (`push_via_git.py`)
+2. 2026 최신 기술 및 스펙 검증 동기화
+3. `XX_[Module_Name]_Marp.md` 마크다운 작성 (위의 Design Rules 준수)
+4. Marp CLI로 단일 수동 빌드 (`slides_html/` 및 `slides_pdf/`)
+5. GitHub Private 저장소 동기화 푸시 (`push_via_git.py`)
