@@ -287,7 +287,7 @@ style: |
   .tool-icon-box {
     background: #ffffff;
     border-radius: 18px;
-    padding: 28px;
+    padding: 24px;
     box-shadow: 0 6px 24px rgba(60, 64, 67, 0.08);
     border: 1px solid #e8eaed;
     display: flex;
@@ -300,12 +300,12 @@ style: |
     max-width: 100%;
     max-height: 220px;
     object-fit: contain;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     box-shadow: none !important;
     border-radius: 0 !important;
   }
   .tool-icon-name {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 800;
     color: #1a73e8;
   }
@@ -633,20 +633,36 @@ comment:
 
 ## Compute Engine 컴퓨팅 성능 및 vCPU 구조
 
-<div class="card" style="margin-top: 10px; padding: 22px;">
-  <h3 style="color: #1a73e8; font-size: 21px; margin-top:0;">⚡ vCPU 하드웨어 하이퍼스레드 및 네트워크 스루풋 확장</h3>
-  <ul style="margin-bottom:0;">
-    <li><strong>vCPU의 표준 정의</strong>: 1개의 vCPU는 물리 CPU의 <strong>1개 하드웨어 하이퍼스레드(Hyper-thread)</strong>와 1:1 대응</li>
-    <li><strong>vCPU 비례 네트워크 대역폭 확장</strong>: 네트워크 처리량은 <strong>vCPU당 2Gbps씩 비례 확장</strong> (일부 머신 타입 예외 적용)</li>
-    <li><strong>이론상 최대 대역폭 지원</strong>: 176개 vCPU 인스턴스 기준 이론상 <strong>최대 200Gbps 대역폭</strong> 및 차세대 Titanium SmartNIC 지원</li>
-    <li><strong>자유로운 메모리 조립</strong>: vCPU 규격에 맞춘 균형 RAM 메모리 배치</li>
-  </ul>
+<div class="tool-hero-layout">
+  <div>
+    <ul>
+      <li><strong>vCPU의 표준 정의</strong>:
+        <ul>
+          <li>1개의 vCPU는 물리 CPU의 <strong>1개 하드웨어 하이퍼스레드(Hyper-thread)</strong>와 1:1 대응</li>
+        </ul>
+      </li>
+      <li><strong>vCPU 비례 네트워크 대역폭 확장</strong>:
+        <ul>
+          <li>네트워크 처리량은 <strong>vCPU당 2Gbps씩 비례 확장</strong> (일부 머신 예외 적용)</li>
+        </ul>
+      </li>
+      <li><strong>이론상 최대 대역폭 지원</strong>:
+        <ul>
+          <li>176개 vCPU 기준 이론상 <strong>최대 200Gbps 대역폭</strong> 지원</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="tool-icon-box">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAccAAAHHCAMAAAD9ImOAAAADAFBMVEX+/v52dnatra3m5uaKioqwsLCYmJgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkZukAAAACXBIWXMAAB7CAAAewgFu0HU+AAAHbklEQVR4nO3bYYojSQyEUaldXfc/8mJDMj9mYcUSyCHV9w6QUkakwdM9HQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6JIl0X4W6PGJ+DzuQI870OMO9LgDPe5AjzvQ4w70uAM97kCPO9DjDvS4Az3uQI870OMO9LgDPe5AjzvQ4w70uAM97kCPO9DjDvS4Az3uQI870OMO9LgDPe5AjzvQ4w70uAM97kCPO9DjDvRo5fX283Zd15VLXNd1fS71uV48AD3uQI870OMO9Dje54tAPsDPW6xFjzvQ4w70uAM9znff952Pct/3HevQ4w70uAM9jveYrzfLfyBAjzvQ4w70uAM97vglVT7ca/5/9aDHpMctXnweV3jR4wqv+T0++Kvqqh/q0GPS4xY/fB5X+KHHFX7m93ht+luc/+sTQoxGj0mPW1x8Hle45vf47Qh9xGjfTs9HjPbt9HzEaN9Oz0eM9u30fMRo3PGI0bIkRkvuSI9D8FaPGC1LYrTkjvQ4BG/1iNGyJEZL7kiPQ/BWjxgtS2K05I70OARv9YjRsiRGS+5Ij0PwVo8YLUtitOSO9DgEb/WI0bIkRkvuSI9D8FaPGC1LYrTkjvQ4BG/1iNGyJEZL7kiPQ/BWjxgtS2K05I70OARv9YjRsiRGS+5Ij0PwVo8YLUtitOSO9DgEb/WI0bIkRsvRd6xtr7yjcmKNaxJK/dsrJ9a4JqHUv71yYo1rEkr92ysn1rgmodS/vXJijWsSSv3bKyfWuCah1L+9cmKNaxJK/dsrJ9a4JqHUv71yYo1rEkr92ysn1rgmodS/vXJijWsSSv3bKyfWuCah1L+9cmKNaxJK/dsrJ9a4JqHUv71yYo1rEkr92ysn1rgmodS/vXJijWsSSv3bKyfWuCah1L+9cmKNaxJK/dsrJ9a4JqHUv71yYo1rEkr92ysn1rgmodS/vXJijWsSSv3bKyfWuCah1L+9cmKNaxJK/dsrJ9a4JqHUv71yYo1rEkr92ysn1rgmodS/vXJijWsSSv3bKyfWuCah1L+9cmKNaxJK/dsrJ9a4JqHUv71yYo1rEkr92ysn1rgmodS/vXJijWsSSv3bKyfWuCah1L+9cmKNaxJK/dsrJ9a4JtGvP68YfZYr17zS9CxXrnml6VmuXPNK07NcueaVpme5cs0rTc9y5ZpXmp7lyjWvND3LlWteaXqWK9e80vQsV655pelZrlzzStOzXLnmlaZnuXLNK03PcuWaV5qe5co1rzQ9y5VrXml6livXvNL0LFeueaXpWa5c80rTs1y55pWmZ7lyzStNz3LlmleanuXKNa80PcuVa15pepYr17zS9CxXrnml6VmuXPNK07NcueaVpme5cs0rTc9y5ZpXmp7lyjWvND3LlWteaXqWK9e80vQsV655pelZrlzzStOzXLnmlaZnuXLNK03P6lfbvj8vJdcklPq3V06scU1CqX975cQa1ySU+rdXTqxxTUKpf3vlxBrXJJT6t1dOrHFNQql/e+XEGtcklPq3V06scU1CqX975cQa1ySU+rdXTqxxTUKpf3vlxBrXJJT6t1dOrHFNQql/e+XEGtcklPq3V06scU1CqX975cQa1ySU+rdXTqxxTUKpf3vlxBrXJJT6t1dOrHFNQql/e+XEGtcklPq3V06scU1CqX975cQa1ySU+rdXTqxxTUKpf3vlxBrXJJT6t1dOrHFNQql/e+XEGtcklPq3V06scU1CqX975cQa1ySU+rdXTqxxTUKpf3vlxBrXJJT6t1dOrHFNQql/e+XEGtcklPq3V06scU1CqX975cQa1ySU+rdXTqxxTUKpf3vlxBrXJJT6t1dOrHFNQql/e+XEGtcklPq3V06scU2i3+zta7gjPU7BWz1itCyJ0ZI70uMQvNUjRsuSGC25Iz0OwVs9YrQsidGSO9LjELzVI0bLkhgtuSM9DsFbPWK0LInRkjvS4xC81SNGy5IYLbkjPQ7BWz1itCyJ0ZI70uMQvNUjRsuSGC25Iz0OwVs9YrQsidGSO9LjELzVI0bLkhgtuSM9DsFbPWK0LInRkjvS4xC81SNGy5IYLbkjPa56q08Qo307PR8x2rfT8xGjfTs9HzHat9PzEaNdb/lw11uMRo9Jj1tcfB5XuOb3+POWD/f7FqPRY9LjFr98Hlf4pccVfuf3+HrLh3u9xWj0mPS4xYvP4wovelzhNb/Hp/8w4Hf+V9U/6HEHetyBHnegx0Xu+77zUe77vmMdetyBHnegxz0e84Xnd9M///9GjzvQ4w70uAM9LvL5Lc6n0U1/+3Fd1/X5drPll1T/iR53oMcd6HEHeny42heOaD8L9PhEfB53oMcd6HEHetyBHnegxx3ocQd63IEed6DHHehxB3rcgR53oMcd6HEHetyBHnegxx3ocQd63IEed6DHHehxB3rcgR53oMcd6HEHetyBHnegxx3ocQd63IEed6DHHehxB3oEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEP/iH1LK5XWk+uc6AAAAAElFTkSuQmCC" alt="Page 09 Compute & Network Diagram">
+    <div class="tool-icon-name">vCPU & Bandwidth Architecture</div>
+  </div>
 </div>
 
 <!--
 comment:
 💬 [강사 대본]
-"원본 교안 9번 장표인 컴퓨팅 성능과 vCPU 구조입니다. vCPU 1개가 1개 하이퍼스레드와 매칭되며, vCPU당 2Gbps씩 네트워크 대역폭이 비례 확장되는 핵심 법칙을 가이드합니다."
+"원본 교안 9번 장표의 vCPU 구조와 다이어그램입니다. vCPU 1개가 1개 하이퍼스레드와 매칭되며, vCPU당 2Gbps씩 네트워크 대역폭이 확장되는 구글 아키텍처 다이어그램을 우측 히어로 박스에서 확인하실 수 있습니다."
 -->
 
 ---
