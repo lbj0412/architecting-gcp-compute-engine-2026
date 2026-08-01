@@ -162,7 +162,6 @@ style: |
     font-weight: 400;
   }
 
-  /* Table Custom Style for Page 4 - Single-line neat layout */
   table.comp-table {
     width: 100%;
     border-collapse: separate;
@@ -196,7 +195,6 @@ style: |
     white-space: nowrap;
     text-align: center !important;
   }
-  table.comp-table tr:nth-child(even) { background-color: #ffffff; }
 
   ul {
     list-style: none;
@@ -228,21 +226,27 @@ style: |
     gap: 16px;
     margin-top: 10px;
   }
+  .card-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-top: 10px;
+  }
   .card {
     background: #ffffff;
     border-radius: 14px;
-    padding: 20px 24px;
+    padding: 18px 20px;
     box-shadow: 0 4px 20px rgba(60, 64, 67, 0.08);
     border: 1px solid #e8eaed;
   }
   .card-title {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 700;
     color: #1a73e8;
     margin-bottom: 6px;
   }
   .card-desc {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     color: #5f6368;
     line-height: 1.5;
@@ -433,20 +437,29 @@ comment:
 
 <!-- Page 5 -->
 
-## Compute Engine 가상 머신의 주요 특징
+## Compute Engine: Infrastructure as a Service (IaaS)
 
 <div class="tool-hero-layout">
   <div>
     <ul>
-      <li><strong>Infrastructure as a Service (IaaS)</strong>: 완전한 가상 머신 제어 권한 제공</li>
-      <li><strong>자유로운 컴퓨팅 리소스 설정</strong>: vCPU(코어) 및 RAM 메모리 사전 정의 또는 커스텀 지정</li>
-      <li><strong>유연한 독립 스토리지</strong>: 영역/리전별 영구 디스크(PD), Local SSD, Cloud Storage 연동</li>
-      <li><strong>글로벌 백본 네트워킹 & OS</strong>: Linux 및 Windows Server 공식 호환 및 빠른 부팅 지원</li>
+      <li><strong>사전 정의된 머신 유형 및 커스텀 머신 유형</strong>:
+        <ul>
+          <li>요구사항에 맞는 vCPU(코어) 및 메모리(RAM) 맞춤 조립</li>
+        </ul>
+      </li>
+      <li><strong>유연한 독립 스토리지 구성</strong>:
+        <ul>
+          <li>영역 또는 리전별 영구 디스크 (HDD 또는 SSD)</li>
+          <li>초고속 로컬 SSD (Local SSD)</li>
+          <li>대용량 오브젝트 스토리지 (Cloud Storage)</li>
+        </ul>
+      </li>
+      <li><strong>글로벌 네트워킹 & OS 지원</strong>: Linux 및 Windows 전용 이미지 지원</li>
     </ul>
   </div>
   <div class="tool-icon-box">
-    <img src="data:image/png;base64,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" alt="Compute Engine">
-    <div class="tool-icon-name">Compute Engine</div>
+    <img src="data:image/png;base64,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" alt="Compute Engine IaaS">
+    <div class="tool-icon-name">IaaS Architecture</div>
     <div style="font-size: 14px; color: #5f6368; margin-top: 6px;">Module 03 Slide 05</div>
   </div>
 </div>
@@ -454,12 +467,51 @@ comment:
 <!--
 comment:
 💬 [강사 대본]
-"5번 장표에서는 Compute Engine IaaS의 핵심 인프라 사양을 살펴봅니다. vCPU, 메모리, 영구 디스크 스토리지 및 네트워크 환경을 자유롭게 맞춤 설정할 수 있습니다."
+"원본 교안 5번 장표인 Compute Engine IaaS 구조입니다. 사전 정의 및 커스텀 vCPU/RAM 설정, 영구 디스크와 로컬 SSD 스토리지, 그리고 글로벌 네트워킹을 자유롭게 조립하는 개요를 설명합니다."
 -->
 
 ---
 
 <!-- Page 6 -->
+
+## Compute Engine의 핵심 주요 특징 (Key Features)
+
+<div class="card-grid-3">
+  <div class="card">
+    <div class="card-title">🔄 무중단 라이브 마이그레이션</div>
+    <div class="card-desc">물리 서버 정기 점검 시 VM 다운타임이나 재부팅 없이 다른 하드웨어로 자동 실시간 이전</div>
+  </div>
+  <div class="card">
+    <div class="card-title">📊 머신 크기 자동 추천</div>
+    <div class="card-desc">Cloud Monitoring 통계를 분석하여 VM 생성 24시간 후 최적의 vCPU/메모리 알맞은 크기 추천</div>
+  </div>
+  <div class="card">
+    <div class="card-title">💰 FinOps 비용 할인 혜택</div>
+    <div class="card-desc">초당 청구, 지속 사용 할인(SUD), 약정 사용 할인(CUD) 및 Spot VM (최대 91% 할인)</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🌐 전역 부하 분산</div>
+    <div class="card-desc">멀티 리전 고가용성을 보장하는 Google 글로벌 전역 부하 분산(Global Load Balancing) 연동</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🛡️ OS 패치 관리</div>
+    <div class="card-desc">자동 패치 승인 규칙, 유연한 예약 설정 및 고급 OS 패치 구성 설정 적용</div>
+  </div>
+  <div class="card">
+    <div class="card-title">⚡ 인스턴스 가용성 & 자동화</div>
+    <div class="card-desc">시작/종료 스크립트, 인스턴스 메타데이터 및 장애 발생 시 자동 다시 시작 가용성 정책</div>
+  </div>
+</div>
+
+<!--
+comment:
+💬 [강사 대본]
+"원본 교안 6번 장표의 Compute Engine 6대 핵심 기능입니다. 라이브 마이그레이션부터 머신 크기 추천, FinOps 할인, 전역 부하 분산, OS 패치 관리 및 인스턴스 자동화까지 Google Cloud의 강점을 학습합니다."
+-->
+
+---
+
+<!-- Page 7 -->
 
 ## 범용 워크로드용 머신 타입 (General-Purpose: E2, N1, N2, N4)
 
@@ -482,7 +534,7 @@ comment:
 
 ---
 
-<!-- Page 7 -->
+<!-- Page 8 -->
 
 ## 컴퓨팅 최적화 머신 타입 (Compute-Optimized: C2, C3, C4)
 
@@ -503,7 +555,7 @@ comment:
 
 ---
 
-<!-- Page 8 -->
+<!-- Page 9 -->
 
 ## 메모리 최적화 머신 타입 (Memory-Optimized: M2, M3)
 
@@ -524,7 +576,7 @@ comment:
 
 ---
 
-<!-- Page 9 -->
+<!-- Page 10 -->
 
 ## 가속기 최적화 머신 타입 (Accelerator-Optimized: A2, A3)
 
@@ -541,27 +593,4 @@ comment:
 comment:
 💬 [강사 대본]
 "가속기 최적화 A3 시리즈입니다. NVIDIA H100 GPU가 탑재되어 LLM 생성형 AI 모델 훈련과 딥러닝 워크로드를 초고속으로 수행합니다."
--->
-
----
-
-<!-- Page 10 -->
-
-## 커스텀 머신 유형 만들기 (Custom Machine Types)
-
-<div class="card-grid">
-  <div class="card">
-    <div class="card-title">⚙️ 맞춤형 사양 조합</div>
-    <div class="card-desc">사전 정의된 규격에 구애받지 않고, 애플리케이션에 필요한 정확한 vCPU와 메모리를 1:1 맞춤 설계</div>
-  </div>
-  <div class="card">
-    <div class="card-title">💡 비용 효율성 극대화</div>
-    <div class="card-desc">불필요하게 과도한 머신 등급을 선택하지 않음으로써 오버프로비저닝을 방지하고 비용 절감</div>
-  </div>
-</div>
-
-<!--
-comment:
-💬 [강사 대본]
-"Compute Engine의 자랑인 커스텀 머신 사양 만들기입니다. 필요한 CPU와 메모리만 딱 맞춰 구매하므로 낭비되는 예산을 완벽히 막을 수 있습니다."
 -->
