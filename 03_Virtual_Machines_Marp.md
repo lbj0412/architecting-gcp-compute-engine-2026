@@ -22,9 +22,9 @@ style: |
     -moz-osx-font-smoothing: grayscale;
     background: #f8f9fa;
     color: #202124;
-    padding: 65px 75px 45px 75px;
-    font-size: 21px;
-    line-height: 1.5;
+    padding: 55px 65px 35px 65px;
+    font-size: 20px;
+    line-height: 1.45;
     letter-spacing: -0.02em;
     box-sizing: border-box;
   }
@@ -121,10 +121,10 @@ style: |
 
   h1, h2 {
     color: #1a73e8;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 800;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     letter-spacing: -0.03em;
   }
 
@@ -203,53 +203,53 @@ style: |
   }
   li {
     position: relative;
-    padding-left: 28px;
-    margin-bottom: 12px;
+    padding-left: 24px;
+    margin-bottom: 8px;
     font-weight: 500;
     letter-spacing: -0.02em;
-    font-size: 20px;
+    font-size: 17px;
   }
   li::before {
     content: '';
     position: absolute;
     left: 4px;
-    top: 11px;
-    width: 8px;
-    height: 8px;
+    top: 9px;
+    width: 6px;
+    height: 6px;
     background-color: #1a73e8;
     border-radius: 50%;
   }
 
-  .card-grid {
+  /* 6번 슬라이드 원본 이미지 1:1 완벽 배치 카드 Grid */
+  .features-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 10px;
-  }
-  .card-grid-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 14px;
-    margin-top: 10px;
+    margin-top: 8px;
   }
-  .card {
+  .feat-card {
     background: #ffffff;
-    border-radius: 14px;
-    padding: 18px 20px;
-    box-shadow: 0 4px 20px rgba(60, 64, 67, 0.08);
+    border-radius: 12px;
+    padding: 14px 18px;
+    box-shadow: 0 3px 12px rgba(60, 64, 67, 0.06);
     border: 1px solid #e8eaed;
   }
-  .card-title {
-    font-size: 18px;
+  .feat-card-title {
+    font-size: 17px;
     font-weight: 700;
     color: #1a73e8;
     margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
-  .card-desc {
+  .feat-card ul {
+    margin-bottom: 0;
+  }
+  .feat-card li {
     font-size: 15px;
-    font-weight: 400;
-    color: #5f6368;
-    line-height: 1.5;
+    margin-bottom: 4px;
+    line-height: 1.45;
   }
 
   .tool-hero-layout {
@@ -474,31 +474,72 @@ comment:
 
 <!-- Page 6 -->
 
-## Compute Engine의 핵심 주요 특징 (Key Features Breakdown)
+## Compute Engine의 특징 (Features of Compute Engine)
 
-<div class="card-grid">
-  <div class="card">
-    <div class="card-title">🔄 무중단 라이브 마이그레이션 (Live Migration)</div>
-    <div class="card-desc">• 호스트 물리 서버 정기 점검 또는 하드웨어 소프트웨어 업데이트 시 발생<br>• 실행 중인 VM을 다운타임이나 인스턴스 재부팅 없이 다른 정상 서버로 자동 실시간 이전</div>
+<div class="features-grid">
+  <div class="feat-card">
+    <div class="feat-card-title">⚙️ 머신 크기를 알맞게 조정</div>
+    <ul>
+      <li>추천 엔진을 통한 최적의 머신 크기</li>
+      <li>Cloud Monitoring 통계 기반 분석</li>
+      <li>VM 생성 또는 크기 조정 후 24시간 뒤에 새로운 추천 제공</li>
+    </ul>
   </div>
-  <div class="card">
-    <div class="card-title">📊 머신 크기 자동 추천 (Right-Sizing)</div>
-    <div class="card-desc">• Cloud Monitoring의 지난 시스템 부하 및 메모리 통계 자동 분석<br>• VM 생성 또는 크기 변경 후 24시간 뒤 최적의 vCPU/RAM 크기를 맞춤 추천하여 오버프로비저닝 방지</div>
+  
+  <div class="feat-card">
+    <div class="feat-card-title">🌐 전역 부하 분산</div>
+    <ul>
+      <li>고가용성을 위한 멀티 리전 전역 부하 분산 연동</li>
+    </ul>
   </div>
-  <div class="card">
-    <div class="card-title">💰 FinOps 유연한 비용 할인 정책</div>
-    <div class="card-desc">• 초당 청구 (Per-second Billing)로 실제 사용 시간만큼 비용 지불<br>• 지속 사용 할인 (SUD) 자동 적용 & 1년/3년 약정 사용 할인 (CUD)<br>• Spot VM: 배치 워크로드에 최대 91% 가격 할인 혜택 제공</div>
+
+  <div class="feat-card">
+    <div class="feat-card-title">🛡️ OS 패치 관리</div>
+    <ul>
+      <li>패치 승인 만들기</li>
+      <li>유연한 예약 설정</li>
+      <li>고급 패치 구성 설정 적용</li>
+    </ul>
   </div>
-  <div class="card">
-    <div class="card-title">🛡️ 전역 부하 분산 & OS 패치 관리</div>
-    <div class="card-desc">• 전 세계 멀티 리전 트래픽 관리를 위한 전역 부하 분산 (Global Load Balancing)<br>• OS 패치 승인 규칙 작성, 유연한 예약 설정 및 고급 자동 패치 정책 적용 지원</div>
+
+  <div class="feat-card">
+    <div class="feat-card-title">🔌 인스턴스 자동화 & 메타데이터</div>
+    <ul>
+      <li>인스턴스 메타데이터 활용</li>
+      <li>시작 및 종료 스크립트 자동 실행</li>
+    </ul>
+  </div>
+
+  <div class="feat-card">
+    <div class="feat-card-title">🛡️ 가용성 정책 (Availability)</div>
+    <ul>
+      <li><strong>라이브 마이그레이션 (Live Migration)</strong></li>
+      <li><strong>자동 다시 시작 (Automatic Restart)</strong></li>
+    </ul>
+  </div>
+
+  <div class="feat-card">
+    <div class="feat-card-title">💰 유연한 비용 모델</div>
+    <ul>
+      <li>초당 청구 (Per-second Billing)</li>
+      <li>지속 사용 할인 (SUD)</li>
+      <li>약정 사용 할인 (CUD)</li>
+    </ul>
+  </div>
+
+  <div class="feat-card" style="grid-column: span 2; background: #e8f0fe; border-color: #1a73e8;">
+    <div class="feat-card-title" style="color: #1a73e8;">⚡ 선점형 VM 및 스팟 VM (Spot VMs)</div>
+    <ul style="display: flex; gap: 30px;">
+      <li>최대 91% 비용 할인 혜택</li>
+      <li>SLA 없음 (배치 워크로드 및 백그라운드 처리 적합)</li>
+    </ul>
   </div>
 </div>
 
 <!--
 comment:
 💬 [강사 대본]
-"6번 장표는 Compute Engine의 6대 핵심 특징을 상세히 다룹니다. 다운타임 없는 라이브 마이그레이션부터 24시간 후 동작하는 머신 크기 추천 엔진, 초당 청구와 지속/약정/Spot VM 할인, OS 패치 관리까지 완전 관리형 이점을 제공합니다."
+"원본 교안 6번 장표의 Compute Engine 전체 특징입니다. 머신 크기 알맞게 조정, 인스턴스 메타데이터/스크립트, 라이브 마이그레이션 및 자동 다시 시작 가용성 정책, 전역 부하 분산, OS 패치 관리, 초당 청구/SUD/CUD, 그리고 최대 91% 할인되는 선점형/스팟 VM까지 원본의 모든 항목을 가이드합니다."
 -->
 
 ---
