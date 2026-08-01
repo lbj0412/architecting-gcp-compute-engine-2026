@@ -447,66 +447,58 @@ comment:
           <li>요구사항에 맞는 vCPU(코어) 및 메모리(RAM) 맞춤 조립</li>
         </ul>
       </li>
-      <li><strong>유연한 독립 스토리지 구성</strong>:
+      <li><strong>유연한 독립 스토리지 옵션 (2026 Modernized)</strong>:
         <ul>
-          <li>영역 또는 리전별 영구 디스크 (HDD 또는 SSD)</li>
-          <li>초고속 로컬 SSD (Local SSD)</li>
-          <li>대용량 오브젝트 스토리지 (Cloud Storage)</li>
+          <li><strong>영구 디스크 (Persistent Disk)</strong>: Standard, <strong>Balanced PD (균형 성능)</strong>, SSD, Extreme PD</li>
+          <li><strong>차세대 Hyperdisk</strong>: IOPS 및 스루풋 독립 동적 제어</li>
+          <li><strong>Local SSD</strong>: 물리 서버 직접 탑재 초고속 NVMe 캐시</li>
+          <li><strong>Cloud Storage</strong>: 대용량 오브젝트 스토리지 버킷 연동</li>
         </ul>
       </li>
-      <li><strong>글로벌 네트워킹 & OS 지원</strong>: Linux 및 Windows 전용 이미지 지원</li>
+      <li><strong>글로벌 네트워킹 & OS 지원</strong>: Linux 및 Windows Server 지원</li>
     </ul>
   </div>
   <div class="tool-icon-box">
     <img src="data:image/png;base64,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" alt="Compute Engine IaaS">
     <div class="tool-icon-name">IaaS Architecture</div>
-    <div style="font-size: 14px; color: #5f6368; margin-top: 6px;">Module 03 Slide 05</div>
   </div>
 </div>
 
 <!--
 comment:
 💬 [강사 대본]
-"원본 교안 5번 장표인 Compute Engine IaaS 구조입니다. 사전 정의 및 커스텀 vCPU/RAM 설정, 영구 디스크와 로컬 SSD 스토리지, 그리고 글로벌 네트워킹을 자유롭게 조립하는 개요를 설명합니다."
+"5번 장표에서는 Compute Engine IaaS 구조를 설명합니다. vCPU/RAM 설정, Standard/Balanced PD/SSD/Hyperdisk 등 다양한 디스크 옵션과 글로벌 네트워킹을 유연하게 결합할 수 있습니다."
 -->
 
 ---
 
 <!-- Page 6 -->
 
-## Compute Engine의 핵심 주요 특징 (Key Features)
+## Compute Engine의 핵심 주요 특징 (Key Features Breakdown)
 
-<div class="card-grid-3">
+<div class="card-grid">
   <div class="card">
-    <div class="card-title">🔄 무중단 라이브 마이그레이션</div>
-    <div class="card-desc">물리 서버 정기 점검 시 VM 다운타임이나 재부팅 없이 다른 하드웨어로 자동 실시간 이전</div>
+    <div class="card-title">🔄 무중단 라이브 마이그레이션 (Live Migration)</div>
+    <div class="card-desc">• 호스트 물리 서버 정기 점검 또는 하드웨어 소프트웨어 업데이트 시 발생<br>• 실행 중인 VM을 다운타임이나 인스턴스 재부팅 없이 다른 정상 서버로 자동 실시간 이전</div>
   </div>
   <div class="card">
-    <div class="card-title">📊 머신 크기 자동 추천</div>
-    <div class="card-desc">Cloud Monitoring 통계를 분석하여 VM 생성 24시간 후 최적의 vCPU/메모리 알맞은 크기 추천</div>
+    <div class="card-title">📊 머신 크기 자동 추천 (Right-Sizing)</div>
+    <div class="card-desc">• Cloud Monitoring의 지난 시스템 부하 및 메모리 통계 자동 분석<br>• VM 생성 또는 크기 변경 후 24시간 뒤 최적의 vCPU/RAM 크기를 맞춤 추천하여 오버프로비저닝 방지</div>
   </div>
   <div class="card">
-    <div class="card-title">💰 FinOps 비용 할인 혜택</div>
-    <div class="card-desc">초당 청구, 지속 사용 할인(SUD), 약정 사용 할인(CUD) 및 Spot VM (최대 91% 할인)</div>
+    <div class="card-title">💰 FinOps 유연한 비용 할인 정책</div>
+    <div class="card-desc">• 초당 청구 (Per-second Billing)로 실제 사용 시간만큼 비용 지불<br>• 지속 사용 할인 (SUD) 자동 적용 & 1년/3년 약정 사용 할인 (CUD)<br>• Spot VM: 배치 워크로드에 최대 91% 가격 할인 혜택 제공</div>
   </div>
   <div class="card">
-    <div class="card-title">🌐 전역 부하 분산</div>
-    <div class="card-desc">멀티 리전 고가용성을 보장하는 Google 글로벌 전역 부하 분산(Global Load Balancing) 연동</div>
-  </div>
-  <div class="card">
-    <div class="card-title">🛡️ OS 패치 관리</div>
-    <div class="card-desc">자동 패치 승인 규칙, 유연한 예약 설정 및 고급 OS 패치 구성 설정 적용</div>
-  </div>
-  <div class="card">
-    <div class="card-title">⚡ 인스턴스 가용성 & 자동화</div>
-    <div class="card-desc">시작/종료 스크립트, 인스턴스 메타데이터 및 장애 발생 시 자동 다시 시작 가용성 정책</div>
+    <div class="card-title">🛡️ 전역 부하 분산 & OS 패치 관리</div>
+    <div class="card-desc">• 전 세계 멀티 리전 트래픽 관리를 위한 전역 부하 분산 (Global Load Balancing)<br>• OS 패치 승인 규칙 작성, 유연한 예약 설정 및 고급 자동 패치 정책 적용 지원</div>
   </div>
 </div>
 
 <!--
 comment:
 💬 [강사 대본]
-"원본 교안 6번 장표의 Compute Engine 6대 핵심 기능입니다. 라이브 마이그레이션부터 머신 크기 추천, FinOps 할인, 전역 부하 분산, OS 패치 관리 및 인스턴스 자동화까지 Google Cloud의 강점을 학습합니다."
+"6번 장표는 Compute Engine의 6대 핵심 특징을 상세히 다룹니다. 다운타임 없는 라이브 마이그레이션부터 24시간 후 동작하는 머신 크기 추천 엔진, 초당 청구와 지속/약정/Spot VM 할인, OS 패치 관리까지 완전 관리형 이점을 제공합니다."
 -->
 
 ---
