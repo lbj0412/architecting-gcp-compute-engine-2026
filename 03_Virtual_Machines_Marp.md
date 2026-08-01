@@ -45,9 +45,7 @@ style: |
   section:not(.lead) ol,
   section:not(.lead) li,
   section:not(.lead) div,
-  section:not(.lead) .card,
-  section:not(.lead) .card-desc,
-  section:not(.lead) .card-title,
+  section:not(.lead) .agenda-list-item,
   section:not(.lead) h3,
   section:not(.lead) table {
     text-align: left !important;
@@ -130,6 +128,41 @@ style: |
     margin-top: 0;
     margin-bottom: 22px;
     letter-spacing: -0.03em;
+  }
+
+  /* Agenda List Layout (전형적인 깔끔한 목차 형태) */
+  .agenda-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .agenda-item {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 18px;
+    background: #ffffff;
+    border-radius: 10px;
+    border-left: 5px solid #1a73e8;
+    box-shadow: 0 2px 8px rgba(60, 64, 67, 0.05);
+  }
+  .agenda-num {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a73e8;
+    min-width: 32px;
+  }
+  .agenda-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #202124;
+    min-width: 340px;
+  }
+  .agenda-desc {
+    font-size: 16px;
+    color: #5f6368;
+    font-weight: 400;
   }
 
   ul {
@@ -245,39 +278,45 @@ comment:
 
 <!-- Page 2 -->
 
-## 모듈 03 학습 주제 (Agenda)
+## 모듈 03 학습 목차 (Agenda)
 
-<div class="card-grid">
-  <div class="card">
-    <div class="card-title">01. Compute Engine 옵션 & 머신 시리즈</div>
-    <div class="card-desc">VM 개념, 2026 최신 C3/C4/N4 및 범용/메모리/컴퓨팅 최적화 시리즈</div>
+<div class="agenda-container">
+  <div class="agenda-item">
+    <span class="agenda-num">01</span>
+    <span class="agenda-title">Compute Engine 옵션 & 머신 시리즈</span>
+    <span class="agenda-desc">| VM 개념 및 2026 최신 C3/C4/N4/A3 머신 타입 사양</span>
   </div>
-  <div class="card">
-    <div class="card-title">02. 가상 머신 접근 및 수명주기</div>
-    <div class="card-desc">SSH/RDP 접속, IAM 권한 제어, VM 생성, 중지, 재부팅 및 삭제 수명주기</div>
+  <div class="agenda-item">
+    <span class="agenda-num">02</span>
+    <span class="agenda-title">가상 머신 접근 및 수명주기</span>
+    <span class="agenda-desc">| SSH/RDP 접속, IAM 역할 제어 및 인스턴스 생애주기</span>
   </div>
-  <div class="card">
-    <div class="card-title">03. Compute Engine 스토리지 옵션</div>
-    <div class="card-desc">Persistent Disk, Hyperdisk, Local SSD, Cloud Storage 연동</div>
+  <div class="agenda-item">
+    <span class="agenda-num">03</span>
+    <span class="agenda-title">Compute Engine 스토리지 옵션</span>
+    <span class="agenda-desc">| Persistent Disk, Hyperdisk, Local SSD, Cloud Storage</span>
   </div>
-  <div class="card">
-    <div class="card-title">04. 무중단 실시간 이동 (Live Migration)</div>
-    <div class="card-desc">물리 서버 점검 시 무중단 VM 자동 실시간 이동 기술</div>
+  <div class="agenda-item">
+    <span class="agenda-num">04</span>
+    <span class="agenda-title">무중단 실시간 이동 (Live Migration)</span>
+    <span class="agenda-desc">| 물리 서버 점검 시 무중단 VM 자동 실시간 이동 프로세스</span>
   </div>
-  <div class="card">
-    <div class="card-title">05. Spot VM & 할인 요금제 (Cost FinOps)</div>
-    <div class="card-desc">Spot VM (최대 90% 할인), 지속 사용 할인(SUD) 및 약정 사용 할인(CUD)</div>
+  <div class="agenda-item">
+    <span class="agenda-num">05</span>
+    <span class="agenda-title">Spot VM & 할인 요금제 (Cost FinOps)</span>
+    <span class="agenda-desc">| Spot VM (최대 90% 할인), 지속 할인(SUD) 및 약정 할인(CUD)</span>
   </div>
-  <div class="card">
-    <div class="card-title">06. 가상 머신 구축 실습</div>
-    <div class="card-desc">Compute Engine VM 생성, 커스텀 사양 구성 및 SSH 접속 실습</div>
+  <div class="agenda-item">
+    <span class="agenda-num">06</span>
+    <span class="agenda-title">가상 머신 구축 및 실습</span>
+    <span class="agenda-desc">| Compute Engine VM 생성, 커스텀 사양 구성 및 SSH 접속 실습</span>
   </div>
 </div>
 
 <!--
 comment:
 💬 [강사 대본]
-"모듈 03의 주요 목차입니다. VM 옵션부터 액세스 관리, 스토리지, 라이브 마이그레이션, Spot VM 요금 모델, 그리고 실제 VM 생성 실습 순서로 진행됩니다."
+"모듈 03의 학습 목차입니다. VM 옵션부터 액세스 관리, 스토리지, 라이브 마이그레이션, Spot VM 요금 모델, 그리고 실제 VM 생성 실습 순서로 한눈에 명확히 진행됩니다."
 -->
 
 ---
