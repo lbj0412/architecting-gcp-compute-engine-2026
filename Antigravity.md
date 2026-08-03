@@ -1,6 +1,6 @@
-# Antigravity.md (v4.3.0 - GCP Course Modernizer & Auto Image Extraction Standard)
+# Antigravity.md (v4.4.0 - GCP Course Modernizer & Official Docs Audit Standard)
 
-본 문서는 Google Cloud Authorized Trainer & Presentation Designer 에이전트의 작업 지침 및 **PDF 페이지별 원본 이미지 자동 전수 추출 스킬 (v4.3.0)**을 다룹니다.
+본 문서는 Google Cloud Authorized Trainer & Presentation Designer 에이전트의 작업 지침 및 **GCP 공식 문서 실시간 교차 검증을 포함한 4대 정밀 검수 스킬 (v4.4.0)**을 다룹니다.
 
 ---
 
@@ -17,9 +17,9 @@
 
 ---
 
-## 🔍 페이지 생성 후 3대 정밀 검수 스킬 (v4.3.0)
+## 🔍 페이지 생성 후 4대 정밀 검수 스킬 (v4.4.0)
 
-모든 슬라이드 작성 완료 후, 아래 3단계 검수 프로세스를 반드시 수행하여 원본과의 정밀 일치 및 결함 여부를 확정한다:
+모든 슬라이드 작성 완료 후, 아래 4단계 검수 프로세스를 반드시 수행하여 원본과의 정밀 일치, GCP 공식 문서 검증 및 결함 여부를 확정한다:
 
 1. **원본 PDF 1:1 내용 비교 검수 (Content Difference Audit)**
    - 원본 PDF 해당 페이지 텍스트/불릿 항목과 슬라이드 내용 간 다름 및 누락 0% 검증
@@ -27,7 +27,10 @@
 2. **2026 최신화 항목 보강 검수 (2026 Spec Modernization Audit)**
    - Balanced PD, Hyperdisk, C3/C4/N4, A3 H100 GPU, Spot VM, OS Login 등 최신 구글 기술 반영 검증
 
-3. **이미지 깨짐 및 자산 결함 검수 (Image & Asset Rendering Audit)**
+3. **GCP 공식 문서 교차 검증 (GCP Official Docs Audit)**
+   - 슬라이드 내 기술 설명, 용어, 제한 사항(Limits), 명령어가 구글 클라우드 공식 문서(`cloud.google.com/docs`) 스펙과 100% 정밀 일치하는지 실시간 검색/조회(`read_url_content` / `search_web`)하여 교차 검증
+
+4. **이미지 깨짐 및 자산 결함 검수 (Image & Asset Rendering Audit)**
    - 브라우저 및 PDF 컴파일 상에서 이미지 경로 손상, 깨짐, 엑스박스, 워터마크 노출 전면 점검
 
 ---
