@@ -63,6 +63,66 @@ style: |
     position: relative;
   }
 
+  /* 모듈 01, 02 표지와 100% 동일한 H1 & H3 표지 타이틀 규격 */
+  section.lead h1 {
+    color: #ffffff !important;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-top: 20px;
+    margin-bottom: 14px;
+    letter-spacing: -0.03em;
+    text-align: center !important;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  section.lead h3 {
+    color: #d2e3fc !important;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    text-align: center !important;
+  }
+
+  .cover-header-logo {
+    position: absolute;
+    top: 45px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cover-header-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  .cover-guide-box {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 14px 28px;
+    color: #ffffff !important;
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    text-align: center !important;
+    backdrop-filter: blur(8px);
+  }
+
+  .cover-footer-info {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    font-size: 14px;
+    color: #9aa0a6;
+    font-weight: 500;
+  }
+
   section.section-divider {
     background: #ffffff !important;
     padding: 90px 80px;
@@ -102,21 +162,6 @@ style: |
     font-weight: 500;
     max-width: 800px;
     line-height: 1.6;
-  }
-
-  .cover-header-logo {
-    position: absolute;
-    top: 45px;
-    left: 50px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .cover-header-text {
-    font-size: 26px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.02em;
   }
 
   h1, h2 {
@@ -333,7 +378,7 @@ style: |
 
 # Virtual Machines
 
-### 2026 Modernized Edition | Module 03: Virtual Machines (Compute Engine VM)
+### 2026 Modernized Edition | Module 03: Virtual Machines
 
 <div class="cover-guide-box">
   Compute Engine 가상 머신(VM) 인스턴스, 2026 머신 패밀리(C3/C4/N4), 블록 스토리지, 무중단 Live Migration 및 Spot VM 종합 가이드
@@ -342,6 +387,12 @@ style: |
 <div class="cover-footer-info">
   Google Cloud 교육 자료 | 베스핀글로벌 2026 개정판
 </div>
+
+<!--
+comment:
+💬 [강사 대본]
+"안녕하세요 수강생 여러분! 모듈 03에서는 Google Cloud의 대표 IaaS 서비스인 Compute Engine 가상 머신(VM)에 대해 배웁니다. VM의 핵심 개념부터 2026 최신 머신 시리즈, 스토리지 옵션, 무중단 라이브 마이그레이션 및 비용 최적화 방안까지 자세히 알아보겠습니다."
+-->
 
 ---
 
@@ -1535,7 +1586,7 @@ gcloud compute instances create my-vm-instance \
     <div class="card-desc">서비스 영향을 최소화하기 위해 주말/야간 등 원하는 정기 점검 유지보수 시간대 지정</div>
   </div>
   <div class="card">
-    <div class="card-title">⚙️ 고급 패치 구성 적용</div>
+    <div class="card-title">⚙️ 고급 패치 구성 설정 적용</div>
     <div class="card-desc">패치 전/후 실행할 커스텀 스크립트 지정 및 OS 자동 재부팅 세부 정책 구성</div>
   </div>
   <div class="card">
